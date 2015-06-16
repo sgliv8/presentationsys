@@ -4,10 +4,11 @@ Rails.application.routes.draw do
 
   resources :comments
 
-    scope "/admin" do
+  scope "/admin" do
     resources :users
     resources :roles
   end
+
 
   root to: "comments#index"
 end
