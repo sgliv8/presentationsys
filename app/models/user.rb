@@ -6,4 +6,8 @@ class User < ActiveRecord::Base
   belongs_to :role
   has_many :comments
   has_many :grades
+
+
+  validates_presence_of :first_name
+  validates_presence_of :last_name
 end

@@ -2,11 +2,25 @@
 <html>
 <head>
   <title>Presentationsys</title>
+  <link rel="stylesheet" type="text/css" href='//cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css'/>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
   <%= csrf_meta_tags %>
 </head>
 <body>
+
+<% if alert %>
+	<div id="notice_wrapper">
+		<p class="alert"><%= alert %></p>
+	</div>
+<% elsif notice %>
+	<div id="notice_wrapper">
+		<p class="notice"><%= notice %></p>
+	</div>
+<% end %>
 
 <% if user_signed_in? %>
   Signed in as <%= current_user.email %>. Not you?
@@ -14,10 +28,6 @@
   <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
 <% else %>
   <%= link_to "Sign up", new_user_registration_path %> or <%= link_to "sign in", new_user_session_path %>
-<% end %>
- 
-<% flash.each do |name, msg| %>
-  <%= content_tag :div, msg, id: "flash_#{name}" %>
 <% end %>
 
 <%= yield %>
