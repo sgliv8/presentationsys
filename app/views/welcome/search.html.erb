@@ -1,0 +1,10 @@
+<div class="form-inline">
+	<label style="margin-right: 5px;">Group Number</label>
+	<%= text_field_tag(:group, nil, :class => 'form-control', :'data-remote' => true, :'data-url' => '/welcome/display', :'data-type' => 'json') %> 
+
+	<label style="margin-right: 5px;">Project Name</label>
+	<%= text_field_tag(:project, nil, :class => 'form-control', :'data-remote' => true, :'data-url' => '/welcome/display', :'data-type' => 'json') %> 
+
+	<button class="btn btn-primary" id="genPdf" data-remote="true" data-url="/welcome/display" data-type="json">Generate PDF Report</button>
+	<img src="<%= asset_path( 'ajax-loader.gif' ) %>" alt="ajax-loader" id="loading" style="margin-left: 10px; display:none;">
+</div>

@@ -11,6 +11,9 @@ Rails.application.routes.draw do
     resources :roles
   end
 
+  get 'welcome/search'
+  get 'welcome/display'
+
 
   authenticated :user do
     root 'comments#index', as: "authenticated_root"
