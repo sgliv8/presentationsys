@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  group: MyString
+  project: MyString
+  strength: MyText
+  weakness: MyText
+  improvement: MyText
+  fund: MyText
+  user_id: 
+
+two:
+  group: MyString
+  project: MyString
+  strength: MyText
+  weakness: MyText
+  improvement: MyText
+  fund: MyText
+  user_id: 

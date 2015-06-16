@@ -1,0 +1,38 @@
+
+<p>
+  <strong>Group:</strong>
+  <%= @comment.group %>
+</p>
+
+<p>
+  <strong>Project:</strong>
+  <%= @comment.project %>
+</p>
+
+<p>
+  <strong>Strength:</strong>
+  <%= @comment.strength %>
+</p>
+
+<p>
+  <strong>Weakness:</strong>
+  <%= @comment.weakness %>
+</p>
+
+<p>
+  <strong>Improvement:</strong>
+  <%= @comment.improvement %>
+</p>
+
+<p>
+  <strong>Fund:</strong>
+  <%= @comment.fund %>
+</p>
+
+<p>
+  <strong>Advisory Board:</strong>
+  <%= @comment.user.first_name %>
+</p>
+
+<%= link_to 'Edit', edit_comment_path(@comment) %> |
+<%= link_to 'Back', comments_path %>

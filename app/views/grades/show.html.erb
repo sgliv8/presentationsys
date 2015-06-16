@@ -1,0 +1,88 @@
+
+<p>
+  <strong>Group:</strong>
+  <%= @grade.group %>
+</p>
+
+<p>
+  <strong>Project:</strong>
+  <%= @grade.project %>
+</p>
+
+<p>
+  <strong>Opport:</strong>
+  <%= @grade.opport %>
+</p>
+
+<p>
+  <strong>Opport c:</strong>
+  <%= @grade.opport_c %>
+</p>
+
+<p>
+  <strong>Cost:</strong>
+  <%= @grade.cost %>
+</p>
+
+<p>
+  <strong>Cost c:</strong>
+  <%= @grade.cost_c %>
+</p>
+
+<p>
+  <strong>Timeline:</strong>
+  <%= @grade.timeline %>
+</p>
+
+<p>
+  <strong>Timeline c:</strong>
+  <%= @grade.timeline_c %>
+</p>
+
+<p>
+  <strong>Obstacle:</strong>
+  <%= @grade.obstacle %>
+</p>
+
+<p>
+  <strong>Obstacle c:</strong>
+  <%= @grade.obstacle_c %>
+</p>
+
+<p>
+  <strong>Risk:</strong>
+  <%= @grade.risk %>
+</p>
+
+<p>
+  <strong>Risk c:</strong>
+  <%= @grade.risk_c %>
+</p>
+
+<p>
+  <strong>Point:</strong>
+  <%= @grade.point %>
+</p>
+
+<p>
+  <strong>Point c:</strong>
+  <%= @grade.point_c %>
+</p>
+
+<p>
+  <strong>Fund:</strong>
+  <%= @grade.fund %>
+</p>
+
+<p>
+  <strong>Fund c:</strong>
+  <%= @grade.fund_c %>
+</p>
+
+<p>
+  <strong>Instructor:</strong>
+  <%= @grade.user.first_name %>
+</p>
+
+<%= link_to 'Edit', edit_grade_path(@grade) %> |
+<%= link_to 'Back', grades_path %>

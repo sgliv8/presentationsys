@@ -1,0 +1,39 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  group: MyString
+  project: MyString
+  opport: MyString
+  opport_c: MyText
+  cost: MyString
+  cost_c: MyText
+  timeline: MyString
+  timeline_c: MyText
+  obstacle: MyString
+  obstacle_c: MyText
+  risk: MyString
+  risk_c: MyText
+  point: MyString
+  point_c: MyText
+  fund: MyString
+  fund_c: MyText
+  user_id: 
+
+two:
+  group: MyString
+  project: MyString
+  opport: MyString
+  opport_c: MyText
+  cost: MyString
+  cost_c: MyText
+  timeline: MyString
+  timeline_c: MyText
+  obstacle: MyString
+  obstacle_c: MyText
+  risk: MyString
+  risk_c: MyText
+  point: MyString
+  point_c: MyText
+  fund: MyString
+  fund_c: MyText
+  user_id: 

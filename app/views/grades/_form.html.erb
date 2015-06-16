@@ -1,0 +1,81 @@
+<%= form_for(@grade) do |f| %>
+  <% if @grade.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@grade.errors.count, "error") %> prohibited this grade from being saved:</h2>
+
+      <ul>
+      <% @grade.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :group %><br>
+    <%= f.text_field :group %>
+  </div>
+  <div class="field">
+    <%= f.label :project %><br>
+    <%= f.text_field :project %>
+  </div>
+  <div class="field">
+    <%= f.label :opport %><br>
+    <%= f.text_field :opport %>
+  </div>
+  <div class="field">
+    <%= f.label :opport_c %><br>
+    <%= f.text_area :opport_c %>
+  </div>
+  <div class="field">
+    <%= f.label :cost %><br>
+    <%= f.text_field :cost %>
+  </div>
+  <div class="field">
+    <%= f.label :cost_c %><br>
+    <%= f.text_area :cost_c %>
+  </div>
+  <div class="field">
+    <%= f.label :timeline %><br>
+    <%= f.text_field :timeline %>
+  </div>
+  <div class="field">
+    <%= f.label :timeline_c %><br>
+    <%= f.text_area :timeline_c %>
+  </div>
+  <div class="field">
+    <%= f.label :obstacle %><br>
+    <%= f.text_field :obstacle %>
+  </div>
+  <div class="field">
+    <%= f.label :obstacle_c %><br>
+    <%= f.text_area :obstacle_c %>
+  </div>
+  <div class="field">
+    <%= f.label :risk %><br>
+    <%= f.text_field :risk %>
+  </div>
+  <div class="field">
+    <%= f.label :risk_c %><br>
+    <%= f.text_area :risk_c %>
+  </div>
+  <div class="field">
+    <%= f.label :point %><br>
+    <%= f.text_field :point %>
+  </div>
+  <div class="field">
+    <%= f.label :point_c %><br>
+    <%= f.text_area :point_c %>
+  </div>
+  <div class="field">
+    <%= f.label :fund %><br>
+    <%= f.text_field :fund %>
+  </div>
+  <div class="field">
+    <%= f.label :fund_c %><br>
+    <%= f.text_area :fund_c %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

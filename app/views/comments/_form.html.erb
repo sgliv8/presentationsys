@@ -1,0 +1,41 @@
+<%= form_for(@comment) do |f| %>
+  <% if @comment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
+
+      <ul>
+      <% @comment.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :group %><br>
+    <%= f.text_field :group %>
+  </div>
+  <div class="field">
+    <%= f.label :project %><br>
+    <%= f.text_field :project %>
+  </div>
+  <div class="field">
+    <%= f.label :strength %><br>
+    <%= f.text_area :strength %>
+  </div>
+  <div class="field">
+    <%= f.label :weakness %><br>
+    <%= f.text_area :weakness %>
+  </div>
+  <div class="field">
+    <%= f.label :improvement %><br>
+    <%= f.text_area :improvement %>
+  </div>
+  <div class="field">
+    <%= f.label :fund %><br>
+    <%= f.text_area :fund %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
