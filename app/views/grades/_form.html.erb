@@ -19,62 +19,104 @@
     <%= f.label :project %><br>
     <%= f.text_field :project %>
   </div>
-  <div class="field">
-    <%= f.label :opport %><br>
-    <%= f.text_field :opport %>
+
+  <div class="form-horizontal">
+  <p>Opport:</p>
+  <% [ '1', '2', '3', '4', '5' ].each do |opport| %>
+    <p style="display:inline-block;"><%= radio_button_tag 'grade[opport]', opport, @grade.opport == opport %>
+    <%= label_tag "opport_#{opport}", opport.humanize %></p>
+  <% end %>
+
   </div>
+
+
   <div class="field">
     <%= f.label :opport_c %><br>
     <%= f.text_area :opport_c %>
   </div>
-  <div class="field">
-    <%= f.label :cost %><br>
-    <%= f.text_field :cost %>
+
+  <div class="form-horizontal">
+  <p>Cost:</p>
+  <% [ '1', '2', '3', '4', '5' ].each do |cost| %>
+    <p style="display:inline-block;"><%= radio_button_tag 'grade[cost]', cost, @grade.cost == cost %>
+    <%= label_tag "cost_#{cost}", cost.humanize %></p>
+  <% end %>
   </div>
+
   <div class="field">
     <%= f.label :cost_c %><br>
     <%= f.text_area :cost_c %>
   </div>
-  <div class="field">
-    <%= f.label :timeline %><br>
-    <%= f.text_field :timeline %>
+  
+  <div class="form-horizontal">
+  <p>Timeline:</p>
+  <% [ '1', '2', '3', '4', '5' ].each do |timeline| %>
+    <p style="display:inline-block;"><%= radio_button_tag 'grade[timeline]', timeline, @grade.timeline == timeline %>
+    <%= label_tag "timeline_#{timeline}", timeline.humanize %></p>
+  <% end %>
   </div>
+
   <div class="field">
     <%= f.label :timeline_c %><br>
     <%= f.text_area :timeline_c %>
   </div>
-  <div class="field">
-    <%= f.label :obstacle %><br>
-    <%= f.text_field :obstacle %>
+
+  <div class="form-horizontal">
+  <p>Obstacle:</p>
+  <% [ '1', '2', '3', '4', '5' ].each do |obstacle| %>
+    <p style="display:inline-block;"><%= radio_button_tag 'grade[obstacle]', obstacle, @grade.obstacle == obstacle %>
+    <%= label_tag "obstacle_#{obstacle}", obstacle.humanize %></p>
+  <% end %>
   </div>
+
   <div class="field">
     <%= f.label :obstacle_c %><br>
     <%= f.text_area :obstacle_c %>
   </div>
-  <div class="field">
-    <%= f.label :risk %><br>
-    <%= f.text_field :risk %>
+
+  <div class="form-horizontal">
+  <p>Risk:</p>
+  <% [ '1', '2', '3', '4', '5' ].each do |risk| %>
+    <p style="display:inline-block;"><%= radio_button_tag 'grade[risk]', risk, @grade.risk == risk %>
+    <%= label_tag "risk_#{risk}", risk.humanize %></p>
+  <% end %>
   </div>
+
   <div class="field">
     <%= f.label :risk_c %><br>
     <%= f.text_area :risk_c %>
   </div>
-  <div class="field">
-    <%= f.label :point %><br>
-    <%= f.text_field :point %>
+
+  <div class="form-horizontal">
+  <p>Point:</p>
+  <% [ '1', '2', '3', '4', '5' ].each do |point| %>
+    <p style="display:inline-block;"><%= radio_button_tag 'grade[point]', point, @grade.point == point %>
+    <%= label_tag "point_#{point}", point.humanize %></p>
+  <% end %>
   </div>
+
   <div class="field">
     <%= f.label :point_c %><br>
     <%= f.text_area :point_c %>
   </div>
-  <div class="field">
-    <%= f.label :fund %><br>
-    <%= f.text_field :fund %>
+  <div class="form-horizontal">
+  <p>Fund:</p>
+  <% [ '1', '2', '3', '4', '5' ].each do |fund| %>
+    <p style="display:inline-block;"><%= radio_button_tag 'grade[fund]', fund, @grade.fund == fund %>
+    <%= label_tag "fund_#{fund}", fund.humanize %></p>
+  <% end %>
   </div>
   <div class="field">
     <%= f.label :fund_c %><br>
     <%= f.text_area :fund_c %>
   </div>
+
+  <div class="field">
+    <%= f.label :totalscore %><br>
+    <%= f.text_field :totalscore %>
+    <button id="calculate" class="btn btn-success">Calculate Grade</button>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>

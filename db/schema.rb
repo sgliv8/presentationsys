@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150616004514) do
+ActiveRecord::Schema.define(version: 20150616055339) do
 
   create_table "comments", force: :cascade do |t|
     t.string   "group"
@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(version: 20150616004514) do
     t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "totalscore"
   end
 
   add_index "grades", ["user_id"], name: "index_grades_on_user_id"

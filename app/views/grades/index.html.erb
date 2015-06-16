@@ -21,6 +21,7 @@
       <th>Fund</th>
       <th>Fund c</th>
       <th>Instructor</th>
+      <th>Final Grade</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -44,6 +45,7 @@
         <td><%= grade.point_c %></td>
         <td><%= grade.fund %></td>
         <td><%= grade.fund_c %></td>
+        <td><%= grade.totalscore %></td>
         <td><%= grade.user.first_name %></td>
         <td><%= link_to 'Show', grade %></td>
         <td><%= link_to 'Edit', edit_grade_path(grade) %></td>
