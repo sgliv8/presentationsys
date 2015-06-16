@@ -41,8 +41,19 @@ class UsersController < ApplicationController
   # PATCH/PUT /users/1
   # PATCH/PUT /users/1.json
   def update
+    if user_params[:password].blank?
+      user_params.delete(:password)
+      user_params.delete(:password_confirmation)
+    end
+
+    successfully_updated = if needs_password?(@user, user_params)
+                             @user.update(user_params)
+                           else
+                             @user.update_without_password(user_params)
+                           end
+
     respond_to do |format|
-      if @user.update(user_params)
+      if successfully_updated
         format.html { redirect_to @user, notice: 'User was successfully updated.' }
         format.json { render :show, status: :ok, location: @user }
       else
@@ -61,6 +72,11 @@ class UsersController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  protected
+    def needs_password?(user, params)
+      params[:password].present?
+    end
 
   private
     # Use callbacks to share common setup or constraints between actions.
