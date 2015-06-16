@@ -5,7 +5,11 @@ class GradesController < ApplicationController
   # GET /grades
   # GET /grades.json
   def index
-    @grades = Grade.all
+    @grades = Grade.where(user_id: current_user)
+
+    if(current_user.role.name == "Admin")
+      @grades = Grade.all
+    end
   end
 
   # GET /grades/1
@@ -15,7 +19,7 @@ class GradesController < ApplicationController
 
   # GET /grades/new
   def new
-    @grade = Grade.new
+    @grade = current_user.grades.build
   end
 
   # GET /grades/1/edit
@@ -25,7 +29,7 @@ class GradesController < ApplicationController
   # POST /grades
   # POST /grades.json
   def create
-    @grade = Grade.new(grade_params)
+    @grade = current_user.grades.build(grade_params)
 
     respond_to do |format|
       if @grade.save

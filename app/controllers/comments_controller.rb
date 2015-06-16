@@ -5,7 +5,11 @@ class CommentsController < ApplicationController
   # GET /comments
   # GET /comments.json
   def index
-    @comments = Comment.all
+    @comments = Comment.where(user_id: current_user)
+
+    if(current_user.role.name == "Admin")
+      @comments = Comment.all
+    end
   end
 
   # GET /comments/1
@@ -15,7 +19,8 @@ class CommentsController < ApplicationController
 
   # GET /comments/new
   def new
-    @comment = Comment.new
+    @comment = current_user.comments.build
+
   end
 
   # GET /comments/1/edit
@@ -25,7 +30,7 @@ class CommentsController < ApplicationController
   # POST /comments
   # POST /comments.json
   def create
-    @comment = Comment.new(comment_params)
+    @comment = current_user.comments.build(comment_params)
 
     respond_to do |format|
       if @comment.save
