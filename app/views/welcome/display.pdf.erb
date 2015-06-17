@@ -27,7 +27,7 @@
   </thead>
 
   <tbody>
-    <% reportGrades.each do |grade| %>
+    <% @reportGrades.each do |grade| %>
       <tr>
         <td><%= grade.group %></td>
         <td><%= grade.project %></td>
@@ -74,7 +74,7 @@
   </thead>
 
   <tbody>
-    <% reportComments.each do |comment| %>
+    <% @reportComments.each do |comment| %>
       <tr>
         <td><%= comment.group %></td>
         <td><%= comment.project %></td>

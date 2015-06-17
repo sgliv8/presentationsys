@@ -25,6 +25,11 @@ $(document).ready(function(){
 	$('#genPdf').on('ajax:success', function(evt, data) {
 
 		console.log(data);
+
+		var groupInput = $('#group').val();
+	  	var projectInput = $('#project').val();
+
+	  	$('#createPdf').html('<a href="/welcome/display.pdf?group='+ groupInput +'&amp;project='+ projectInput +'">Create PDF document</a>')
 	}); 
 
 	$('#genPdf').on('ajax:complete', function(){
