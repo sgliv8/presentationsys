@@ -1,0 +1,30 @@
+<script id="search_result_template" type="text/x-handlebars-template">
+	<table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Group Name</th>
+          <th>Project Name</th>
+          <th>Type</th>
+        </tr>
+      </thead>
+
+      <tbody>
+      	{{#each comments}}
+      	<tr>
+      		<td>{{group}}</td>
+      		<td><a class="tag">{{project}}</a></td>
+      		<td>Comment</td>
+      	</tr>
+      	{{/each}}
+
+      	{{#each grades}}
+      	<tr>
+      		<td>{{group}}</td>
+      		<td><a class="tag">{{project}}</a></td>
+      		<td>Grade</td>
+      	</tr>
+      	{{/each}}
+
+      </tbody>
+    </table>
+</script>

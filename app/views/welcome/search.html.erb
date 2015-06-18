@@ -24,11 +24,13 @@
 			<button class="btn btn-primary" id="genPdf" data-remote="true" data-url="/welcome/display" data-type="json">Search</button>
 			<img src="<%= asset_path( 'ajax-loader.gif' ) %>" alt="ajax-loader" id="loading" style="margin-left: 10px; display:none;">
 			
-			<div id="createPdf">
-				
-			</div>
+			<div id="createPdf"></div>
 	  </div>
 	</div>
+
+	<div id="search_result" class="wrapper_wide" style="padding-bottom: 5em;"></div>
+
+	<%= render 'layouts/search' %>
 
 </div>
 

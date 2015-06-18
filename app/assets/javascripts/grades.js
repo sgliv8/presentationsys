@@ -26,6 +26,14 @@ $(document).ready(function(){
 
 		console.log(data);
 
+
+		var template = $("#search_result_template").html();
+		var render = Handlebars.compile(template);
+
+		var output = render(data);
+	            
+		$('#search_result').html(output);
+
 		var groupInput = $('#group').val();
 	  	var projectInput = $('#project').val();
 
