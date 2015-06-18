@@ -1,6 +1,5 @@
 class WelcomeController < ApplicationController
-  def index
-  end
+  before_action :authenticate_user!
 
   def search
   	respond_to do |format|

@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  get 'welcome/index'
+
+  get 'greeting/index'
 
   devise_for :users
   resources :grades
@@ -19,5 +20,5 @@ Rails.application.routes.draw do
     root 'comments#index', as: "authenticated_root"
   end
 
-  root 'welcome#index'
+  root 'greeting#index'
 end
