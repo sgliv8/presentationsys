@@ -15,3 +15,90 @@
  *= require_tree .
  *= require_self
  */
+
+$white: #FFFFFF;
+$highlight: #d2674e;
+$dark: #22292e;
+$light: #EDEFF5;
+$grey: #E9E9E9;
+$blue: #23527c;
+
+
+body {
+	font-family: 'Open Sans', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: 100;
+}
+
+.delete-button {
+	visibility: hidden;
+}
+
+
+//navbar style
+.navbar {
+	padding: 1.2em 0;
+	margin-bottom: 0;
+	background: $white;
+}
+
+.nav-default{
+	.navbar-brand{
+		color: #f9f290;
+		&:hover {
+			color: #f9f290;
+		}
+	}
+}
+
+//Utility style
+.wrapper_wide {
+	width: 90%;
+	margin: 0 auto;
+}
+
+.wrapper {
+	width: 80%;
+	margin: 0 auto;
+}
+
+.wrapper_rules {
+	width: 70%;
+	margin: 0 auto;
+}
+
+.wrapper_skinny {
+	width: 50%;
+	margin: 0 auto;
+}
+
+//Style for clearfix
+.cf:before, .cf:after {
+	content: " ";
+	display: table;
+}
+
+.cf:after {
+	clear: both;
+}
+
+
+#notice_wrapper {
+	width: 100%;
+	position: absolute;
+	display: inline-block;
+	background: rgba(23, 137, 237, 0.85);
+	z-index: 999;
+	p {
+		color: $white;
+		text-align: center;
+		font-weight: 700;
+		font-size: 1.25rem;
+		padding: 1.5rem 0;
+	}
+}
+
+
+

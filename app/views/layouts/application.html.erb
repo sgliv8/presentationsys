@@ -12,25 +12,37 @@
 </head>
 <body>
 
-<% if alert %>
-	<div id="notice_wrapper">
-		<p class="alert"><%= alert %></p>
-	</div>
-<% elsif notice %>
-	<div id="notice_wrapper">
-		<p class="notice"><%= notice %></p>
-	</div>
-<% end %>
+  <% if alert %>
+  	<div id="notice_wrapper">
+  		<p class="alert"><%= alert %></p>
+  	</div>
+  <% elsif notice %>
+  	<div id="notice_wrapper">
+  		<p class="notice"><%= notice %></p>
+  	</div>
+  <% end %>
 
-<% if user_signed_in? %>
-  Signed in as <%= current_user.email %>. Not you?
-  <%= link_to "Edit profile", edit_user_registration_path %>
-  <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
-<% else %>
-  <%= link_to "Sign up", new_user_registration_path %> or <%= link_to "sign in", new_user_session_path %>
-<% end %>
 
-<%= yield %>
+
+  <%= render 'layouts/header'; %>
+
+  <div id="content-div" class="cf ">
+    <%= yield %>
+  </div>
+
+
+
+<script>
+  //function to control flash message fadeout
+  $(document).ready(function(){
+    setTimeout(function() {
+      $('#notice_wrapper').fadeOut("slow", function() {
+        $(this).remove();
+      });
+    }, 4000 );
+  });
+</script>
+
 
 </body>
 </html>
