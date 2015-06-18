@@ -1,3 +1,5 @@
+<%= render 'layouts/banner'; %>
+
 <div class="form-inline">
 	<label style="margin-right: 5px;">Group Number</label>
 	<%= text_field_tag(:group, nil, :class => 'form-control', :'data-remote' => true, :'data-url' => '/welcome/display', :'data-type' => 'json') %> 
