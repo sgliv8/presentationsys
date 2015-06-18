@@ -1,16 +1,34 @@
-<%= render 'layouts/banner'; %>
+<div id="dashboard_show">
+  <%= render 'layouts/banner'; %>
 
-<div class="form-inline">
-	<label style="margin-right: 5px;">Group Number</label>
-	<%= text_field_tag(:group, nil, :class => 'form-control', :'data-remote' => true, :'data-url' => '/welcome/display', :'data-type' => 'json') %> 
-
-	<label style="margin-right: 5px;">Project Name</label>
-	<%= text_field_tag(:project, nil, :class => 'form-control', :'data-remote' => true, :'data-url' => '/welcome/display', :'data-type' => 'json') %> 
-
-	<button class="btn btn-primary" id="genPdf" data-remote="true" data-url="/welcome/display" data-type="json">Search</button>
-	<img src="<%= asset_path( 'ajax-loader.gif' ) %>" alt="ajax-loader" id="loading" style="margin-left: 10px; display:none;">
+  <div id="links">
+    <div class="wrapper_skinny">
+      <ul>
+        <li><%= link_to "Manage Comments", comments_path %></li>
+        <li><%= link_to "Manage Grades", grades_path %></li>
+        <li><%= link_to "Manage Users", users_path %></li>
+        <li class="current">Create PDF report</li>
+      </ul>
+    </div>
+  </div>
 	
-	<div id="createPdf">
-		
+
+  <div class="wrapper_search" style="padding-bottom: 5em;">
+	  <div class="form-inline">
+			<label style="margin-right: 5px;">Group Number</label>
+			<%= text_field_tag(:group, nil, :class => 'form-control', :style => 'margin-right: 15px;', :'data-remote' => true, :'data-url' => '/welcome/display', :'data-type' => 'json') %> 
+
+			<label style="margin-right: 5px;">Project Name</label>
+			<%= text_field_tag(:project, nil, :class => 'form-control', :style => 'margin-right: 20px;', :'data-remote' => true, :'data-url' => '/welcome/display', :'data-type' => 'json') %> 
+
+			<button class="btn btn-primary" id="genPdf" data-remote="true" data-url="/welcome/display" data-type="json">Search</button>
+			<img src="<%= asset_path( 'ajax-loader.gif' ) %>" alt="ajax-loader" id="loading" style="margin-left: 10px; display:none;">
+			
+			<div id="createPdf">
+				
+			</div>
+	  </div>
 	</div>
+
 </div>
+

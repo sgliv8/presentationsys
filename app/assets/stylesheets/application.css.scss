@@ -36,6 +36,30 @@ h1, h2, h3, h4, h5, h6 {
 	visibility: hidden;
 }
 
+//overwrite boostrap table style
+.table>thead:first-child>tr:first-child>th {
+	text-align: center;
+	background: $blue;
+	color:$white;
+
+}
+
+
+.table>tbody>tr>td {
+	vertical-align: middle !important;
+}
+
+.table {
+	text-align:center;
+	border: 1px solid #ddd;
+}
+
+
+a:hover, a:focus {
+	text-decoration: none;
+	color: $white;
+}
+
 
 //navbar style
 .navbar {
@@ -66,6 +90,11 @@ h1, h2, h3, h4, h5, h6 {
 
 .wrapper_rules {
 	width: 70%;
+	margin: 0 auto;
+}
+
+.wrapper_search {
+	width: 56%;
 	margin: 0 auto;
 }
 
@@ -119,6 +148,42 @@ h1, h2, h3, h4, h5, h6 {
 			color: lighten($dark, 20%);
 		}
 	}
+
+	#links {
+		padding: 2em 0;
+		text-align: center;
+		ul {
+			list-style: none;
+			padding-left: 0;
+			padding: 1rem 0;
+			margin-bottom: 1rem;
+			border-bottom: 1px solid lighten($dark, 75%);
+			li {
+				display: inline;
+				margin-right: 1em;
+				font-weight: 700;
+				a {
+					color: $dark;
+					text-decoration: none;
+					&:hover {
+						color: $blue;
+					}
+				}
+			}
+			.current {
+				color: $blue;
+			}
+		}
+	}
+}
+
+
+.tag {
+	background-color: $blue;
+	padding: 6px 8px;
+	font-size:90%;
+	border-radius: 4px;
+	color: $white;
 }
 
 

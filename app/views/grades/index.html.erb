@@ -1,60 +1,68 @@
+<div id="dashboard_show">
+  <%= render 'layouts/banner'; %>
 
-<%= render 'layouts/banner'; %>
+  <% if current_user.role.name == 'Admin' %>
+    <div id="links">
+      <div class="wrapper_skinny">
+        <ul>
+          <li><%= link_to "Manage Comments", comments_path %></li>
+          <li class="current">Manage Grades</li>
+          <li><%= link_to "Manage Users", users_path %></li>
+          <li><%= link_to "Create PDF report", welcome_search_path %></li>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+</div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Group</th>
-      <th>Project</th>
-      <th>Opport</th>
-      <th>Opport c</th>
-      <th>Cost</th>
-      <th>Cost c</th>
-      <th>Timeline</th>
-      <th>Timeline c</th>
-      <th>Obstacle</th>
-      <th>Obstacle c</th>
-      <th>Risk</th>
-      <th>Risk c</th>
-      <th>Point</th>
-      <th>Point c</th>
-      <th>Fund</th>
-      <th>Fund c</th>
-      <th>Instructor</th>
-      <th>Final Grade</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @grades.each do |grade| %>
+<div class="wrapper_wide" style="padding-bottom: 5em;">
+    
+  <% if current_user.role.name == 'Instructor' %>
+    <div class="pull-right" style="margin-bottom: 20px; margin-top: 40px;">
+         <%= link_to 'Create New Grade', new_grade_path, class: 'btn btn-primary' %>
+    </div>
+  <% end %>
+
+  <table class="table table-hover">
+    <thead>
       <tr>
-        <td><%= grade.group %></td>
-        <td><%= grade.project %></td>
-        <td><%= grade.opport %></td>
-        <td><%= grade.opport_c %></td>
-        <td><%= grade.cost %></td>
-        <td><%= grade.cost_c %></td>
-        <td><%= grade.timeline %></td>
-        <td><%= grade.timeline_c %></td>
-        <td><%= grade.obstacle %></td>
-        <td><%= grade.obstacle_c %></td>
-        <td><%= grade.risk %></td>
-        <td><%= grade.risk_c %></td>
-        <td><%= grade.point %></td>
-        <td><%= grade.point_c %></td>
-        <td><%= grade.fund %></td>
-        <td><%= grade.fund_c %></td>
-        <td><%= grade.totalscore %></td>
-        <td><%= grade.user.first_name %></td>
-        <td><%= link_to 'Show', grade %></td>
-        <td><%= link_to 'Edit', edit_grade_path(grade) %></td>
-        <td><%= link_to 'Destroy', grade, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Group Name</th>
+        <th>Project Name</th>
+        <th>Created Time</th>
+        <th>Final Grade</th>
+        <th colspan="2"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @grades.each do |grade| %>
+        <tr>
+          <td><%= grade.group %></td>
+          <td><%= link_to grade.project, grade, class: 'tag' %></td>
+          <td><%= grade.created_at.strftime("Created at %m/%d/%Y - %I:%M%p") %></td>
+          <td><%= grade.totalscore %></td>
 
-<%= link_to 'New Grade', new_grade_path %>
+          <td colspan="2" style="width: 20%;">
+            <%= link_to edit_grade_path(grade), class: 'btn btn-primary' do %>
+              <i class='fa fa-pencil-square-o'></i>
+            <% end %>
+            
+            <div style="display:inline-block;">
+              <button class="delete-confirm btn btn-danger"><i class="fa fa-trash-o"></i></button>
+              <%= link_to grade, method: :delete, class: 'delete-button' do%>
+                <i class='fa fa-pencil-square-o'></i>
+              <% end %>
+            </div>
+          </td>
+
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <div class="pull-right">
+    
+  </div>
+</div>
+

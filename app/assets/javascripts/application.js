@@ -32,4 +32,33 @@ $(document).ready(function(){
 
 		$('#grade_totalscore').val(new_sum);
 	});
+	
+
+	$('.delete-confirm').on('click', function(e){
+		$(this).parent().children('a').addClass('current');
+		console.log($(this).parent().children('a'));
+		e.preventDefault();
+		swal({
+            title: "Are you sure?",
+            text: "You will not be able to recover this record!",
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonColor: '#DD6B55',
+            confirmButtonText: 'Yes, delete it!',
+            cancelButtonText: "No, cancel plx!",
+            closeOnConfirm: false,
+            closeOnCancel: false
+          },
+          function(isConfirm){
+            if (isConfirm){
+              $('.current').trigger('click');
+              swal("Deleted successfully!", "The record has been deleted!", "success");
+              //$('#delete').css('display', 'block');
+              
+              //$('#delete').css('display', 'none');
+            } else {
+              swal("Cancelled", "The records are safe :)", "error");
+            }
+        });
+	});
 });

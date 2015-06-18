@@ -6,6 +6,7 @@ class CommentsController < ApplicationController
   # GET /comments.json
   def index
     @comments = Comment.where(user_id: current_user)
+    @grades = Grade.where(user_id: current_user)
 
     if(current_user.role.name == "Admin")
       @comments = Comment.all
