@@ -58,3 +58,9 @@
   float: $float-direction;
 }
 
+@mixin bold_font {
+	font-family: "Brandon Grotesque", "helvetica Neue", Helvetica, sans-serif;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+

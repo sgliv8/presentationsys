@@ -1,3 +1,56 @@
 // Place all the styles related to the greeting controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "global/variables";
+@import "global/mixins";
+
+#banner {
+	background: url(image_path("intro-bg.jpg")) no-repeat center center;
+	background-size: cover;
+	width: 100%;
+	display: table;
+	min-height: 600px;
+	.banner_content {
+		display: table-cell;
+		vertical-align: middle;
+		text-align: center;
+		h1 {
+			@include bold_font;
+			color: white;
+			font-size: 3.5em;
+			margin: 0;
+			text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+		}
+		p {
+			font-size: 1.5em;
+			margin: 1.2em 0 1.2em 0;
+			color: rgba(250, 250, 250, 0.8);
+			text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+		}
+		hr {
+			width: 400px;
+			border-top: 1px solid $darkgrey;
+			border-bottom: 1px solid rgba(0,0,0,0.2);
+			margin-bottom: 1.2em;
+		}
+	}
+
+}
+
+button, .button {
+	border: none;
+	outline: none;
+	background: lighten($lightblue, 20%);
+	padding: 1em 3.5em;
+	border-radius: 2em;
+	a {
+		color: white;
+		text-decoration: none;
+	}
+}
+
+.button {
+	color: white;
+	margin: 2em 0;
+}
