@@ -2,18 +2,51 @@
 
 //navbar style
 .navbar {
-	padding: 1.2em 0;
+	padding: 10px 0;
 	margin-bottom: 0;
 	background: $white;
-	z-index: 999;
+	z-index: 998;
+	-moz-box-shadow: rgba($black, 0.3) 0 3px 6px;
+    -webkit-box-shadow: rgba($black, 0.3) 0 3px 6px;
+    box-shadow: rgba($black, 0.3) 0 3px 6px;
 }
 
-.nav-default{
-	.navbar-brand{
-		color: #f9f290;
-		&:hover {
-			color: #f9f290;
-		}
+.navbar-default .navbar-nav>li>a {
+	color: $blue;
+	font-size: 16px;
+	margin-right: 10px;
+
+	&:hover, &:focus, &:active {
+		border-bottom: 2px solid $blue;
+		color: $blue;
+	}
+}
+
+.navbar-default .navbar-nav>.open>a {
+	color: $white;
+    background: rgba($blue, 0.7);
+
+	&:hover {
+		color: $white;
+        background: rgba($blue, 0.7);
+	}
+}
+
+#logo {
+	color: $blue;
+	border: 2px solid $blue;
+	padding: 10px;
+	border-radius: 5px;
+
+	&:hover {
+		text-decoration: none;
+	}
+}
+
+.navbar-right {
+	.dropdown-menu {
+		right: 10px;
+		top: 50px;
 	}
 }
 
