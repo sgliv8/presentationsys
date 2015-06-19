@@ -1,19 +1,15 @@
+<% if @grade.errors.any? %>
+  <div class="alert alert-danger">
+    <% @grade.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </div>
+<% end %>
+
 
 <div class="grade-content">
 
   <%= form_for(@grade) do |f| %>
-    <% if @grade.errors.any? %>
-      <div id="error_explanation">
-        <h2><%= pluralize(@grade.errors.count, "error") %> prohibited this grade from being saved:</h2>
-
-        <ul>
-        <% @grade.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-        </ul>
-      </div>
-    <% end %>
-
     <div class="group-info group-info-edit clearfix">
         <div class="col-md-6">
           <div class="group-num"><strong>Group #:</strong></div> 

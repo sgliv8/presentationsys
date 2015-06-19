@@ -1,36 +1,33 @@
+<% if @user.errors.any? %>
+  <div class="alert alert-danger">
+    <% @user.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </div>
+<% end %>
+
+
 <%= form_for(@user) do |f| %>
-  <% if @user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
-
-      <ul>
-      <% @user.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+  <div class="auth-main">
+    <div class="field">
+      <%= f.text_field :first_name, class: "input-control auth-input", placeholder: 'First Name' %>
     </div>
-  <% end %>
+    <div class="field">
+      <%= f.text_field :last_name, class: "input-control auth-input", placeholder: 'Last Name' %>
+    </div>
 
-<div class="auth-main">
-  <div class="field">
-    <%= f.text_field :first_name, class: "input-control auth-input", placeholder: 'First Name' %>
-  </div>
-  <div class="field">
-    <%= f.text_field :last_name, class: "input-control auth-input", placeholder: 'Last Name' %>
-  </div>
+    <div class="field">
+      <%= f.text_field :email, class: "input-control auth-input", placeholder: 'Email' %>
+    </div>
+    <div class="form-group">
+      <%= collection_select(:user, :role_id, Role.all, :id, :name, {prompt: true}, class: "input-control") %>
+    </div>
 
-  <div class="field">
-    <%= f.text_field :email, class: "input-control auth-input", placeholder: 'Email' %>
+    <div class="form-group">
+      <%= f.password_field :password, placeholder: "Password - Leave blank if unchanged", class: 'input-control' %>
+    </div>
+    <div class="actions">
+      <%= f.submit class: "primary-button auth-button" %>
+    </div>
   </div>
-  <div class="form-group">
-    <%= collection_select(:user, :role_id, Role.all, :id, :name, {prompt: true}, class: "input-control") %>
-  </div>
-
-  <div class="form-group">
-    <%= f.password_field :password, placeholder: "Password - Leave blank if unchanged", class: 'input-control' %>
-  </div>
-  <div class="actions">
-    <%= f.submit class: "primary-button auth-button" %>
-  </div>
-</div>
 <% end %>
