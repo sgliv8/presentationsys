@@ -32,12 +32,12 @@ $(document).ready(function(){
 
 		var output = render(data);
 	            
-		$('#search_result').html(output);
+		$('#search_result').append(output);
 
 		var groupInput = $('#group').val();
 	  	var projectInput = $('#project').val();
 
-	  	$('#createPdf').html('<a href="/welcome/display.pdf?group='+ groupInput +'&amp;project='+ projectInput +'">Create PDF document</a>')
+	  	$('#createPdf').html('<a class="btn btn-primary" href="/welcome/display.pdf?group='+ groupInput +'&amp;project='+ projectInput +'">Create PDF document</a>')
 	}); 
 
 	$('#genPdf').on('ajax:complete', function(){

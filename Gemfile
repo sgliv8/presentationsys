@@ -24,4 +24,5 @@ gem 'jquery-turbolinks', '~> 2.1.0'
 gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary'
 gem 'nprogress-rails'
+gem 'font-awesome-sass'
 

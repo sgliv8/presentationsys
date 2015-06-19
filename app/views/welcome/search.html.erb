@@ -13,7 +13,7 @@
   </div>
 	
 
-  <div class="wrapper_search" style="padding-bottom: 5em;">
+  <div class="wrapper_search">
 	  <div class="form-inline">
 			<label style="margin-right: 5px;">Group Number</label>
 			<%= text_field_tag(:group, nil, :class => 'form-control', :style => 'margin-right: 15px;', :'data-remote' => true, :'data-url' => '/welcome/display', :'data-type' => 'json') %> 
@@ -24,11 +24,12 @@
 			<button class="btn btn-primary" id="genPdf" data-remote="true" data-url="/welcome/display" data-type="json">Search</button>
 			<img src="<%= asset_path( 'ajax-loader.gif' ) %>" alt="ajax-loader" id="loading" style="margin-left: 10px; display:none;">
 			
-			<div id="createPdf"></div>
 	  </div>
 	</div>
 
-	<div id="search_result" class="wrapper_wide" style="padding-bottom: 5em;"></div>
+	<div id="search_result" class="wrapper_wide" style="padding-bottom: 5em;">
+		<div id="createPdf" class="pull-right" style="padding-top: 25px; margin-bottom:20px;"></div>
+	</div>
 
 	<%= render 'layouts/search' %>
 

@@ -1,93 +1,54 @@
+<div>
+  <h1>Summary report of the presentation</h1>
 
-<h1>Listing Grades</h1>
+  <% @reportComments.each do |comment| %>
+    <div style='page-break-after:always;' style="padding-top: 1.5em;">
+      <div class="col-md-6 col-md-offset-3">
+        <div class="row">
+          <div class="panel panel-info">
+            <div class="panel-heading">
+              <h2>Comment Report Details</h2>
+            </div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Group</th>
-      <th>Project</th>
-      <th>Opport</th>
-      <th>Opport c</th>
-      <th>Cost</th>
-      <th>Cost c</th>
-      <th>Timeline</th>
-      <th>Timeline c</th>
-      <th>Obstacle</th>
-      <th>Obstacle c</th>
-      <th>Risk</th>
-      <th>Risk c</th>
-      <th>Point</th>
-      <th>Point c</th>
-      <th>Fund</th>
-      <th>Fund c</th>
-      <th>Instructor</th>
-      <th>Final Grade</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+            <div class="panel-body">
+              <section class="col-md-6">
+                  <h4>Group Number: <%= comment.group %></h4>
+              </section>
+              <section class="col-md-6">
+                  <h4>Project Name: <%= comment.project %></h4>
+              </section>
 
-  <tbody>
-    <% @reportGrades.each do |grade| %>
-      <tr>
-        <td><%= grade.group %></td>
-        <td><%= grade.project %></td>
-        <td><%= grade.opport %></td>
-        <td><%= grade.opport_c %></td>
-        <td><%= grade.cost %></td>
-        <td><%= grade.cost_c %></td>
-        <td><%= grade.timeline %></td>
-        <td><%= grade.timeline_c %></td>
-        <td><%= grade.obstacle %></td>
-        <td><%= grade.obstacle_c %></td>
-        <td><%= grade.risk %></td>
-        <td><%= grade.risk_c %></td>
-        <td><%= grade.point %></td>
-        <td><%= grade.point_c %></td>
-        <td><%= grade.fund %></td>
-        <td><%= grade.fund_c %></td>
-        <td><%= grade.totalscore %></td>
-        <td><%= grade.user.first_name %></td>
-        <td><%= link_to 'Show', grade %></td>
-        <td><%= link_to 'Edit', edit_grade_path(grade) %></td>
-        <td><%= link_to 'Destroy', grade, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+              <section class="col-md-12 form-group">
+                <label class="comment_label">What are the strengths of this presentation(clarity, flow, delivery, visuals etc.)?</label><br/>
+                <div class="comment_content">Comment: <%= comment.strength %></div>
+              </section>
 
+              <hr>
 
+              <section class="col-md-12 form-group">
+                <label class="comment_label">What are its primary weaknesses?</label><br/>
+                <div class="comment_content">Comment: <%= comment.weakness %></div>
+              </section>
 
-<h1>Listing Comments</h1>
+              <hr>
 
-<table>
-  <thead>
-    <tr>
-      <th>Group</th>
-      <th>Project</th>
-      <th>Strength</th>
-      <th>Weakness</th>
-      <th>Improvement</th>
-      <th>Fund</th>
-      <th>Advisory Board</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+              <section class="col-md-12 form-group">
+                <label class="comment_label">Was it clear to you what improvement was being proposed and do you find its benefits compelling? Why or why not?</label><br/>
+                <div class="comment_content">Comment: <%= comment.improvement %></div>
+              </section>
 
-  <tbody>
-    <% @reportComments.each do |comment| %>
-      <tr>
-        <td><%= comment.group %></td>
-        <td><%= comment.project %></td>
-        <td><%= comment.strength %></td>
-        <td><%= comment.weakness %></td>
-        <td><%= comment.improvement %></td>
-        <td><%= comment.fund %></td>
-        <td><%= comment.user.first_name %></td>
-        <td><%= link_to 'Show', comment %></td>
-        <td><%= link_to 'Edit', edit_comment_path(comment) %></td>
-        <td><%= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+              <hr>
 
+              <section class="col-md-12 form-group">
+                <label class="comment_label">If this were presented to you would you be inclined to agree to move ahead and fund this project?<small> (It is understood that you would probably require a lot of additional detailed information to make this decision. We are simply asking whether the high level idea and the approach, costs/benefits etc.) make this seem like a worthwhile project to you.</small></label><br/>
+                <div class="comment_content">Comment: <%= comment.fund %></div>
+              </section>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+
+</div>
