@@ -25,4 +25,5 @@ gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary'
 gem 'nprogress-rails'
 gem 'font-awesome-sass'
+gem 'bootstrap-sass', '~> 3.3.5'
 
