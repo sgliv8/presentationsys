@@ -34,6 +34,7 @@ $(document).ready(function(){
 	});
 
 
+	//sweet alert delete confrim button
 	$('.delete-confirm').on('click', function(e){
 		$(this).parent().children('a').addClass('current');
 		console.log($(this).parent().children('a'));
@@ -61,4 +62,25 @@ $(document).ready(function(){
             }
         });
 	});
+
+
+	$('#sticky').sticky();
+    
+    // comment section accordion
+	$('#comment-a').on('click', commentAccordion).parent().next().hide();
+	$('#comment-b').on('click', commentAccordion).parent().next().hide();
+	$('#comment-c').on('click', commentAccordion).parent().next().hide();
+	$('#comment-d').on('click', commentAccordion).parent().next().hide();
+	$('#comment-e').on('click', commentAccordion).parent().next().hide();
+	$('#comment-f').on('click', commentAccordion).parent().next().hide();
+	$('#comment-g').on('click', commentAccordion).parent().next().hide();
+
+	// callback function
+    function commentAccordion() {
+    	$(this).toggleClass('special');
+    	$(this).parent().next().toggle(800, 'swing');
+    	return false;
+    }
+
+    $('[data-toggle="tooltip"]').tooltip();
 });
