@@ -1,55 +1,64 @@
-<div class="col-md-6 col-md-offset-3" style="padding: 3em 0; ">
-  <div class="row">
-    <div class="panel panel-info">
-      <div class="panel-heading">
-        <h2>Comment Report Details</h2>
-      </div>
+<div class="grade-container">
+    <h2 class="grade-header">Comment Report Details</h2>
 
-      <div class="panel-body">
-        <section class="col-md-6">
-            <h4>Group Number: <%= @comment.group %></h4>
-        </section>
-        <section class="col-md-6">
-            <h4>Project Name: <%= @comment.project %></h4>
-        </section>
+    <div class="grade-content">
+        <div class="group-info group-info-comment clearfix">
+          <p class="pull-left"><strong>Group #:</strong> <%= @comment.group %></p>
+          <p class="pull-right"><strong>Project Name:</strong> <%= @comment.project %></p>
+        </div>
 
-        <section class="col-md-12 form-group">
-          <label class="comment_label">What are the strengths of this presentation(clarity, flow, delivery, visuals etc.)?</label><br/>
-          <div class="comment_content"><i class="fa fa-comments"></i>: <%= @comment.strength %></div>
-        </section>
+        <div class="question clearfix">
+            <div class="col-md-12 question-section adv-comment">1. What are the strengths of this presentation(clarity, flow, delivery, visuals etc.)?</div>
+            <div class="col-md-12 comment-content clearfix">
+               <span class="fa fa-comment adv-comment-color"> Comment:</span>
+               <div class="content">
+                  <%= @comment.strength %>
+               </div>
+            </div>
+        </div>
 
-        <hr>
+        <div class="question clearfix">
+            <div class="col-md-12 question-section adv-comment">2. What are its primary weaknesses?</div>
+            <div class="col-md-12 comment-content clearfix">
+               <span class="fa fa-comment adv-comment-color"> Comment:</span>
+               <div class="content">
+                  <%= @comment.weakness %>
+               </div>
+            </div>
+        </div>
 
-        <section class="col-md-12 form-group">
-          <label class="comment_label">What are its primary weaknesses?</label><br/>
-          <div class="comment_content"><i class="fa fa-comments"></i>: <%= @comment.weakness %></div>
-        </section>
+        <div class="question clearfix">
+            <div class="col-md-12 question-section adv-comment">3. Was it clear to you what improvement was being proposed and do you find its benefits compelling? Why or why not?</div>
+            <div class="col-md-12 comment-content clearfix">
+               <span class="fa fa-comment adv-comment-color"> Comment:</span>
+               <div class="content">
+                  <%= @comment.improvement %>
+               </div>
+            </div>
+        </div>
 
-        <hr>
+        <div class="question clearfix">
+            <div class="col-md-12 question-section adv-comment">4. If this were presented to you would you be inclined to agree to move ahead and fund this project?<small> (It is understood that you would probably require a lot of additional detailed information to make this decision. We are simply asking whether the high level idea and the approach, costs/benefits etc.) make this seem like a worthwhile project to you.</small></div>
+            <div class="col-md-12 comment-content clearfix">
+               <span class="fa fa-comment adv-comment-color"> Comment:</span>
+               <div class="content">
+                  <%= @comment.fund %>
+               </div>
+            </div>
+        </div>
 
-        <section class="col-md-12 form-group">
-          <label class="comment_label">Was it clear to you what improvement was being proposed and do you find its benefits compelling? Why or why not?</label><br/>
-          <div class="comment_content"><i class="fa fa-comments"></i>: <%= @comment.improvement %></div>
-        </section>
+        <div class="col-md-12 adv-board clearfix">
+          <div class="pull-right">
+            <span class="fa fa-pencil"></span>
+            <strong>Advisory Board:</strong> <%= current_user.full_name %>
+          </div> 
+        </div>
 
-        <hr>
+        <div class="btn-section">
+          <%= link_to 'Edit', edit_comment_path(@comment), class: 'edit-btn' %>
+          <%= link_to 'Back', comments_path, class: 'back-btn'%>
+        </div>
 
-        <section class="col-md-12 form-group">
-          <label class="comment_label">If this were presented to you would you be inclined to agree to move ahead and fund this project?<small> (It is understood that you would probably require a lot of additional detailed information to make this decision. We are simply asking whether the high level idea and the approach, costs/benefits etc.) make this seem like a worthwhile project to you.</small></label><br/>
-          <div class="comment_content"><i class="fa fa-comments"></i>: <%= @comment.fund %></div>
-        </section>
-
-
-        <sectopm class="col-md-12 form-group">
-          <div class="pull-right">Advisory Board: <%= current_user.full_name %></div> 
-        </sectopm>
-      </div>
     </div>
-  </div>
-  <div class="form-group pull-right">
-    <%= link_to 'Edit', edit_comment_path(@comment), class: 'btn btn-primary' %>
-    <%= link_to 'Back', comments_path, class: 'btn btn-default'%>
-  </div>
 </div>
-
 

@@ -7,36 +7,58 @@
 <% end %>
 
 
+<div class="grade-content">
+  
+  <%= form_for(@comment, html: {role: 'form' }) do |f| %>
 
-<%= form_for(@comment, html: {role: 'form' }) do |f| %>
-  <div class="row">
-    <div class="col-md-6">
-      <%= f.label :group %><br>
-      <%= f.text_field :group, class: "form-control"%>
+    <div class="group-info group-info-edit clearfix">
+        <div class="col-md-6">
+          <div class="group-num"><strong>Group #:</strong></div> 
+          <%= f.text_field :group, class: "input-control group-num-input" %>
+        </div>
+        <div class="col-md-6">
+          <div class="project-name"><strong>Project Name:</strong></div>
+          <%= f.text_field :project, class: "input-control project-name-input" %>
+        </div>
     </div>
-    <div class="col-md-6">
-      <%= f.label :project %><br>
-      <%= f.text_field :project, class: "form-control" %>
+
+    <div class="question question-edit clearfix">
+        <div class="col-md-12 question-section adv-comment">1. What are the strengths of this presentation(clarity, flow, delivery, visuals etc.)?</div>
+        <div class="col-md-12 comment-content comment-edit">
+           <span class="fa fa-comment adv-comment-color"> Comment:</span>  
+           <%= f.text_area :strength, class: 'input-control comment-textarea' %>
+        </div>
     </div>
-  </div>
-  <div class="form-group">
-    <label class="comment_label">What are the strengths of this presentation(clarity, flow, delivery, visuals etc.)?</label><br/>
-    <%= f.text_area :strength, size: '50x10', class: "form-control"%>
-  </div>
-  <div class="form-group">
-    <label class="comment_label">What are its primary weaknesses?</label><br/>
-    <%= f.text_area :weakness, size: '50x10', class: "form-control" %>
-  </div>
-  <div class="form-group">
-    <label class="comment_label">Was it clear to you what improvement was being proposed and do you find its benefits compelling? Why or why not?</label><br>
-    <%= f.text_area :improvement, size: '50x10', class: "form-control" %>
-  </div>
-  <div class="form-group">
-    <label class="comment_label">If this were presented to you would you be inclined to agree to move ahead and fund this project?<small> (It is understood that you would probably require a lot of additional detailed information to make this decision. We are simply asking whether the high level idea and the approach, costs/benefits etc.) make this seem like a worthwhile project to you.</small></label><br/>
-    <%= f.text_area :fund, size: '50x10', class: "form-control" %>
-  </div>
-  <div class="form-group">
-    <%= f.submit 'Save', class: "btn btn-primary" %>
-    <%= link_to 'Back', comments_path, class: 'btn btn-default' %>
-  </div>
-<% end %>
+
+    <div class="question question-edit clearfix">
+        <div class="col-md-12 question-section adv-comment">2. What are its primary weaknesses?</div>
+        <div class="col-md-12 comment-content comment-edit">
+           <span class="fa fa-comment adv-comment-color"> Comment:</span>  
+           <%= f.text_area :weakness, class: 'input-control comment-textarea' %>
+        </div>
+    </div>
+
+    <div class="question question-edit clearfix">
+        <div class="col-md-12 question-section adv-comment">3. Was it clear to you what improvement was being proposed and do you find its benefits compelling? Why or why not?</div>
+        <div class="col-md-12 comment-content comment-edit">
+           <span class="fa fa-comment adv-comment-color"> Comment:</span>  
+           <%= f.text_area :improvement, class: 'input-control comment-textarea' %>
+        </div>
+    </div>
+
+    <div class="question question-edit clearfix">
+        <div class="col-md-12 question-section adv-comment">4. If this were presented to you would you be inclined to agree to move ahead and fund this project?<small> (It is understood that you would probably require a lot of additional detailed information to make this decision. We are simply asking whether the high level idea and the approach, costs/benefits etc.) make this seem like a worthwhile project to you.</div>
+        <div class="col-md-12 comment-content comment-edit">
+           <span class="fa fa-comment adv-comment-color"> Comment:</span>  
+           <%= f.text_area :fund, class: 'input-control comment-textarea' %>
+        </div>
+    </div>
+
+    <div class="btn-section" style="margin-top: 25px;">
+      <%= f.submit 'Save', class: 'save-btn save-comment-btn' %>
+      <%= link_to 'Back', comments_path, class: 'back-btn'%>
+    </div>
+
+  <% end %>
+
+</div>

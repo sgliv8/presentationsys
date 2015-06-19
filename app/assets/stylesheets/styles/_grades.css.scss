@@ -63,6 +63,14 @@
 
 .group-info-edit {
 	padding-bottom: 15px;
+	padding-top: 15px;
+	border-bottom: none;
+	// border-radius: 5px;
+	background: $grey;
+}
+
+.group-info-comment {
+	border-bottom: 2px solid darken($blue, 20);
 }
 
 .criteria {
@@ -227,5 +235,10 @@
        	  color: $white;
        	  background: rgba($red, 1);
        }
+	}
+
+	.save-comment-btn {
+		padding-top: 9px;
+		padding-bottom: 8px;
 	}
 }

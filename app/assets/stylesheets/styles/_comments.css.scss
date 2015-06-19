@@ -1,3 +1,27 @@
 // Place all the styles related to the comments controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "global/variables";
+
+.adv-comment {
+	font-size: 20px;
+	font-weight: $bold;
+
+	small {
+		font-size: 12px;
+		font-style: italic;
+	}
+}
+
+.adv-comment-color {
+	color: darken($blue, 20);
+}
+
+.adv-board {
+	padding: 10px;
+	color: darken($blue, 20);
+	margin-top: 5px;
+	font-size: 16px;
+	margin-bottom: 30px;
+}
