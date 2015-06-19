@@ -1,0 +1,231 @@
+// Place all the styles related to the grades controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "global/variables";
+@import "global/mixins";
+@import "global/form";
+
+.grade-container {
+	width: 60%;
+	max-width: 768px;
+	margin: 40px auto 20px;
+}
+
+.grade-header {
+	font-size: 25px;
+	color: $blue;
+    font-weight: $normal;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.group-info {
+	border-bottom: 1px dotted rgba($dark, 0.6);
+	padding-left: 5px;
+	padding-right: 5px;
+	
+	p, .group-num, .project-name {
+       margin-bottom: 5px;
+       color: darken($blue, 20);
+       font-size: 20px;
+	}
+
+	.input-control {
+		border-width: 1.5px;
+
+	    &:focus {
+	    	background: rgba(#ccc, 0.2);
+     	    @include single-transition(all, 0.3s, ease-in-out);
+	    }
+	}
+
+	.group-num {
+	    @include column(0.2);
+	    font-size: 15px;
+	    padding-top: 10px;
+	}
+
+	.group-num-input {
+		@include column(0.15);
+	}
+
+	.project-name {
+		@include column(0.32);
+		font-size: 15px;
+		padding-top: 10px;
+	}
+
+	.project-name-input {
+		@include column(0.68);
+	}
+}
+
+.group-info-edit {
+	padding-bottom: 15px;
+}
+
+.criteria {
+	padding: 15px 5px;
+	font-size: 18px;
+	background: rgba($blue, 1);
+	color: $white;
+}
+
+.question {
+	padding: 10px 5px 25px;
+	font-size: 15px;
+	border-bottom: 1px solid rgba($dark, 0.4);
+}
+
+.question-edit {
+	padding-bottom: 30px;
+}
+
+.question-section, .grade-section,
+.comment-section {
+	padding-bottom: 13px;
+	padding-top: 13px;
+} 
+
+.grade-section, .comment-section {
+	text-align: center;
+}
+
+.grade-section {
+	color: $red;
+
+	.grade-checkbox {
+		margin-right: 30px;
+	}
+}
+
+.comment-section {
+	span {
+		background: rgba($dark, 0.8);
+		color: $white;
+		padding: 5px 8px; 
+		border-radius: 5px;
+		cursor: pointer;
+	}
+
+	span.special {
+		background: darken($blue, 20);
+	}
+}
+
+.comment-content {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background: $grey;
+    border-radius: 5px;
+
+    .content {
+    	padding: 5px; 
+    	word-wrap: break-word;
+    }
+}
+
+.comment-edit {
+	padding-bottom: 25px;
+	padding-top: 15px;
+}
+
+.comment-textarea {
+	height: 150px;
+	margin-top: 10px;
+}
+
+.final-grade-section {
+	padding: 6px;
+
+	p {
+		color: darken($blue, 20);
+        font-size: 18px;
+	}
+
+	.final-grade {
+		color: $red;
+	}
+}
+
+.calculate-score {
+	margin-top: 15px;
+	padding: 0 5px;
+
+	span {
+		color: $blue;
+		cursor: pointer;
+	}
+}
+
+.total-grade {
+	@include column(0.4);
+	padding-top: 10px;
+	color: $blue;
+}
+
+.grade-input {
+	height: 40px;
+    width: 40%;
+}
+
+#calculate {
+	padding-top: 7px;
+	padding-left: 10px;
+	font-size: 25px;
+}
+
+.btn-section {
+	padding: 20px;
+	text-align: center;
+
+	a, input {
+		padding: 10px 30px;
+		text-decoration: none;
+		border-radius: 5px;
+
+		&:hover {
+			text-decoration: none;
+		}
+	}
+
+	.edit-btn {
+       border: 2px solid darken($blue, 20);
+       color: darken($blue, 20);
+       font-weight: $bold;
+       margin-right: 10px;
+
+       &:hover {
+       	  color: $white;
+       	  background: darken($blue, 20);
+       }
+	}
+
+	.back-btn {
+		border: 2px solid rgba($black, 0.5);
+		color: rgba($black, 0.5);
+		font-weight: $bold;
+
+		&:hover {
+       	  color: $white;
+       	  background: rgba($black, 0.5);
+       	  border-color: transparent;
+       }
+	}
+
+	.save-btn {
+		border: 2px solid rgba($red, 1);
+		color: rgba($red, 1);
+		font-weight: $bold;
+		margin-right: 10px;
+		background: $white;
+		padding-top: 8px;
+		padding-bottom: 8px;
+
+		&:hover {
+       	  color: $white;
+       	  background: rgba($red, 1);
+       }
+	}
+}

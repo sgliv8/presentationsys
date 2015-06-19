@@ -1,0 +1,85 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "global/variables";
+@import "global/mixins";
+
+.content-wrapper {
+	margin: 80px auto 30px;
+	max-width: 580px;
+	text-align: center;
+} 
+
+.auth-header {
+	text-transform: uppercase;
+    letter-spacing: 1px;
+    -webkit-font-smoothing: antialiased;
+    font-size: 21px;
+    color: $blue;
+    font-weight: 500;
+}
+
+.auth-main {
+	padding: 20px 15% 2px;
+
+	.auth-input {
+     	width: 100%;
+     	font-weight: $normal;
+     	margin-bottom: 25px;
+     } // auth-input
+
+     .auth-input-last {
+     	margin-bottom: 10px;
+     }
+
+     input {
+
+     	border-width: 1.5px;
+     	
+        &:focus {
+     	  border-color: $blue;
+     	  background: rgba(#ccc, 0.2);
+     	  @include single-transition(all, 0.3s, ease-in-out);
+        }// input:focus
+     } // input
+
+     .remember-section {
+     	float: left;
+
+     	label {
+     		font-size: 12px;
+     		font-weight: 600;
+     		color: rgba($black, 0.6);
+     	} // label
+
+     } // remeber-section
+
+     .auth-button {
+     	width: 80%;
+     	margin-top: 15px;
+     	margin-bottom: 5px;
+     	font-size: 16px;
+     	padding: 10px 0;
+     } //auth-button
+
+     .form-group {
+         .input-control {
+	     	color: rgba($black, 0.35);
+	     	margin-bottom: 25px;
+	     }
+     } // form-group 
+
+     .auth-footer {
+     	
+     	p {
+     		color: rgba($black, 0.6);
+     		letter-spacing: 0.5px;
+     		font-size: 14px;
+     	} // p 
+     } // auth-footer
+
+     .setting-color {
+     	color: $black !important;
+     }    
+} // auth-main

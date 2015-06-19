@@ -1,0 +1,60 @@
+// ==========================================================
+// Mixins 
+// ==========================================================
+
+// clearfix 
+@mixin clearfix() {
+	//Style for clearfix
+	.cf:before, .cf:after {
+		content: " ";
+		display: table;
+	}
+
+	.cf:after {
+		clear: both;
+	}
+
+}
+
+@mixin rotate($deg) {
+	-moz-transform: rotate($deg);
+	-webkit-transform: rotate($deg);
+	-o-transform: rotate($deg);
+	-ms-transform: rotate($deg);
+	transform: rotate($deg);
+}
+
+@mixin single-transition($property, $duration, $function) {
+	-webkit-transition: $property $duration $function;
+	-moz-transition: $property $duration $function;
+	-ms-transition: $property $duration $function;
+	-o-transition: $property $duration $function;
+	transition: $property $duration $function;
+}
+
+@mixin background-linear-gradient($dir, $color1, $color2) {
+	background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, $color1), color-stop(100%, $color2));
+    background-image: -moz-linear-gradient(left, $color1, $color2);
+    background-image: -webkit-linear-gradient(left, $color1, $color2);
+    background-image: linear-gradient(to $dir, $color1, $color2);
+}
+
+@mixin transition-duration($time) {
+	-moz-transition-duration: $time;
+    -o-transition-duration: $time;
+    -webkit-transition-duration: $time;
+    transition-duration: $time;
+}
+
+@mixin transition-timing-function($function) {
+	-moz-transition-timing-function: $function;
+    -o-transition-timing-function: $function;
+    -webkit-transition-timing-function: $function;
+    transition-timing-function: $function;
+}
+
+@mixin column($percentage, $float-direction:left) {
+  width: 100% * $percentage;
+  float: $float-direction;
+}
+

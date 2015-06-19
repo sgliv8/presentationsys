@@ -1,0 +1,54 @@
+// ==========================================================
+// Base Styles
+// ==========================================================
+
+@import "variables";
+
+body {
+	font-family: 'Open Sans', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: 100;
+}
+
+.delete-button {
+	visibility: hidden;
+}
+
+//Utility style
+.wrapper_wide {
+	width: 90%;
+	margin: 0 auto;
+}
+
+.wrapper {
+	width: 80%;
+	margin: 0 auto;
+}
+
+.wrapper_rules {
+	width: 70%;
+	margin: 0 auto;
+}
+
+.wrapper_skinny {
+	width: 50%;
+	margin: 0 auto;
+}
+
+
+.comment_label {
+	margin-top: 30px;
+	font-size: 20px;
+	color: darken($blue, 10);
+	small {
+		font-size: 13px;
+		font-weight: 500;
+	}
+}
+
+.comment_content {
+	padding: 10px 20px 25px 20px;
+	font-weight: 600;
+}

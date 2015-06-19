@@ -1,123 +1,141 @@
-<%= form_for(@grade) do |f| %>
-  <% if @grade.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@grade.errors.count, "error") %> prohibited this grade from being saved:</h2>
 
-      <ul>
-      <% @grade.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+<div class="grade-content">
+
+  <%= form_for(@grade) do |f| %>
+    <% if @grade.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@grade.errors.count, "error") %> prohibited this grade from being saved:</h2>
+
+        <ul>
+        <% @grade.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="group-info group-info-edit clearfix">
+        <div class="col-md-6">
+          <div class="group-num"><strong>Group #:</strong></div> 
+          <%= f.text_field :group, class: "input-control group-num-input" %>
+        </div>
+        <div class="col-md-6">
+          <div class="project-name"><strong>Project Name:</strong></div>
+          <%= f.text_field :project, class: "input-control project-name-input" %>
+        </div>
     </div>
+
+    <div class="question question-edit clearfix">
+          <div class="col-md-6 question-section"><strong>a.</strong> The improvemnt opportnuity</div>
+          <div class="col-md-6 grade-section">
+            <% [ '1', '2', '3', '4', '5' ].each do |opport| %>
+              <p style="display:inline-block;" class="grade-checkbox"><%= radio_button_tag 'grade[opport]', opport, @grade.opport == opport %>
+              <%= label_tag "opport_#{opport}", opport.humanize %></p>
+            <% end %>
+          </div>
+          <div class="col-md-12 comment-content comment-edit">
+             <span class="fa fa-comment"></span> Comment: 
+             <%= f.text_area :opport_c, class: 'input-control comment-textarea' %>
+          </div>
+    </div>
+
+     <div class="question question-edit clearfix">
+          <div class="col-md-6 question-section"><strong>b.</strong> Costs and benefits</div>
+          <div class="col-md-6 grade-section">
+            <% [ '1', '2', '3', '4', '5' ].each do |cost| %>
+              <p style="display:inline-block;" class="grade-checkbox"><%= radio_button_tag 'grade[cost]', cost, @grade.cost == cost %>
+              <%= label_tag "cost_#{cost}", cost.humanize %></p>
+            <% end %>
+          </div>
+          <div class="col-md-12 comment-content comment-edit">
+             <span class="fa fa-comment"></span> Comment: 
+             <%= f.text_area :cost_c, class: 'input-control comment-textarea' %>
+          </div>
+    </div>
+
+    <div class="question question-edit clearfix">
+          <div class="col-md-6 question-section"><strong>c.</strong> The approach and timeline</div>
+          <div class="col-md-6 grade-section">
+            <% [ '1', '2', '3', '4', '5' ].each do |timeline| %>
+              <p style="display:inline-block;" class="grade-checkbox"><%= radio_button_tag 'grade[timeline]', timeline, @grade.timeline == timeline %>
+              <%= label_tag "timeline_#{timeline}", timeline.humanize %></p>
+            <% end %>
+          </div>
+          <div class="col-md-12 comment-content comment-edit">
+             <span class="fa fa-comment"></span> Comment: 
+             <%= f.text_area :timeline_c, class: 'input-control comment-textarea' %>
+          </div>
+    </div>    
+    
+    <div class="question question-edit clearfix">
+          <div class="col-md-6 question-section"><strong>d.</strong> Key obstacles and how they will be addressed</div>
+          <div class="col-md-6 grade-section">
+            <% [ '1', '2', '3', '4', '5' ].each do |obstacle| %>
+              <p style="display:inline-block;" class="grade-checkbox"><%= radio_button_tag 'grade[obstacle]', obstacle, @grade.obstacle == obstacle %>
+              <%= label_tag "obstacle_#{obstacle}", obstacle.humanize %></p>
+            <% end %>
+          </div>
+          <div class="col-md-12 comment-content comment-edit">
+             <span class="fa fa-comment"></span> Comment: 
+             <%= f.text_area :obstacle_c, class: 'input-control comment-textarea' %>
+          </div>
+    </div>   
+    
+    <div class="question question-edit clearfix">
+          <div class="col-md-6 question-section"><strong>e.</strong> Risks and mitigation</div>
+          <div class="col-md-6 grade-section">
+            <% [ '1', '2', '3', '4', '5' ].each do |risk| %>
+              <p style="display:inline-block;" class="grade-checkbox"><%= radio_button_tag 'grade[risk]', risk, @grade.risk == risk %>
+              <%= label_tag "risk_#{risk}", risk.humanize %></p>
+            <% end %>
+          </div>
+          <div class="col-md-12 comment-content comment-edit">
+             <span class="fa fa-comment"></span> Comment: 
+             <%= f.text_area :risk_c, class: 'input-control comment-textarea' %>
+          </div>
+    </div>
+
+    <div class="question question-edit clearfix">
+          <div class="col-md-6 question-section"><strong>f.</strong> To what extent does the presentation address all the critical decision-points a senior executive would consider? If not, what do you feel is missing?</div>
+          <div class="col-md-6 grade-section">
+            <% [ '1', '2', '3', '4', '5' ].each do |point| %>
+              <p style="display:inline-block;" class="grade-checkbox"><%= radio_button_tag 'grade[point]', point, @grade.point == point %>
+              <%= label_tag "point_#{point}", point.humanize %></p>
+            <% end %>
+          </div>
+          <div class="col-md-12 comment-content comment-edit">
+             <span class="fa fa-comment"></span> Comment: 
+             <%= f.text_area :point_c, class: 'input-control comment-textarea' %>
+          </div>
+    </div>
+
+    <div class="question question-edit clearfix">
+          <div class="col-md-6 question-section"><strong>g.</strong> Will the initiative will provide sufficient ROI and other benefits while minimizing risk, such that it is worth funding?</div>
+          <div class="col-md-6 grade-section">
+            <% [ '1', '2', '3', '4', '5' ].each do |fund| %>
+              <p style="display:inline-block;" class="grade-checkbox"><%= radio_button_tag 'grade[fund]', fund, @grade.fund == fund %>
+              <%= label_tag "fund_#{fund}", fund.humanize %></p>
+            <% end %>
+          </div>
+          <div class="col-md-12 comment-content comment-edit">
+             <span class="fa fa-comment"></span> Comment: 
+             <%= f.text_area :fund_c, class: 'input-control comment-textarea' %>
+          </div>
+    </div>        
+
+    <div class="calculate-score clearfix">
+      <div class="pull-right col-md-4">
+        <div class="total-grade">Total Grade:</div> 
+        <%= f.text_field :totalscore, class: 'input-control grade-input' %>
+        <span id="calculate" class="fa fa-calculator" data-toggle="tooltip" data-placement="top" title="Calculate Grade"></span>
+      </div>
+    </div>
+
+    <div class="btn-section">
+       <%= f.submit 'Save', class: 'save-btn' %>
+       <%= link_to 'Back', grades_path, class: "back-btn" %>
+    </div>
+      
   <% end %>
 
-  <div class="field">
-    <%= f.label :group %><br>
-    <%= f.text_field :group %>
-  </div>
-  <div class="field">
-    <%= f.label :project %><br>
-    <%= f.text_field :project %>
-  </div>
-
-  <div class="form-horizontal">
-  <p>Opport:</p>
-  <% [ '1', '2', '3', '4', '5' ].each do |opport| %>
-    <p style="display:inline-block;"><%= radio_button_tag 'grade[opport]', opport, @grade.opport == opport %>
-    <%= label_tag "opport_#{opport}", opport.humanize %></p>
-  <% end %>
-
-  </div>
-
-
-  <div class="field">
-    <%= f.label :opport_c %><br>
-    <%= f.text_area :opport_c %>
-  </div>
-
-  <div class="form-horizontal">
-  <p>Cost:</p>
-  <% [ '1', '2', '3', '4', '5' ].each do |cost| %>
-    <p style="display:inline-block;"><%= radio_button_tag 'grade[cost]', cost, @grade.cost == cost %>
-    <%= label_tag "cost_#{cost}", cost.humanize %></p>
-  <% end %>
-  </div>
-
-  <div class="field">
-    <%= f.label :cost_c %><br>
-    <%= f.text_area :cost_c %>
-  </div>
-  
-  <div class="form-horizontal">
-  <p>Timeline:</p>
-  <% [ '1', '2', '3', '4', '5' ].each do |timeline| %>
-    <p style="display:inline-block;"><%= radio_button_tag 'grade[timeline]', timeline, @grade.timeline == timeline %>
-    <%= label_tag "timeline_#{timeline}", timeline.humanize %></p>
-  <% end %>
-  </div>
-
-  <div class="field">
-    <%= f.label :timeline_c %><br>
-    <%= f.text_area :timeline_c %>
-  </div>
-
-  <div class="form-horizontal">
-  <p>Obstacle:</p>
-  <% [ '1', '2', '3', '4', '5' ].each do |obstacle| %>
-    <p style="display:inline-block;"><%= radio_button_tag 'grade[obstacle]', obstacle, @grade.obstacle == obstacle %>
-    <%= label_tag "obstacle_#{obstacle}", obstacle.humanize %></p>
-  <% end %>
-  </div>
-
-  <div class="field">
-    <%= f.label :obstacle_c %><br>
-    <%= f.text_area :obstacle_c %>
-  </div>
-
-  <div class="form-horizontal">
-  <p>Risk:</p>
-  <% [ '1', '2', '3', '4', '5' ].each do |risk| %>
-    <p style="display:inline-block;"><%= radio_button_tag 'grade[risk]', risk, @grade.risk == risk %>
-    <%= label_tag "risk_#{risk}", risk.humanize %></p>
-  <% end %>
-  </div>
-
-  <div class="field">
-    <%= f.label :risk_c %><br>
-    <%= f.text_area :risk_c %>
-  </div>
-
-  <div class="form-horizontal">
-  <p>Point:</p>
-  <% [ '1', '2', '3', '4', '5' ].each do |point| %>
-    <p style="display:inline-block;"><%= radio_button_tag 'grade[point]', point, @grade.point == point %>
-    <%= label_tag "point_#{point}", point.humanize %></p>
-  <% end %>
-  </div>
-
-  <div class="field">
-    <%= f.label :point_c %><br>
-    <%= f.text_area :point_c %>
-  </div>
-  <div class="form-horizontal">
-  <p>Fund:</p>
-  <% [ '1', '2', '3', '4', '5' ].each do |fund| %>
-    <p style="display:inline-block;"><%= radio_button_tag 'grade[fund]', fund, @grade.fund == fund %>
-    <%= label_tag "fund_#{fund}", fund.humanize %></p>
-  <% end %>
-  </div>
-  <div class="field">
-    <%= f.label :fund_c %><br>
-    <%= f.text_area :fund_c %>
-  </div>
-
-  <div class="field">
-    <%= f.label :totalscore %><br>
-    <%= f.text_field :totalscore %>
-    <button id="calculate" class="btn btn-success">Calculate Grade</button>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+</div>

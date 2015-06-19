@@ -1,0 +1,34 @@
+@import "global/variables";
+
+//navbar style
+.navbar {
+	padding: 1.2em 0;
+	margin-bottom: 0;
+	background: $white;
+	z-index: 999;
+}
+
+.nav-default{
+	.navbar-brand{
+		color: #f9f290;
+		&:hover {
+			color: #f9f290;
+		}
+	}
+}
+
+//Style for the flash message
+#notice_wrapper {
+	width: 100%;
+	position: absolute;
+	display: inline-block;
+	background: rgba($blue, 0.85);
+	z-index: 999;
+	p {
+		color: $white;
+		text-align: center;
+		font-weight: 700;
+		font-size: 1.25rem;
+		padding: 1.5rem 0;
+	}
+}

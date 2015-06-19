@@ -1,93 +1,114 @@
+<div class="grade-container">
+    <h1 class="grade-header">Grading Details</h1>
 
-<p>
-  <strong>Group:</strong>
-  <%= @grade.group %>
-</p>
+    <div class="grade-content">
+      <div class="group-info clearfix">
+        <p class="pull-left"><strong>Group #:</strong> <%= @grade.group %></p>
+        <p class="pull-right"><strong>Project Name:</strong> <%= @grade.project %></p>
+      </div>
+      <div class="criteria">Does the presentation provide a complete and compelling explanation of: </div>
 
-<p>
-  <strong>Project:</strong>
-  <%= @grade.project %>
-</p>
+      <div class="question clearfix">
+          <div class="col-md-6 question-section"><strong>a.</strong> The improvemnt opportnuity</div>
+          <div class="col-md-3 grade-section"><%= @grade.opport %></div>
+          <div class="col-md-3 comment-section">
+            <span id="comment-a">comment</span>
+          </div>
+          <div class="col-md-12 comment-content clearfix">
+             <span class="fa fa-comment"> Instructor Comment:</span>
+             <div class="content">
+                <%= @grade.opport_c %>
+             </div>
+          </div>
+      </div>
 
-<p>
-  <strong>Opport:</strong>
-  <%= @grade.opport %>
-</p>
+      <div class="question clearfix">
+          <div class="col-md-6 question-section"><strong>b.</strong> Costs and benefits</div>
+          <div class="col-md-3 grade-section"><%= @grade.cost %></div>
+          <div class="col-md-3 comment-section"><span id="comment-b">comment</span></div>
+          <div class="col-md-12 comment-content">
+             <span class="fa fa-comment"> Instructor Comment:</span>
+             <div class="content">
+                <%= @grade.cost_c %>
+            </div>
+          </div>
+      </div>
 
-<p>
-  <strong>Opport c:</strong>
-  <%= @grade.opport_c %>
-</p>
+      <div class="question clearfix">
+          <div class="col-md-6 question-section"><strong>c.</strong> The approach and timeline</div>
+          <div class="col-md-3 grade-section"><%= @grade.timeline %></div>
+          <div class="col-md-3 comment-section"><span id="comment-c">comment</span></div>
+          <div class="col-md-12 comment-content clearfix">
+             <span class="fa fa-comment"> Instructor Comment:</span>
+             <div class="content">
+               <%= @grade.timeline_c %>
+             </div> 
+          </div>
+      </div>
 
-<p>
-  <strong>Cost:</strong>
-  <%= @grade.cost %>
-</p>
+      <div class="question clearfix">
+          <div class="col-md-6 question-section"><strong>d.</strong> Key obstacles and how they will be addressed</div>
+          <div class="col-md-3 grade-section"><%= @grade.obstacle %></div>
+          <div class="col-md-3 comment-section"><span id="comment-d">comment</span></div>
+          <div class="col-md-12 comment-content clearfix">
+             <span class="fa fa-comment"> Instructor Comment:</span>
+             <div class="content">
+               <%= @grade.obstacle %>
+             </div>   
+          </div>
+      </div>
 
-<p>
-  <strong>Cost c:</strong>
-  <%= @grade.cost_c %>
-</p>
+      <div class="question clearfix">
+          <div class="col-md-6 question-section"><strong>e.</strong> Risks and mitigation</div>
+          <div class="col-md-3 grade-section"><%= @grade.risk %></div>
+          <div class="col-md-3 comment-section"><span id="comment-e">comment</span></div>
+          <div class="col-md-12 comment-content clearfix">
+             <span class="fa fa-comment"> Instructor Comment:</span>
+             <div class="content">
+               <%= @grade.risk_c %>
+             </div>
+          </div>
+      </div>
 
-<p>
-  <strong>Timeline:</strong>
-  <%= @grade.timeline %>
-</p>
+      <div class="question clearfix">
+          <div class="col-md-6 question-section"><strong>f.</strong> To what extent does the presentation address all the critical decision-points a senior executive would consider? If not, what do you feel is missing?</div>
+          <div class="col-md-3 grade-section"><%= @grade.point %></div>
+          <div class="col-md-3 comment-section"><span id="comment-f">comment</span></div>
+          <div class="col-md-12 comment-content clearfix">
+             <span class="fa fa-comment"> Instructor Comment: </span>
+             <div class="content">
+                <%= @grade.point_c %>
+             </div>
+          </div>
+      </div>
 
-<p>
-  <strong>Timeline c:</strong>
-  <%= @grade.timeline_c %>
-</p>
+      <div class="question clearfix">
+          <div class="col-md-6 question-section"><strong>g.</strong> Will the initiative will provide sufficient ROI and other benefits while minimizing risk, such that it is worth funding?</div>
+          <div class="col-md-3 grade-section"><%= @grade.fund %></div>
+          <div class="col-md-3 comment-section"><span id="comment-g">comment</span></div>
+          <div class="col-md-12 comment-content clearfix">
+             <span class="fa fa-comment"> Instructor Comment:</span>
+             <div class="content">
+                <%= @grade.fund_c %>
+             </div>
+          </div>
+      </div>
 
-<p>
-  <strong>Obstacle:</strong>
-  <%= @grade.obstacle %>
-</p>
+      <div class="final-grade-section clearfix">
+         <p class="pull-left">
+            <strong><span class="fa fa-calculator"></span> Final Grade:</strong>
+            <span class="final-grade"><%= @grade.totalscore %></span>
+         </p>
+         <p class="pull-right">
+            <strong><span class="fa fa-pencil"></span> Instructor:</strong> 
+            <%= @grade.user.first_name %>
+         </p>
+      </div>
+    </div>
 
-<p>
-  <strong>Obstacle c:</strong>
-  <%= @grade.obstacle_c %>
-</p>
+    <div class="btn-section">
+       <%= link_to 'Edit', edit_grade_path(@grade), class: 'edit-btn' %>
+       <%= link_to 'Back', grades_path, class: 'back-btn' %>
+    </div>
 
-<p>
-  <strong>Risk:</strong>
-  <%= @grade.risk %>
-</p>
-
-<p>
-  <strong>Risk c:</strong>
-  <%= @grade.risk_c %>
-</p>
-
-<p>
-  <strong>Point:</strong>
-  <%= @grade.point %>
-</p>
-
-<p>
-  <strong>Point c:</strong>
-  <%= @grade.point_c %>
-</p>
-
-<p>
-  <strong>Fund:</strong>
-  <%= @grade.fund %>
-</p>
-
-<p>
-  <strong>Fund c:</strong>
-  <%= @grade.fund_c %>
-</p>
-
-<p>
-  <strong>Final Grade:</strong>
-  <%= @grade.totalscore %>
-</p>
-
-<p>
-  <strong>Instructor:</strong>
-  <%= @grade.user.first_name %>
-</p>
-
-<%= link_to 'Edit', edit_grade_path(@grade) %> |
-<%= link_to 'Back', grades_path %>
+</div>
