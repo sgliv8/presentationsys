@@ -51,4 +51,117 @@
     </div>
   <% end %>
 
+
+  <% @reportGrades.each do |grade| %>
+    <div style='page-break-after:always;' style="padding-top: 1.5em;">
+      
+      <div class="grade-container">
+          <h1 class="grade-header">Grading Details</h1>
+
+          <div class="grade-content">
+            <div class="group-info clearfix">
+              <p class="pull-left"><strong>Group #:</strong> <%= grade.group %></p>
+              <p class="pull-right"><strong>Project Name:</strong> <%= grade.project %></p>
+            </div>
+            <div class="criteria">Does the presentation provide a complete and compelling explanation of: </div>
+
+            <div class="question clearfix">
+                <div class="col-md-6 question-section"><strong>a.</strong> The improvemnt opportnuity</div>
+                <div class="col-md-3 grade-section"><%= grade.opport %></div>
+                <div class="col-md-3 comment-section">
+                  <span>comment</span>
+                </div>
+                <div class="col-md-12 comment-content clearfix">
+                   <span class="fa fa-comment"> Instructor Comment:</span>
+                   <div class="content">
+                      <%= grade.opport_c %>
+                   </div>
+                </div>
+            </div>
+
+            <div class="question clearfix">
+                <div class="col-md-6 question-section"><strong>b.</strong> Costs and benefits</div>
+                <div class="col-md-3 grade-section"><%= grade.cost %></div>
+                <div class="col-md-3 comment-section"><span>comment</span></div>
+                <div class="col-md-12 comment-content">
+                   <span class="fa fa-comment"> Instructor Comment:</span>
+                   <div class="content">
+                      <%= grade.cost_c %>
+                  </div>
+                </div>
+            </div>
+
+            <div class="question clearfix">
+                <div class="col-md-6 question-section"><strong>c.</strong> The approach and timeline</div>
+                <div class="col-md-3 grade-section"><%= grade.timeline %></div>
+                <div class="col-md-3 comment-section"><span>comment</span></div>
+                <div class="col-md-12 comment-content clearfix">
+                   <span class="fa fa-comment"> Instructor Comment:</span>
+                   <div class="content">
+                     <%= grade.timeline_c %>
+                   </div> 
+                </div>
+            </div>
+
+            <div class="question clearfix">
+                <div class="col-md-6 question-section"><strong>d.</strong> Key obstacles and how they will be addressed</div>
+                <div class="col-md-3 grade-section"><%= grade.obstacle %></div>
+                <div class="col-md-3 comment-section"><span>comment</span></div>
+                <div class="col-md-12 comment-content clearfix">
+                   <span class="fa fa-comment"> Instructor Comment:</span>
+                   <div class="content">
+                     <%= grade.obstacle %>
+                   </div>   
+                </div>
+            </div>
+
+            <div class="question clearfix">
+                <div class="col-md-6 question-section"><strong>e.</strong> Risks and mitigation</div>
+                <div class="col-md-3 grade-section"><%= grade.risk %></div>
+                <div class="col-md-3 comment-section"><span>comment</span></div>
+                <div class="col-md-12 comment-content clearfix">
+                   <span class="fa fa-comment"> Instructor Comment:</span>
+                   <div class="content">
+                     <%= grade.risk_c %>
+                   </div>
+                </div>
+            </div>
+
+            <div class="question clearfix">
+                <div class="col-md-6 question-section"><strong>f.</strong> To what extent does the presentation address all the critical decision-points a senior executive would consider? If not, what do you feel is missing?</div>
+                <div class="col-md-3 grade-section"><%= grade.point %></div>
+                <div class="col-md-3 comment-section"><span>comment</span></div>
+                <div class="col-md-12 comment-content clearfix">
+                   <span class="fa fa-comment"> Instructor Comment: </span>
+                   <div class="content">
+                      <%= grade.point_c %>
+                   </div>
+                </div>
+            </div>
+
+            <div class="question clearfix">
+                <div class="col-md-6 question-section"><strong>g.</strong> Will the initiative will provide sufficient ROI and other benefits while minimizing risk, such that it is worth funding?</div>
+                <div class="col-md-3 grade-section"><%= grade.fund %></div>
+                <div class="col-md-3 comment-section"><span>comment</span></div>
+                <div class="col-md-12 comment-content clearfix">
+                   <span class="fa fa-comment"> Instructor Comment:</span>
+                   <div class="content">
+                      <%= grade.fund_c %>
+                   </div>
+                </div>
+            </div>
+
+            <div class="final-grade-section clearfix">
+               <p class="pull-left">
+                  <strong><span class="fa fa-calculator"></span> Final Grade:</strong>
+                  <span class="final-grade"><%= grade.totalscore %></span>
+               </p>
+            </div>
+          </div>
+
+      </div>
+    </div>
+  <% end %>
+
+
 </div>
