@@ -16,6 +16,11 @@
  *= require_self
  */
 
+
+//Import Bootstrap-sass
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
 // Import core Partials
 @import "global/variables";
 @import "global/mixins";
