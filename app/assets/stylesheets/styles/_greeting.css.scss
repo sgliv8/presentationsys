@@ -54,3 +54,18 @@ button, .button {
 	color: white;
 	margin: 2em 0;
 }
+
+
+footer {
+	width: 100%;
+	color: lighten($lightblue, 10);
+	text-align: center;
+	p {
+		margin: 0;
+		font-size: 1em;
+	}
+	.wrapper_rules {
+		padding: 2rem 0;
+		border-top: 2px solid $blue;
+	}
+}
