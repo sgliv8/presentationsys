@@ -42,5 +42,9 @@ $(document).ready(function(){
 
 	$('#genPdf').on('ajax:complete', function(){
 		loading.hide();
+
+		$('#group').val('');
+		$('#project').val('');
+
 	});
 });

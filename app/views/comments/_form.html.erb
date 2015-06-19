@@ -1,41 +1,42 @@
-<%= form_for(@comment) do |f| %>
-  <% if @comment.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
+<% if @comment.errors.any? %>
+  <div class="alert alert-danger">
+    <% @comment.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </div>
+<% end %>
 
-      <ul>
-      <% @comment.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+
+
+<%= form_for(@comment, html: {role: 'form' }) do |f| %>
+  <div class="row">
+    <div class="col-md-6">
+      <%= f.label :group %><br>
+      <%= f.text_field :group, class: "form-control"%>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :group %><br>
-    <%= f.text_field :group %>
+    <div class="col-md-6">
+      <%= f.label :project %><br>
+      <%= f.text_field :project, class: "form-control" %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :project %><br>
-    <%= f.text_field :project %>
+  <div class="form-group">
+    <label class="comment_label">What are the strengths of this presentation(clarity, flow, delivery, visuals etc.)?</label><br/>
+    <%= f.text_area :strength, size: '50x10', class: "form-control"%>
   </div>
-  <div class="field">
-    <%= f.label :strength %><br>
-    <%= f.text_area :strength %>
+  <div class="form-group">
+    <label class="comment_label">What are its primary weaknesses?</label><br/>
+    <%= f.text_area :weakness, size: '50x10', class: "form-control" %>
   </div>
-  <div class="field">
-    <%= f.label :weakness %><br>
-    <%= f.text_area :weakness %>
+  <div class="form-group">
+    <label class="comment_label">Was it clear to you what improvement was being proposed and do you find its benefits compelling? Why or why not?</label><br>
+    <%= f.text_area :improvement, size: '50x10', class: "form-control" %>
   </div>
-  <div class="field">
-    <%= f.label :improvement %><br>
-    <%= f.text_area :improvement %>
+  <div class="form-group">
+    <label class="comment_label">If this were presented to you would you be inclined to agree to move ahead and fund this project?<small> (It is understood that you would probably require a lot of additional detailed information to make this decision. We are simply asking whether the high level idea and the approach, costs/benefits etc.) make this seem like a worthwhile project to you.</small></label><br/>
+    <%= f.text_area :fund, size: '50x10', class: "form-control" %>
   </div>
-  <div class="field">
-    <%= f.label :fund %><br>
-    <%= f.text_area :fund %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-group">
+    <%= f.submit 'Save', class: "btn btn-primary" %>
+    <%= link_to 'Back', comments_path, class: 'btn btn-default' %>
   </div>
 <% end %>
