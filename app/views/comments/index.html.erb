@@ -21,7 +21,7 @@
     
     <% if current_user.role.name == 'Instructor' %>
       <div class="pull-right" style="margin-bottom: 20px; margin-top: 40px;">
-           <%= link_to 'Create New Grade', new_grade_path, class: 'btn btn-primary' %>
+           <%= link_to 'Evaluation Presentation', new_grade_path, class: 'btn btn-primary' %>
       </div>
     <% end %>
 
@@ -30,6 +30,8 @@
         <tr>
           <th>Group Name</th>
           <th>Project Name</th>
+          <th>Evaluator</th>
+          <th>Role</th>
           <th>Created Time</th>
           <th>Final Grade</th>
           <th colspan="2"></th>
@@ -41,7 +43,9 @@
           <tr>
             <td><%= grade.group %></td>
             <td><%= link_to grade.project, grade, class: 'tag' %></td>
-            <td><%= grade.created_at.strftime("Created at %m/%d/%Y - %I:%M%p") %></td>
+            <td><%= grade.user.full_name %></td>
+            <td><%= grade.user.role.name %></td>
+            <td><%= grade.created_at.strftime("%m/%d/%Y") %></td>
             <td><%= grade.totalscore %></td>
             
 
@@ -74,7 +78,7 @@
     
     <% if current_user.role.name == 'Advisory Board' %>
       <div class="pull-right" style="margin-bottom: 20px; margin-top: 40px;">
-           <%= link_to 'Create New Comment', new_comment_path, class: 'btn btn-primary' %>
+           <%= link_to 'Evaluate Presentation', new_comment_path, class: 'btn btn-primary' %>
       </div>
     <% end %>
 
@@ -83,6 +87,8 @@
         <tr>
           <th>Group Name</th>
           <th>Project Name</th>
+          <th>Evaluator</th>
+          <th>Role</th>
           <th>Created Time</th>
           <th colspan="2"></th>
         </tr>
@@ -93,7 +99,9 @@
           <tr>
             <td><%= comment.group %></td>
             <td><%= link_to comment.project, comment, class: 'tag' %></td>
-            <td><%= comment.created_at.strftime("Created at %m/%d/%Y - %I:%M%p") %></td>
+            <td><%= comment.user.full_name %></td>
+            <td><%= comment.user.role.name %></td>
+            <td><%= comment.created_at.strftime("%m/%d/%Y") %></td>
             
 
             <td colspan="2" style="width: 20%;">
