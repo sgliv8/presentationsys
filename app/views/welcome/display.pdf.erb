@@ -66,6 +66,12 @@
               <p class="pull-left"><strong>Group #:</strong> <%= grade.group %></p>
               <p class="pull-right"><strong>Project Name:</strong> <%= grade.project %></p>
             </div>
+            <div class="final-grade-section clearfix">
+               <p class="pull-left">
+                  <strong><span class="fa fa-calculator"></span> Final Grade:</strong>
+                  <span class="final-grade"><%= grade.totalscore %></span>
+               </p>
+            </div>
             <div class="criteria">Does the presentation provide a complete and compelling explanation of: </div>
 
             <div class="question">
@@ -145,12 +151,6 @@
                 </div>
             </div>
 
-            <div class="final-grade-section clearfix">
-               <p class="pull-left">
-                  <strong><span class="fa fa-calculator"></span> Final Grade:</strong>
-                  <span class="final-grade"><%= grade.totalscore %></span>
-               </p>
-            </div>
           </div>
 
 
