@@ -2,8 +2,10 @@
 	<table class="table table-hover">
       <thead>
         <tr>
-          <th>Group Name</th>
+          <th>Group Number</th>
           <th>Project Name</th>
+          <th>Evaluator</th>
+          <th>Role</th>
           <th>Type</th>
         </tr>
       </thead>
@@ -13,6 +15,8 @@
       	<tr>
       		<td>{{group}}</td>
       		<td><a class="tag">{{project}}</a></td>
+          <td>{{first_name}} {{last_name}}</td>
+          <td>Advisory Board</td>
       		<td>Comment</td>
       	</tr>
       	{{/each}}
@@ -21,6 +25,8 @@
       	<tr>
       		<td>{{group}}</td>
       		<td><a class="tag">{{project}}</a></td>
+          <td>{{first_name}} {{last_name}}</td>
+          <td>Instructor</td>
       		<td>Grade</td>
       	</tr>
       	{{/each}}

@@ -25,7 +25,7 @@ $(document).ready(function(){
 	$('#genPdf').on('ajax:success', function(evt, data) {
 
 		var error = $('.error');
-		var createPdf = $('createPdf');
+		var createPdf = $('#createPdf');
 		var search_result = $('.search_result');
 
 		error.html('');
