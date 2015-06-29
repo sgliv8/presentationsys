@@ -15,8 +15,8 @@ class WelcomeController < ApplicationController
   end
 
   def display
-  	@reportComments = Comment.where(group: params[:group], project: params[:project])
-  	@reportGrades = Grade.where(group: params[:group], project: params[:project])
+  	@reportComments = Comment.where(group: params[:group])
+  	@reportGrades = Grade.where(group: params[:group])
 
   	respond_to do |format|
   	  format.html
