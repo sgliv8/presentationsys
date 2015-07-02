@@ -100,7 +100,7 @@ $(document).ready(function(){
 
 			// })
 
-			//$('#course_sign').html('<input class="input-control group-num-input" type="hidden" name="comment[course_id]" id="comment_course_id" value="' + data.questions[0].id + '">');
+			$('#course_sign').html('<input class="input-control group-num-input" type="hidden" name="comment[course_id]" id="comment_course_id" value="' + data.questions[0].id + '">');
 			// $('tr.cash').html('');
 			// $.each(data, function(index, element){
 			// 	var fullName = element.name + ' ' + element.last_name;
