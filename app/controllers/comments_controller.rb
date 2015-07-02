@@ -22,10 +22,14 @@ class CommentsController < ApplicationController
   def new
     @comment = current_user.comments.build
 
+    @inquestions1 = Course.first
+
   end
 
   # GET /comments/1/edit
   def edit
+    # @course_id = @comment.select("comments.course_id")
+    # @inquestions1 = Course.where(id: @course_id)
   end
 
   # POST /comments
@@ -85,6 +89,9 @@ class CommentsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_comment
       @comment = Comment.find(params[:id])
+      @course_id = @comment.course_id
+      @inquestions1 = Course.where(id: @course_id)
+      #@course_id = @comment.select("comments.course_id")
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

@@ -98,6 +98,13 @@ $(document).ready(function(){
 			
 
 			$('input[name="comment[course_id]"]').val(data.questions[0].id );
+
+
+			$('#comment_q1').html(data.questions[0].cq1);
+			$('#comment_q2').html(data.questions[0].cq2);
+			$('#comment_q3').html(data.questions[0].cq3);
+			$('#comment_q4').html(data.questions[0].cq4);
+
 			
 		
 		

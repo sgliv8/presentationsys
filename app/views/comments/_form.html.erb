@@ -26,7 +26,7 @@
     </div>
 
     <div class="question question-edit clearfix">
-        <div class="col-md-12 question-section adv-comment">1. What are the strengths of this presentation(clarity, flow, delivery, visuals etc.)?</div>
+        <div class="col-md-12 question-section adv-comment" id="comment_q1"><%= @inquestions1.cq1 %></div>
         <div class="col-md-12 comment-content comment-edit">
            <span class="fa fa-comment adv-comment-color"> Comment:</span>  
            <%= f.text_area :strength, class: 'input-control comment-textarea' %>
@@ -34,7 +34,7 @@
     </div>
 
     <div class="question question-edit clearfix">
-        <div class="col-md-12 question-section adv-comment">2. What are its primary weaknesses?</div>
+        <div class="col-md-12 question-section adv-comment" id="comment_q2"><%= @inquestions1.cq2 %></div>
         <div class="col-md-12 comment-content comment-edit">
            <span class="fa fa-comment adv-comment-color"> Comment:</span>  
            <%= f.text_area :weakness, class: 'input-control comment-textarea' %>
@@ -42,7 +42,7 @@
     </div>
 
     <div class="question question-edit clearfix">
-        <div class="col-md-12 question-section adv-comment">3. Was it clear to you what improvement was being proposed and do you find its benefits compelling? Why or why not?</div>
+        <div class="col-md-12 question-section adv-comment" id="comment_q3"><%= @inquestions1.cq3 %></div>
         <div class="col-md-12 comment-content comment-edit">
            <span class="fa fa-comment adv-comment-color"> Comment:</span>  
            <%= f.text_area :improvement, class: 'input-control comment-textarea' %>
@@ -50,7 +50,7 @@
     </div>
 
     <div class="question question-edit clearfix">
-        <div class="col-md-12 question-section adv-comment">4. If this were presented to you would you be inclined to agree to move ahead and fund this project?<small> (It is understood that you would probably require a lot of additional detailed information to make this decision. We are simply asking whether the high level idea and the approach, costs/benefits etc.) make this seem like a worthwhile project to you.</div>
+        <div class="col-md-12 question-section adv-comment" id="comment_q4"><%= @inquestions1.cq4 %></div>
         <div class="col-md-12 comment-content comment-edit">
            <span class="fa fa-comment adv-comment-color"> Comment:</span>  
            <%= f.text_area :fund, class: 'input-control comment-textarea' %>
