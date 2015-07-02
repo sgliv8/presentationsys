@@ -1,5 +1,15 @@
 <div class="grade-container">
-  <h1 class="grade-header">Update Comment Report</h1>
+
+  <div class="clearfix">
+  	<h1 class="grade-header">Update Comment Report</h1>
+
+  	<div class="form-inline pull-right" style="margin-bottom: 10px;">
+    	<img src="<%= asset_path( 'ajax-loader.gif' ) %>" alt="ajax-loader" id="loading" style="margin-left: 10px; display:none;">
+  		<label style="margin-right: 5px;">Course</label>
+    
+  		<%= collection_select :comment, :course_id, Course.all, :id, :course_name, {prompt: false}, {class: 'form-control', 'data-remote' => true, 'data-url' => '/comments/questiondisplay', "data-type"=> 'json'} %>
+	</div>
+  </div>
 
   <%= render 'form' %>
 

@@ -11,7 +11,7 @@
   
   <%= form_for(@comment, html: {role: 'form' }) do |f| %>
   
-  <div id="course_sign"></div>
+    <%= f.hidden_field :course_id, class: "input-control" %>
     
 
     <div class="group-info group-info-edit clearfix">

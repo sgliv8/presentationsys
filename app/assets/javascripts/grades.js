@@ -95,17 +95,10 @@ $(document).ready(function(){
 
 			console.log(data.questions);
 			//console.log(data.questions[0].id);
-			//console.log(data.questions[id]);
-			// $.each(data.questions, function(index, element){
+			
 
-			// })
-
-			$('#course_sign').html('<input class="input-control group-num-input" type="hidden" name="comment[course_id]" id="comment_course_id" value="' + data.questions[0].id + '">');
-			// $('tr.cash').html('');
-			// $.each(data, function(index, element){
-			// 	var fullName = element.name + ' ' + element.last_name;
-			// 	$("table.table").append("<tr class='cash'><td>" + fullName + "</td><td>" + element.round + "</td><td>" + element.end_cash + "</td></tr>");
-			// });
+			$('input[name="comment[course_id]"]').val(data.questions[0].id );
+			
 		
 		
 	  // data is now an array containing your objects 
