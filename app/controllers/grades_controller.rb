@@ -74,6 +74,6 @@ class GradesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def grade_params
-      params.require(:grade).permit(:group, :project, :opport, :opport_c, :cost, :cost_c, :timeline, :timeline_c, :obstacle, :obstacle_c, :risk, :risk_c, :point, :point_c, :fund, :fund_c, :totalscore, :user_id)
+      params.require(:grade).permit(:group, :project, :opport, :opport_c, :cost, :cost_c, :timeline, :timeline_c, :obstacle, :obstacle_c, :risk, :risk_c, :point, :point_c, :fund, :fund_c, :totalscore, :user_id, :course_id)
     end
 end

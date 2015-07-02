@@ -61,4 +61,58 @@ $(document).ready(function(){
 		//$('#project').val('');
 
 	});
+
+
+
+
+
+	//retrieve all new data from different round
+	$('#comment_course_id').on('ajax:before', function(evt) {
+	  loading.show();
+	  // console.log($(this).val());
+	  var courseInput = $('#comment_course_id');
+	  //var userInput = $('#record_user_id');
+	  console.log(courseInput);
+	  //console.log(userInput);
+
+	  // we need both values to send a request
+	  if(courseInput.val()) {
+	    // add parameters
+	    //roundInput.val(roundInput.val() - 1);
+	    $(this).data('params', courseInput.serialize());
+	    console.log($(this).data('params'));
+	  }
+	  else
+	  {
+	    return false;
+	  }
+	});
+
+
+	// this handler will be invoked when the request has completed successfully
+	$('#comment_course_id').on('ajax:success', function(evt, data) {
+		//var roundInput = $('#round');
+
+			console.log(data.questions);
+			//console.log(data.questions[0].id);
+			//console.log(data.questions[id]);
+			// $.each(data.questions, function(index, element){
+
+			// })
+
+			//$('#course_sign').html('<input class="input-control group-num-input" type="hidden" name="comment[course_id]" id="comment_course_id" value="' + data.questions[0].id + '">');
+			// $('tr.cash').html('');
+			// $.each(data, function(index, element){
+			// 	var fullName = element.name + ' ' + element.last_name;
+			// 	$("table.table").append("<tr class='cash'><td>" + fullName + "</td><td>" + element.round + "</td><td>" + element.end_cash + "</td></tr>");
+			// });
+		
+		
+	  // data is now an array containing your objects 
+	  // you can dump them on firebug or your web browser console using console.log(data); 
+	}); 
+
+	$('#comment_course_id').on('ajax:complete', function(){
+		loading.hide();
+	});
 });

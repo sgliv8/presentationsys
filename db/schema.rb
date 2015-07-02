@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150616055339) do
+ActiveRecord::Schema.define(version: 20150701075354) do
 
   create_table "comments", force: :cascade do |t|
     t.string   "group"
@@ -23,9 +23,28 @@ ActiveRecord::Schema.define(version: 20150616055339) do
     t.integer  "user_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "course_id"
   end
 
+  add_index "comments", ["course_id"], name: "index_comments_on_course_id"
   add_index "comments", ["user_id"], name: "index_comments_on_user_id"
+
+  create_table "courses", force: :cascade do |t|
+    t.string   "course_name"
+    t.text     "cq1"
+    t.text     "cq2"
+    t.text     "cq3"
+    t.text     "cq4"
+    t.text     "gq1"
+    t.text     "gq2"
+    t.text     "gq3"
+    t.text     "gq4"
+    t.text     "gq5"
+    t.text     "gq6"
+    t.text     "gq7"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
   create_table "grades", force: :cascade do |t|
     t.string   "group"
@@ -48,8 +67,10 @@ ActiveRecord::Schema.define(version: 20150616055339) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "totalscore"
+    t.integer  "course_id"
   end
 
+  add_index "grades", ["course_id"], name: "index_grades_on_course_id"
   add_index "grades", ["user_id"], name: "index_grades_on_user_id"
 
   create_table "roles", force: :cascade do |t|

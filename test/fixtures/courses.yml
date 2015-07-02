@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  course_name: MyString
+  cq1: MyText
+  cq2: MyText
+  cq3: MyText
+  cq4: MyText
+  gq1: MyText
+  gq2: MyText
+  gq3: MyText
+  gq4: MyText
+  gq5: MyText
+  gq6: MyText
+  gq7: MyText
+
+two:
+  course_name: MyString
+  cq1: MyText
+  cq2: MyText
+  cq3: MyText
+  cq4: MyText
+  gq1: MyText
+  gq2: MyText
+  gq3: MyText
+  gq4: MyText
+  gq5: MyText
+  gq6: MyText
+  gq7: MyText

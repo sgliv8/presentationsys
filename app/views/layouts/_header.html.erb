@@ -9,8 +9,8 @@
 		      </button>
 		      <!-- <a class="navbar-brand" href="/records" style="font-size: 25px;">ERP Games</a> -->
 		      <div class="navbar-brand">
+		      	<a href="/"><img src="<%= asset_path( 'logo.jpg' ) %>" alt="logo" width="40"; height="40" style="margin-top: -10px;"></a>
 		      	
-		      	<%= link_to "Wall-E", root_path, id: "logo" %>
 		      </div>
 		    </div>
 
@@ -35,6 +35,8 @@
 					            <li><%= link_to 'Manage Users', users_path %></li>
 					            <li class="divider"></li>
 					            <li><%= link_to 'Manage Comments', comments_path %></li>
+					            <li class="divider"></li>
+					            <li><%= link_to 'Manage Courses', courses_path %></li>
 					            <li class="divider"></li>
 					            <li><%= link_to "Manage Grades", grades_path %></li>
 					            <li class="divider"></li>
