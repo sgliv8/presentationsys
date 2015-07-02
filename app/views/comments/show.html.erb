@@ -2,13 +2,22 @@
     <h2 class="grade-header">Comment Report Details</h2>
 
     <div class="grade-content">
-        <div class="group-info group-info-comment clearfix">
+        <div class="group-info clearfix" style="border-bottom: 0;">
           <p class="pull-left"><strong>Group #:</strong> <%= @comment.group %></p>
           <p class="pull-right"><strong>Project Name:</strong> <%= @comment.project %></p>
         </div>
 
+        <div class="group-info group-info-comment clearfix">
+            <p class="pull-left"><strong>Course:</strong> <%= @comment.course.course_name %></p> 
+            <p class="pull-right">
+              <span class="fa fa-pencil"></span>
+              <strong>Advisory Board:</strong> <%= @comment.user.full_name %>
+            </p>
+
+          </div>
+
         <div class="question clearfix">
-            <div class="col-md-12 question-section adv-comment">1. What are the strengths of this presentation(clarity, flow, delivery, visuals etc.)?</div>
+            <div class="col-md-12 question-section adv-comment"><%= @comment.course.cq1 %></div>
             <div class="col-md-12 comment-content clearfix">
                <span class="fa fa-comment adv-comment-color"> Comment:</span>
                <div class="content">
@@ -18,7 +27,7 @@
         </div>
 
         <div class="question clearfix">
-            <div class="col-md-12 question-section adv-comment">2. What are its primary weaknesses?</div>
+            <div class="col-md-12 question-section adv-comment"><%= @comment.course.cq2 %></div>
             <div class="col-md-12 comment-content clearfix">
                <span class="fa fa-comment adv-comment-color"> Comment:</span>
                <div class="content">
@@ -28,7 +37,7 @@
         </div>
 
         <div class="question clearfix">
-            <div class="col-md-12 question-section adv-comment">3. Was it clear to you what improvement was being proposed and do you find its benefits compelling? Why or why not?</div>
+            <div class="col-md-12 question-section adv-comment"><%= @comment.course.cq3 %></div>
             <div class="col-md-12 comment-content clearfix">
                <span class="fa fa-comment adv-comment-color"> Comment:</span>
                <div class="content">
@@ -38,7 +47,7 @@
         </div>
 
         <div class="question clearfix">
-            <div class="col-md-12 question-section adv-comment">4. If this were presented to you would you be inclined to agree to move ahead and fund this project?<small> (It is understood that you would probably require a lot of additional detailed information to make this decision. We are simply asking whether the high level idea and the approach, costs/benefits etc.) make this seem like a worthwhile project to you.</small></div>
+            <div class="col-md-12 question-section adv-comment"><%= @comment.course.cq4 %></div>
             <div class="col-md-12 comment-content clearfix">
                <span class="fa fa-comment adv-comment-color"> Comment:</span>
                <div class="content">
@@ -48,10 +57,7 @@
         </div>
 
         <div class="col-md-12 adv-board clearfix">
-          <div class="pull-right">
-            <span class="fa fa-pencil"></span>
-            <strong>Advisory Board:</strong> <%= @comment.user.full_name %>
-          </div> 
+          
         </div>
 
         <div class="btn-section">
