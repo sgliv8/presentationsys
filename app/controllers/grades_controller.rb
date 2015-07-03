@@ -33,6 +33,8 @@ class GradesController < ApplicationController
   def create
     @grade = current_user.grades.build(grade_params)
 
+    @inquestions1 = Course.first
+
     respond_to do |format|
       if @grade.save
         format.html { redirect_to @grade, notice: 'Grade was successfully created.' }

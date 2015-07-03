@@ -1,7 +1,7 @@
 <% if @grade.errors.any? %>
   <div class="alert alert-danger">
-    <% @grade.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
+    <% @grade.errors.messages.each do |message| %>
+      <li><%= message.last.last.try(:html_safe) %></li>
     <% end %>
   </div>
 <% end %>
@@ -11,7 +11,7 @@
 
   <%= form_for(@grade) do |f| %>
 
-    <%= f.hidden_field :course_id, class: "input-control" %>
+    <%= f.hidden_field :course_id, class: "input-control", :value => Course.first.id %>
 
 
     <div class="group-info group-info-edit clearfix">

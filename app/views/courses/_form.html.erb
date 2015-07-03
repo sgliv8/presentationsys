@@ -1,7 +1,7 @@
 <% if @course.errors.any? %>
   <div class="alert alert-danger">
-    <% @course.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
+    <% @course.errors.messages.each do |message| %>
+      <li><%= message.last.last.to_s.html_safe %></li>
     <% end %>
   </div>
 <% end %>
