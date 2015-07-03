@@ -24,39 +24,30 @@
   <thead>
     <tr>
       <th>Course name</th>
-      <th>Cq1</th>
-      <th>Cq2</th>
-      <th>Cq3</th>
-      <th>Cq4</th>
-      <th>Gq1</th>
-      <th>Gq2</th>
-      <th>Gq3</th>
-      <th>Gq4</th>
-      <th>Gq5</th>
-      <th>Gq6</th>
-      <th>Gq7</th>
-      <th colspan="3"></th>
+      <th>Created Time</th>
+      <th colspan="4"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @courses.each do |course| %>
       <tr>
-        <td><%= course.course_name %></td>
-        <td><%= course.cq1 %></td>
-        <td><%= course.cq2 %></td>
-        <td><%= course.cq3 %></td>
-        <td><%= course.cq4 %></td>
-        <td><%= course.gq1 %></td>
-        <td><%= course.gq2 %></td>
-        <td><%= course.gq3 %></td>
-        <td><%= course.gq4 %></td>
-        <td><%= course.gq5 %></td>
-        <td><%= course.gq6 %></td>
-        <td><%= course.gq7 %></td>
-        <td><%= link_to 'Show', course %></td>
-        <td><%= link_to 'Edit', edit_course_path(course) %></td>
-        <td><%= link_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to course.course_name, course, class: 'tag' %></td>
+        <td><%= course.created_at.strftime("%m/%d/%Y") %></td>
+
+        <td colspan="4" style="width: 20%;">
+          <%= link_to edit_course_path(course), class: 'btn btn-primary' do %>
+            <i class='fa fa-pencil-square-o'></i>
+          <% end %>
+          
+          <div style="display:inline-block;">
+            <button class="delete-confirm btn btn-danger"><i class="fa fa-trash-o"></i></button>
+            <%= link_to course, method: :delete, class: 'delete-button' do%>
+              <i class='fa fa-pencil-square-o'></i>
+            <% end %>
+          </div>
+        </td>
+
       </tr>
     <% end %>
   </tbody>
