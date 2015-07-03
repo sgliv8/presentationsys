@@ -3,16 +3,16 @@
 
   <% @reportComments.each do |comment| %>
     <div style='page-break-after:always;' style="padding-top: 1.5em;">
-      <h2 class="grade-header">Comment Report Details</h2>
+      <h3 class="grade-header">Comment Report Details</h3>
 
       <div class="grade-content">
           <div class="group-info clearfix" style="border-bottom: 0;">
-            <p class="pull-left"><strong>Group #:</strong> <%= comment.group %></p>
-            <p class="pull-right"><strong>Project Name:</strong> <%= comment.project %></p>
+            <p class="pull-left" style="font-size: 18px;"><strong>Group #:</strong> <%= comment.group %></p>
+            <p class="pull-right" style="font-size: 18px;"><strong>Project Name:</strong> <%= comment.project %></p>
           </div>
 
           <div class="group-info group-info-comment clearfix">
-            <p class="pull-left"><strong>Course:</strong> <%= comment.course.course_name %></p> 
+            <p class="pull-left" style="font-size: 18px;"><strong>Course:</strong> <%= comment.course.course_name %></p> 
           </div>
 
           <div class="question clearfix">
