@@ -26,4 +26,6 @@ gem 'wkhtmltopdf-binary'
 gem 'nprogress-rails'
 gem 'font-awesome-sass'
 gem 'bootstrap-sass', '~> 3.3.5'
+gem 'will_paginate', '~> 3.0'
+gem 'will_paginate-bootstrap', '~> 1.0.1'
 
