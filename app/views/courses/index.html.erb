@@ -20,38 +20,42 @@
   </div>
 
 
-<table class="table table-hover">
-  <thead>
-    <tr>
-      <th>Course Number</th>
-      <th>Created Time</th>
-      <th colspan="8"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @courses.each do |course| %>
+  <table class="table table-hover">
+    <thead>
       <tr>
-        <td><%= link_to course.course_name, course, class: 'tag' %></td>
-        <td><%= course.created_at.strftime("%m/%d/%Y") %></td>
+        <th>Course Number</th>
+        <th>Created Time</th>
+        <th colspan="8"></th>
+      </tr>
+    </thead>
 
-        <td colspan="8" style="width: 20%;">
-          <%= link_to edit_course_path(course), class: 'btn btn-primary' do %>
-            <i class='fa fa-pencil-square-o'></i>
-          <% end %>
-          
-          <div style="display:inline-block;">
-            <button class="delete-confirm btn btn-danger"><i class="fa fa-trash-o"></i></button>
-            <%= link_to course, method: :delete, class: 'delete-button' do%>
+    <tbody>
+      <% @courses.each do |course| %>
+        <tr>
+          <td><%= link_to course.course_name, course, class: 'tag' %></td>
+          <td><%= course.created_at.strftime("%m/%d/%Y") %></td>
+
+          <td colspan="8" style="width: 20%;">
+            <%= link_to edit_course_path(course), class: 'btn btn-primary' do %>
               <i class='fa fa-pencil-square-o'></i>
             <% end %>
-          </div>
-        </td>
+            
+            <div style="display:inline-block;">
+              <button class="delete-confirm btn btn-danger"><i class="fa fa-trash-o"></i></button>
+              <%= link_to course, method: :delete, class: 'delete-button' do%>
+                <i class='fa fa-pencil-square-o'></i>
+              <% end %>
+            </div>
+          </td>
 
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <div class="pull-right">
+    <%= will_paginate @users, renderer: BootstrapPagination::Rails %>
+  </div>
 
 </div>
 
