@@ -29,7 +29,7 @@ class CommentsController < ApplicationController
   # GET /comments/1/edit
   def edit
     # @course_id = @comment.select("comments.course_id")
-    # @inquestions1 = Course.where(id: @course_id)
+    #@inquestions1 = Course.where(id: params[:course_id])
   end
 
   # POST /comments
@@ -89,8 +89,6 @@ class CommentsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_comment
       @comment = Comment.find(params[:id])
-      @course_id = @comment.course_id
-      @inquestions1 = Course.where(id: @course_id)
       #@course_id = @comment.select("comments.course_id")
     end
 

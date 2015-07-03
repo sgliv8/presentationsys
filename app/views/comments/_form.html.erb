@@ -26,7 +26,15 @@
     </div>
 
     <div class="question question-edit clearfix">
-        <div class="col-md-12 question-section adv-comment" id="comment_q1"><%= @inquestions1.cq1 %></div>
+        <div class="col-md-12 question-section adv-comment" id="comment_q1">
+
+          <%= if @inquestions1.present?
+                @inquestions1.cq1 
+              else
+                @comment.course.cq1
+              end
+          %>
+        </div>
         <div class="col-md-12 comment-content comment-edit">
            <span class="fa fa-comment adv-comment-color"> Comment:</span>  
            <%= f.text_area :strength, class: 'input-control comment-textarea' %>
@@ -34,7 +42,15 @@
     </div>
 
     <div class="question question-edit clearfix">
-        <div class="col-md-12 question-section adv-comment" id="comment_q2"><%= @inquestions1.cq2 %></div>
+        <div class="col-md-12 question-section adv-comment" id="comment_q2">
+          
+          <%= if @inquestions1.present?
+                @inquestions1.cq2 
+              else
+                @comment.course.cq2
+              end
+          %>
+        </div>
         <div class="col-md-12 comment-content comment-edit">
            <span class="fa fa-comment adv-comment-color"> Comment:</span>  
            <%= f.text_area :weakness, class: 'input-control comment-textarea' %>
@@ -42,7 +58,14 @@
     </div>
 
     <div class="question question-edit clearfix">
-        <div class="col-md-12 question-section adv-comment" id="comment_q3"><%= @inquestions1.cq3 %></div>
+        <div class="col-md-12 question-section adv-comment" id="comment_q3">
+          <%= if @inquestions1.present?
+                @inquestions1.cq3 
+              else
+                @comment.course.cq3
+              end
+          %>
+        </div>
         <div class="col-md-12 comment-content comment-edit">
            <span class="fa fa-comment adv-comment-color"> Comment:</span>  
            <%= f.text_area :improvement, class: 'input-control comment-textarea' %>
@@ -50,7 +73,14 @@
     </div>
 
     <div class="question question-edit clearfix">
-        <div class="col-md-12 question-section adv-comment" id="comment_q4"><%= @inquestions1.cq4 %></div>
+        <div class="col-md-12 question-section adv-comment" id="comment_q4">
+          <%= if @inquestions1.present?
+                @inquestions1.cq4
+              else
+                @comment.course.cq4
+              end
+          %>
+        </div>
         <div class="col-md-12 comment-content comment-edit">
            <span class="fa fa-comment adv-comment-color"> Comment:</span>  
            <%= f.text_area :fund, class: 'input-control comment-textarea' %>

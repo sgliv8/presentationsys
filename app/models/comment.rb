@@ -8,4 +8,5 @@ class Comment < ActiveRecord::Base
   validates_presence_of :weakness 
   validates_presence_of :improvement
   validates_presence_of :fund
+  validates_presence_of :course_id
 end
