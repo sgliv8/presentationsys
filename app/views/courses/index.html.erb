@@ -23,9 +23,9 @@
 <table class="table table-hover">
   <thead>
     <tr>
-      <th>Course name</th>
+      <th>Course Number</th>
       <th>Created Time</th>
-      <th colspan="4"></th>
+      <th colspan="8"></th>
     </tr>
   </thead>
 
@@ -35,7 +35,7 @@
         <td><%= link_to course.course_name, course, class: 'tag' %></td>
         <td><%= course.created_at.strftime("%m/%d/%Y") %></td>
 
-        <td colspan="4" style="width: 20%;">
+        <td colspan="8" style="width: 20%;">
           <%= link_to edit_course_path(course), class: 'btn btn-primary' do %>
             <i class='fa fa-pencil-square-o'></i>
           <% end %>

@@ -1,65 +1,114 @@
-<%= form_for(@course) do |f| %>
-  <% if @course.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@course.errors.count, "error") %> prohibited this course from being saved:</h2>
+<% if @course.errors.any? %>
+  <div class="alert alert-danger">
+    <% @course.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </div>
+<% end %>
 
-      <ul>
-      <% @course.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+<%= form_for(@course, html: {role: 'form' }) do |f| %>
+
+  <div class="group-info group-info-edit clearfix">
+    <div class="col-md-12">
+      <div class="group-num" style="width: 13%;"><strong>Course #:</strong></div> 
+      <%= f.text_field :course_name, class: "input-control group-course-input"  %>
     </div>
-  <% end %>
+    
+  </div>
 
-  <div class="field">
-    <%= f.label :course_name %><br>
-    <%= f.text_field :course_name %>
+  <div class="group-info group-info-comment clearfix" style="padding: 10px;">
+    <p class="pull-left"><strong>Comment Questions Section:</strong></p>
   </div>
-  <div class="field">
-    <%= f.label :cq1 %><br>
-    <%= f.text_area :cq1 %>
+
+  <div class="question question-edit clearfix">
+    <div class="col-md-12 comment-content comment-edit">
+       <span class="fa fa-question-circle adv-comment-color"> Question 1:</span>  
+       <%= f.text_area :cq1, class: 'input-control comment-textarea' %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :cq2 %><br>
-    <%= f.text_area :cq2 %>
+
+  <div class="question question-edit clearfix">
+    <div class="col-md-12 comment-content comment-edit">
+       <span class="fa fa-question-circle adv-comment-color"> Question 2:</span>  
+       <%= f.text_area :cq2, class: 'input-control comment-textarea' %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :cq3 %><br>
-    <%= f.text_area :cq3 %>
+
+  
+  <div class="question question-edit clearfix">
+    <div class="col-md-12 comment-content comment-edit">
+       <span class="fa fa-question-circle adv-comment-color"> Question 3:</span>  
+       <%= f.text_area :cq3, class: 'input-control comment-textarea' %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :cq4 %><br>
-    <%= f.text_area :cq4 %>
+  
+  <div class="question question-edit clearfix" style="border-bottom: 0;">
+    <div class="col-md-12 comment-content comment-edit">
+       <span class="fa fa-question-circle adv-comment-color"> Question 4:</span>  
+       <%= f.text_area :cq4, class: 'input-control comment-textarea' %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :gq1 %><br>
-    <%= f.text_area :gq1 %>
+
+  <div class="group-info group-info-comment clearfix" style="padding: 10px;">
+    <p class="pull-left"><strong>Grade Questions Section:</strong></p>
   </div>
-  <div class="field">
-    <%= f.label :gq2 %><br>
-    <%= f.text_area :gq2 %>
+
+  <div class="question question-edit clearfix">
+    <div class="col-md-12 comment-content comment-edit">
+       <span class="fa fa-question-circle adv-comment-color"> Question 1:</span>  
+       <%= f.text_area :gq1, class: 'input-control comment-textarea' %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :gq3 %><br>
-    <%= f.text_area :gq3 %>
+
+  <div class="question question-edit clearfix">
+    <div class="col-md-12 comment-content comment-edit">
+       <span class="fa fa-question-circle adv-comment-color"> Question 2:</span>  
+       <%= f.text_area :gq2, class: 'input-control comment-textarea' %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :gq4 %><br>
-    <%= f.text_area :gq4 %>
+
+  <div class="question question-edit clearfix">
+    <div class="col-md-12 comment-content comment-edit">
+       <span class="fa fa-question-circle adv-comment-color"> Question 3:</span>  
+       <%= f.text_area :gq3, class: 'input-control comment-textarea' %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :gq5 %><br>
-    <%= f.text_area :gq5 %>
+
+  
+  <div class="question question-edit clearfix">
+    <div class="col-md-12 comment-content comment-edit">
+       <span class="fa fa-question-circle adv-comment-color"> Question 4:</span>  
+       <%= f.text_area :gq4, class: 'input-control comment-textarea' %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :gq6 %><br>
-    <%= f.text_area :gq6 %>
+
+
+  <div class="question question-edit clearfix">
+    <div class="col-md-12 comment-content comment-edit">
+       <span class="fa fa-question-circle adv-comment-color"> Question 5:</span>  
+       <%= f.text_area :gq5, class: 'input-control comment-textarea' %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :gq7 %><br>
-    <%= f.text_area :gq7 %>
+
+  <div class="question question-edit clearfix">
+    <div class="col-md-12 comment-content comment-edit">
+       <span class="fa fa-question-circle adv-comment-color"> Question 6:</span>  
+       <%= f.text_area :gq6, class: 'input-control comment-textarea' %>
+    </div>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+
+  
+  <div class="question question-edit clearfix">
+    <div class="col-md-12 comment-content comment-edit">
+       <span class="fa fa-question-circle adv-comment-color"> Question 7:</span>  
+       <%= f.text_area :gq7, class: 'input-control comment-textarea' %>
+    </div>
   </div>
+  
+
+  <div class="btn-section" style="margin-top: 25px;">
+      <%= f.submit 'Save', class: 'save-btn save-comment-btn' %>
+      <%= link_to 'Back', courses_path, class: 'back-btn'%>
+    </div>
+  
 <% end %>

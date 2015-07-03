@@ -1,64 +1,134 @@
+<div class="grade-container">
+  <h2 class="grade-header">Course Questions Details</h2>
+
+  <div class="grade-content">
+
+    <div class="group-info group-info-edit clearfix">
+      <div class="col-md-12">
+         <p class="pull-left"><strong>Course #:</strong> <%= @course.course_name %></p>
+      </div>
+    </div>
+
+    <div class="group-info group-info-comment clearfix" style="padding: 15px;">
+      <p class="pull-left"><strong style="color: #000;">Comment Questions Section:</strong></p>
+    </div>
+
+    <div class="question clearfix question1">
+      <div class="col-md-12 comment-content clearfix">
+         <span class="fa fa-question-circle adv-comment-color"> Question 1:</span>
+         <div class="content">
+            <%= @course.cq1 %>
+         </div>
+      </div>
+    </div>
 
 
-<p>
-  <strong>Course name:</strong>
-  <%= @course.course_name %>
-</p>
+    <div class="question clearfix question1">
+      <div class="col-md-12 comment-content clearfix">
+         <span class="fa fa-question-circle adv-comment-color"> Question 2:</span>
+         <div class="content">
+            <%= @course.cq2 %>
+         </div>
+      </div>
+    </div>
 
-<p>
-  <strong>Cq1:</strong>
-  <%= @course.cq1 %>
-</p>
+    <div class="question clearfix question1">
+      <div class="col-md-12 comment-content clearfix">
+         <span class="fa fa-question-circle adv-comment-color"> Question 3:</span>
+         <div class="content">
+            <%= @course.cq3 %>
+         </div>
+      </div>
+    </div>
 
-<p>
-  <strong>Cq2:</strong>
-  <%= @course.cq2 %>
-</p>
+    <div class="question clearfix question1" style="border-bottom: 0;">
+      <div class="col-md-12 comment-content clearfix">
+         <span class="fa fa-question-circle adv-comment-color"> Question 4:</span>
+         <div class="content">
+            <%= @course.cq4 %>
+         </div>
+      </div>
+    </div>
 
-<p>
-  <strong>Cq3:</strong>
-  <%= @course.cq3 %>
-</p>
+    <div class="group-info group-info-comment clearfix" style="padding: 10px;">
+      <p class="pull-left"><strong style="color: #000;">Grade Questions Section:</strong></p>
+    </div>
 
-<p>
-  <strong>Cq4:</strong>
-  <%= @course.cq4 %>
-</p>
 
-<p>
-  <strong>Gq1:</strong>
-  <%= @course.gq1 %>
-</p>
+    <div class="question clearfix question1">
+      <div class="col-md-12 comment-content clearfix">
+         <span class="fa fa-question-circle adv-comment-color"> Question 1:</span>
+         <div class="content">
+            <%= @course.gq1 %>
+         </div>
+      </div>
+    </div>
 
-<p>
-  <strong>Gq2:</strong>
-  <%= @course.gq2 %>
-</p>
+    <div class="question clearfix question1">
+      <div class="col-md-12 comment-content clearfix">
+         <span class="fa fa-question-circle adv-comment-color"> Question 2:</span>
+         <div class="content">
+            <%= @course.gq2 %>
+         </div>
+      </div>
+    </div>
 
-<p>
-  <strong>Gq3:</strong>
-  <%= @course.gq3 %>
-</p>
 
-<p>
-  <strong>Gq4:</strong>
-  <%= @course.gq4 %>
-</p>
+    <div class="question clearfix question1">
+      <div class="col-md-12 comment-content clearfix">
+         <span class="fa fa-question-circle adv-comment-color"> Question 3:</span>
+         <div class="content">
+            <%= @course.gq3 %>
+         </div>
+      </div>
+    </div>
 
-<p>
-  <strong>Gq5:</strong>
-  <%= @course.gq5 %>
-</p>
+    <div class="question clearfix question1">
+      <div class="col-md-12 comment-content clearfix">
+         <span class="fa fa-question-circle adv-comment-color"> Question 4:</span>
+         <div class="content">
+            <%= @course.gq4 %>
+         </div>
+      </div>
+    </div>
 
-<p>
-  <strong>Gq6:</strong>
-  <%= @course.gq6 %>
-</p>
 
-<p>
-  <strong>Gq7:</strong>
-  <%= @course.gq7 %>
-</p>
+    <div class="question clearfix question1">
+      <div class="col-md-12 comment-content clearfix">
+         <span class="fa fa-question-circle adv-comment-color"> Question 5:</span>
+         <div class="content">
+            <%= @course.gq5 %>
+         </div>
+      </div>
+    </div>
 
-<%= link_to 'Edit', edit_course_path(@course) %> |
-<%= link_to 'Back', courses_path %>
+
+    <div class="question clearfix question1">
+      <div class="col-md-12 comment-content clearfix">
+         <span class="fa fa-question-circle adv-comment-color"> Question 6:</span>
+         <div class="content">
+            <%= @course.gq6 %>
+         </div>
+      </div>
+    </div>
+
+    <div class="question clearfix question1">
+      <div class="col-md-12 comment-content clearfix">
+         <span class="fa fa-question-circle adv-comment-color"> Question 7:</span>
+         <div class="content">
+            <%= @course.gq7 %>
+         </div>
+      </div>
+    </div>
+
+
+    <div class="col-md-12 adv-board clearfix"></div>
+
+    <div class="btn-section">
+      <%= link_to 'Edit', edit_course_path(@course), class: 'edit-btn' %>
+      <%= link_to 'Back', courses_path, class: 'back-btn'%>
+    </div>
+
+  </div>
+
+</div>

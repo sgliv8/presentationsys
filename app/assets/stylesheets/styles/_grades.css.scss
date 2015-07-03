@@ -50,6 +50,10 @@
 		@include column(0.15);
 	}
 
+	.group-course-input {
+		@include column(0.87);
+	}
+
 	.project-name {
 		@include column(0.32);
 		font-size: 15px;
@@ -84,6 +88,10 @@
 	padding: 10px 5px 25px;
 	font-size: 15px;
 	border-bottom: 1px solid rgba($dark, 0.4);
+}
+
+.question1 {
+	padding-top: 25px;
 }
 
 .question-edit {
