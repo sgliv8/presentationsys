@@ -6,13 +6,17 @@
       <h2 class="grade-header">Comment Report Details</h2>
 
       <div class="grade-content">
-          <div class="group-info group-info-comment clearfix">
+          <div class="group-info clearfix" style="border-bottom: 0;">
             <p class="pull-left"><strong>Group #:</strong> <%= comment.group %></p>
             <p class="pull-right"><strong>Project Name:</strong> <%= comment.project %></p>
           </div>
 
+          <div class="group-info group-info-comment clearfix">
+            <p class="pull-left"><strong>Course:</strong> <%= comment.course.course_name %></p> 
+          </div>
+
           <div class="question clearfix">
-              <div class="col-md-12 question-section adv-comment">1. What are the strengths of this presentation(clarity, flow, delivery, visuals etc.)?</div>
+              <div class="col-md-12 question-section adv-comment"><%= comment.course.cq1 %></div>
               <div class="col-md-12 comment-content clearfix">
                  <span class="fa fa-comment adv-comment-color"> Comment:</span>
                  <div class="content">
@@ -22,7 +26,7 @@
           </div>
 
           <div class="question clearfix">
-              <div class="col-md-12 question-section adv-comment">2. What are its primary weaknesses?</div>
+              <div class="col-md-12 question-section adv-comment"><%= comment.course.cq2 %></div>
               <div class="col-md-12 comment-content clearfix">
                  <span class="fa fa-comment adv-comment-color"> Comment:</span>
                  <div class="content">
@@ -32,7 +36,7 @@
           </div>
 
           <div class="question clearfix">
-              <div class="col-md-12 question-section adv-comment">3. Was it clear to you what improvement was being proposed and do you find its benefits compelling? Why or why not?</div>
+              <div class="col-md-12 question-section adv-comment"><%= comment.course.cq3 %></div>
               <div class="col-md-12 comment-content clearfix">
                  <span class="fa fa-comment adv-comment-color"> Comment:</span>
                  <div class="content">
@@ -42,7 +46,7 @@
           </div>
 
           <div class="question clearfix">
-              <div class="col-md-12 question-section adv-comment">4. If this were presented to you would you be inclined to agree to move ahead and fund this project?<small> (It is understood that you would probably require a lot of additional detailed information to make this decision. We are simply asking whether the high level idea and the approach, costs/benefits etc.) make this seem like a worthwhile project to you.</small></div>
+              <div class="col-md-12 question-section adv-comment"><%= comment.course.cq4 %></div>
               <div class="col-md-12 comment-content clearfix">
                  <span class="fa fa-comment adv-comment-color"> Comment:</span>
                  <div class="content">
@@ -62,20 +66,21 @@
         <h1 class="grade-header">Grading Details</h1>
 
         <div class="grade-content">
-            <div class="group-info clearfix">
+            <div class="group-info clearfix" style="border-bottom: 0;">
               <p class="pull-left"><strong>Group #:</strong> <%= grade.group %></p>
               <p class="pull-right"><strong>Project Name:</strong> <%= grade.project %></p>
             </div>
-            <div class="final-grade-section clearfix">
-               <p class="pull-left">
+            <div class="group-info clearfix">
+                <p class="pull-left"><strong>Course:</strong> <%= grade.course.course_name %></p>
+               <p class="pull-right">
                   <strong><span class="fa fa-calculator"></span> Final Grade:</strong>
-                  <span class="final-grade"><%= grade.totalscore %></span>
+                  <span style="color: #B83936;"><%= grade.totalscore %></span>
                </p>
             </div>
             <div class="criteria">Does the presentation provide a complete and compelling explanation of: </div>
 
             <div class="question">
-                <div class="col-md-6 question-section"><strong>a.</strong> The improvemnt opportnuity</div>
+                <div class="col-md-6 question-section"><%= grade.course.gq1 %></div>
                 <h4 style="color: #b83936; padding-left: 10px;">Grade: <%= grade.opport %></h4>
                 <div class="col-md-12 comment-content clearfix">
                    <span class="fa fa-comment"> Instructor Comment:</span>
@@ -86,7 +91,7 @@
             </div>
 
             <div class="question clearfix">
-                <div class="col-md-6 question-section"><strong>b.</strong> Costs and benefits</div>
+                <div class="col-md-6 question-section"><%= grade.course.gq2 %></div>
                 <h4 style="color: #b83936; padding-left: 10px;">Grade: <%= grade.cost %></h4>
                 <div class="col-md-12 comment-content">
                    <span class="fa fa-comment"> Instructor Comment:</span>
@@ -97,7 +102,7 @@
             </div>
 
             <div class="question clearfix">
-                <div class="col-md-6 question-section"><strong>c.</strong> The approach and timeline</div>
+                <div class="col-md-6 question-section"><%= grade.course.gq3 %></div>
                 <h4 style="color: #b83936; padding-left: 10px;">Grade: <%= grade.timeline %></h4>
                 <div class="col-md-12 comment-content clearfix">
                    <span class="fa fa-comment"> Instructor Comment:</span>
@@ -108,7 +113,7 @@
             </div>
 
             <div class="question clearfix">
-                <div class="col-md-6 question-section"><strong>d.</strong> Key obstacles and how they will be addressed</div>
+                <div class="col-md-6 question-section"><%= grade.course.gq4 %></div>
                 <h4 style="color: #b83936; padding-left: 10px;">Grade: <%= grade.obstacle %></h4>
                 <div class="col-md-12 comment-content clearfix">
                    <span class="fa fa-comment"> Instructor Comment:</span>
@@ -119,7 +124,7 @@
             </div>
 
             <div class="question clearfix">
-                <div class="col-md-6 question-section"><strong>e.</strong> Risks and mitigation</div>
+                <div class="col-md-6 question-section"><%= grade.course.gq5 %></div>
                 <h4 style="color: #b83936; padding-left: 10px;">Grade: <%= grade.risk %></h4>
                 <div class="col-md-12 comment-content clearfix">
                    <span class="fa fa-comment"> Instructor Comment:</span>
@@ -130,7 +135,7 @@
             </div>
 
             <div class="question clearfix">
-                <div class="col-md-6 question-section"><strong>f.</strong> To what extent does the presentation address all the critical decision-points a senior executive would consider? If not, what do you feel is missing?</div>
+                <div class="col-md-6 question-section"><%= grade.course.gq6 %></div>
                 <h4 style="color: #b83936; padding-left: 10px;">Grade: <%= grade.point %></h4>
                 <div class="col-md-12 comment-content clearfix">
                    <span class="fa fa-comment"> Instructor Comment: </span>
@@ -141,7 +146,7 @@
             </div>
 
             <div class="question clearfix">
-                <div class="col-md-6 question-section"><strong>g.</strong> Will the initiative will provide sufficient ROI and other benefits while minimizing risk, such that it is worth funding?</div>
+                <div class="col-md-6 question-section"><%= grade.course.gq7 %></div>
                 <h4 style="color: #b83936; padding-left: 10px;">Grade: <%= grade.fund %></h4>
                 <div class="col-md-12 comment-content clearfix">
                    <span class="fa fa-comment"> Instructor Comment:</span>
