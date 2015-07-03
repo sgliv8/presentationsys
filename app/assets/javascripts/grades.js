@@ -115,4 +115,56 @@ $(document).ready(function(){
 	$('#comment_course_id').on('ajax:complete', function(){
 		loading.hide();
 	});
+
+
+
+	//retrieve all new data from different round
+	$('#grade_course_id').on('ajax:before', function(evt) {
+	  loading.show();
+	  // console.log($(this).val());
+	  var courseInput = $('#grade_course_id');
+	  //var userInput = $('#record_user_id');
+	  console.log(courseInput);
+	  //console.log(userInput);
+
+	  // we need both values to send a request
+	  if(courseInput.val()) {
+	    // add parameters
+	    //roundInput.val(roundInput.val() - 1);
+	    $(this).data('params', courseInput.serialize());
+	    console.log($(this).data('params'));
+	  }
+	  else
+	  {
+	    return false;
+	  }
+	});
+
+
+	// this handler will be invoked when the request has completed successfully
+	$('#grade_course_id').on('ajax:success', function(evt, data) {
+		//var roundInput = $('#round');
+
+			console.log(data.questions);
+			//console.log(data.questions[0].id);
+			
+
+			$('input[name="grade[course_id]"]').val(data.questions[0].id );
+
+
+			// $('#comment_q1').html(data.questions[0].cq1);
+			// $('#comment_q2').html(data.questions[0].cq2);
+			// $('#comment_q3').html(data.questions[0].cq3);
+			// $('#comment_q4').html(data.questions[0].cq4);
+
+			
+		
+		
+	  // data is now an array containing your objects 
+	  // you can dump them on firebug or your web browser console using console.log(data); 
+	}); 
+
+	$('#grade_course_id').on('ajax:complete', function(){
+		loading.hide();
+	});
 });

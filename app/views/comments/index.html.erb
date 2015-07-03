@@ -3,11 +3,12 @@
 
   <% if current_user.role.name == 'Admin' %>
     <div id="links">
-      <div class="wrapper_skinny">
+      <div class="wrapper_skinny1">
         <ul>
           <li class="current">Manage Comments</li>
           <li><%= link_to "Manage Grades", grades_path %></li>
           <li><%= link_to "Manage Users", users_path %></li>
+          <li><%= link_to "Manage Courses", courses_path %></li>
           <li><%= link_to "Create PDF report", welcome_search_path %></li>
         </ul>
       </div>

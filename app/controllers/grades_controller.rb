@@ -20,6 +20,8 @@ class GradesController < ApplicationController
   # GET /grades/new
   def new
     @grade = current_user.grades.build
+
+    @inquestions1 = Course.first
   end
 
   # GET /grades/1/edit
@@ -63,6 +65,18 @@ class GradesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to grades_url, notice: 'Grade was successfully destroyed.' }
       format.json { head :no_content }
+    end
+  end
+
+  def questiondisplay
+    @questions = Course.where(id: grade_params[:course_id]);
+
+    respond_to do |format|
+      format.json { 
+        render :json => {
+          :questions => @questions,
+        }
+      }
     end
   end
 

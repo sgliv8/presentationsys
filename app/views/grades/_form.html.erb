@@ -10,6 +10,10 @@
 <div class="grade-content">
 
   <%= form_for(@grade) do |f| %>
+
+    <%= f.hidden_field :course_id, class: "input-control" %>
+
+    
     <div class="group-info group-info-edit clearfix">
         <div class="col-md-6">
           <div class="group-num"><strong>Group #:</strong></div> 

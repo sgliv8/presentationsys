@@ -5,7 +5,9 @@ Rails.application.routes.draw do
   get 'greeting/index'
 
   devise_for :users
-  resources :grades
+  resources :grades do
+    get 'questiondisplay', on: :collection
+  end
 
   resources :comments do
     get 'questiondisplay', on: :collection
