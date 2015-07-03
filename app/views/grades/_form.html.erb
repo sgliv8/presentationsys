@@ -13,7 +13,7 @@
 
     <%= f.hidden_field :course_id, class: "input-control" %>
 
-    
+
     <div class="group-info group-info-edit clearfix">
         <div class="col-md-6">
           <div class="group-num"><strong>Group #:</strong></div> 
@@ -26,7 +26,14 @@
     </div>
 
     <div class="question question-edit clearfix">
-          <div class="col-md-6 question-section"><strong>a.</strong> The improvemnt opportnuity</div>
+          <div class="col-md-6 question-section" id="grade_q1">
+            <%= if @inquestions1.present?
+                @inquestions1.gq1 
+              else
+                @grade.course.gq1
+              end
+          %>
+          </div>
           <div class="col-md-6 grade-section">
             <% [ '1', '2', '3', '4', '5' ].each do |opport| %>
               <p style="display:inline-block;" class="grade-checkbox"><%= radio_button_tag 'grade[opport]', opport, @grade.opport == opport %>
@@ -40,7 +47,16 @@
     </div>
 
      <div class="question question-edit clearfix">
-          <div class="col-md-6 question-section"><strong>b.</strong> Costs and benefits</div>
+          <div class="col-md-6 question-section" id="grade_q2">
+            
+            <%= if @inquestions1.present?
+                @inquestions1.gq2 
+              else
+                @grade.course.gq2
+              end
+            %>
+
+          </div>
           <div class="col-md-6 grade-section">
             <% [ '1', '2', '3', '4', '5' ].each do |cost| %>
               <p style="display:inline-block;" class="grade-checkbox"><%= radio_button_tag 'grade[cost]', cost, @grade.cost == cost %>
@@ -54,7 +70,14 @@
     </div>
 
     <div class="question question-edit clearfix">
-          <div class="col-md-6 question-section"><strong>c.</strong> The approach and timeline</div>
+          <div class="col-md-6 question-section" id="comment_q3">
+            <%= if @inquestions1.present?
+                @inquestions1.gq3 
+              else
+                @grade.course.gq3
+              end
+            %>
+          </div>
           <div class="col-md-6 grade-section">
             <% [ '1', '2', '3', '4', '5' ].each do |timeline| %>
               <p style="display:inline-block;" class="grade-checkbox"><%= radio_button_tag 'grade[timeline]', timeline, @grade.timeline == timeline %>
@@ -68,7 +91,14 @@
     </div>    
     
     <div class="question question-edit clearfix">
-          <div class="col-md-6 question-section"><strong>d.</strong> Key obstacles and how they will be addressed</div>
+          <div class="col-md-6 question-section" id="comment_q4">
+            <%= if @inquestions1.present?
+                @inquestions1.gq4 
+              else
+                @grade.course.gq4
+              end
+            %>
+          </div>
           <div class="col-md-6 grade-section">
             <% [ '1', '2', '3', '4', '5' ].each do |obstacle| %>
               <p style="display:inline-block;" class="grade-checkbox"><%= radio_button_tag 'grade[obstacle]', obstacle, @grade.obstacle == obstacle %>
@@ -82,7 +112,14 @@
     </div>   
     
     <div class="question question-edit clearfix">
-          <div class="col-md-6 question-section"><strong>e.</strong> Risks and mitigation</div>
+          <div class="col-md-6 question-section" id="comment_q5">
+            <%= if @inquestions1.present?
+                @inquestions1.gq5 
+              else
+                @grade.course.gq5
+              end
+            %>
+          </div>
           <div class="col-md-6 grade-section">
             <% [ '1', '2', '3', '4', '5' ].each do |risk| %>
               <p style="display:inline-block;" class="grade-checkbox"><%= radio_button_tag 'grade[risk]', risk, @grade.risk == risk %>
@@ -96,7 +133,14 @@
     </div>
 
     <div class="question question-edit clearfix">
-          <div class="col-md-6 question-section"><strong>f.</strong> To what extent does the presentation address all the critical decision-points a senior executive would consider? If not, what do you feel is missing?</div>
+          <div class="col-md-6 question-section" id="comment_q6">
+            <%= if @inquestions1.present?
+                @inquestions1.gq6 
+              else
+                @grade.course.gq6
+              end
+            %>
+          </div>
           <div class="col-md-6 grade-section">
             <% [ '1', '2', '3', '4', '5' ].each do |point| %>
               <p style="display:inline-block;" class="grade-checkbox"><%= radio_button_tag 'grade[point]', point, @grade.point == point %>
@@ -110,7 +154,14 @@
     </div>
 
     <div class="question question-edit clearfix">
-          <div class="col-md-6 question-section"><strong>g.</strong> Will the initiative will provide sufficient ROI and other benefits while minimizing risk, such that it is worth funding?</div>
+          <div class="col-md-6 question-section" id="comment_q7">
+            <%= if @inquestions1.present?
+                @inquestions1.gq7 
+              else
+                @grade.course.gq7
+              end
+            %>
+          </div>
           <div class="col-md-6 grade-section">
             <% [ '1', '2', '3', '4', '5' ].each do |fund| %>
               <p style="display:inline-block;" class="grade-checkbox"><%= radio_button_tag 'grade[fund]', fund, @grade.fund == fund %>
