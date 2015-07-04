@@ -22,9 +22,23 @@ module WickedPdfHelper
     sources.collect{ |source| wicked_pdf_javascript_src_tag(source) }.join("\n").html_safe
   end
 
-  WickedPdf.config = {
-	  #:wkhtmltopdf => '/usr/local/bin/wkhtmltopdf',
-	  #:layout => "pdf.html",
-	  :exe_path => '/usr/bin/wkhtmltopdf'
-	}
+  # WickedPdf.config = {
+	#   :exe_path => '/usr/bin/wkhtmltopdf'
+	# }
+
+
+  WickedPdf.config do |config|  
+    if Rails.env == 'production' then
+      config.exe_path = Rails.root.to_s + "/bin/wkhtmltopdf"
+    else  ### Following allows for development on my MacBook or Linux box
+      if /darwin/ =~ RUBY_PLATFORM then
+        config.exe_path = '/usr/bin/wkhtmltopdf' 
+      elsif /linux/ =~ RUBY_PLATFORM then
+        config.exe_path = '/usr/bin/wkhtmltopdf' 
+      else
+        raise "UnableToLocateWkhtmltopdf"
+      end
+    end
+  end
+
 end
