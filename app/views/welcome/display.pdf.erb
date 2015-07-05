@@ -1,3 +1,14 @@
+<style>
+  .cf:before, .cf:after {
+    content: " ";
+    display: table;
+  }
+
+  .cf:after {
+    clear: both;
+  }
+</style>
+
 
 <div>
   <h1>Summary report of the presentation</h1>
@@ -7,12 +18,12 @@
       <h3 style="font-size: 25px; color: #33a3dc; font-weight: 400; text-align: center; margin-bottom: 40px;">Comment Report Details</h3>
 
       <div class="grade-content">
-          <div style="padding-left: 5px;padding-right: 5px; content: " "; display: table; clear: both;">
+          <div style="padding-left: 5px;padding-right: 5px;" class="cf">
             <p style="font-size: 18px; margin-bottom: 5px; color: #196890; float:left;"><strong>Group #:</strong> <%= comment.group %></p>
             <p style="font-size: 18px; margin-bottom: 5px; color: #196890; float:right;"><strong>Project Name:</strong> <%= comment.project %></p>
           </div>
 
-          <div style="padding: 0 5px; border-bottom: 2px solid #196890;content: " "; display: table; clear: both;">
+          <div style="padding: 0 5px; border-bottom: 2px solid #196890;" class="cf">
             <p jm ystyle="font-size: 18px; margin-bottom: 5px; color: #196890; float:left;"><strong>Course:</strong> <%= comment.course.course_name %></p> 
           </div>
 
