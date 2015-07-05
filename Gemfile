@@ -36,4 +36,5 @@ gem 'will_paginate-bootstrap', '~> 1.0.1'
 group :production do
 	gem 'pg'
 	gem 'rails_12factor'
+	gem 'wkhtmltopdf-heroku'
 end
