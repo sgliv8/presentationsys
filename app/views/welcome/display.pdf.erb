@@ -1,6 +1,6 @@
 <style>
   .cf:before, .cf:after {
-    content: "";
+    content: " ";
     display: table;
   }
 
@@ -83,7 +83,7 @@
               <p style="font-size: 18px; color: #196890; float:left;"><strong>Group #:</strong> <%= grade.group %></p>
               <p style="font-size: 18px; color: #196890; float:right;"><strong>Project Name:</strong> <%= grade.project %></p>
             </div>
-            <div class="cf" style="padding: 0 15px; border-bottom: 1px dotted rgba(34,41,46,0.6);">
+            <div class="cf" style="padding: 0 15px; border-bottom: 2px solid #196890;">
                 <p style="font-size: 18px; margin-bottom: 5px; color: #196890; float:left;"><strong>Course:</strong> <%= grade.course.course_name %></p>
                <p style="font-size: 18px; margin-bottom: 5px; color: #196890; float:right;">
                   <strong><span class="fa fa-calculator"></span> Final Grade:</strong>
