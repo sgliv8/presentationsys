@@ -1,3 +1,131 @@
+<style>
+  .cf:before, .cf:after {
+    content: " ";
+    display: table;
+  }
+
+  .cf:after {
+    clear: both;
+  }
+
+  .pull-left {
+    float: left !important;
+  }
+
+  .pull-right {
+    float: right !important;
+  }
+
+
+  .grade-header {
+    font-size: 25px;
+    color: #33a3dc;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .group-info {
+    border-bottom: 1px dotted rgba(34,41,46,0.6);
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+
+  .group-info p, .group-info .group-num, .group-info .project-name {
+    margin-bottom: 5px;
+    color: #196890;
+    font-size: 20px;
+  }
+
+  b, strong {
+    font-weight: bold;
+  }
+
+  .group-info-comment {
+    border-bottom: 2px solid #196890;
+  }
+
+  .question {
+    padding: 10px 5px 25px;
+    font-size: 15px;
+    border-bottom: 1px solid rgba(34,41,46,0.4);
+  }
+
+  @media (min-width: 992px){
+    .col-md-12 {
+      width: 100%;
+    }
+  }
+
+  .question-section, .grade-section, .comment-section {
+    padding-bottom: 13px;
+    padding-top: 13px;
+  }
+
+  .adv-comment {
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  .comment-content {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background: #E9E9E9;
+    border-radius: 5px;
+  }
+
+
+  .adv-comment-color {
+    color: #196890;
+  }
+
+  .comment-content .content {
+    padding: 5px;
+    word-wrap: break-word;
+  }
+
+
+  .adv-board {
+    padding: 10px;
+    color: #196890;
+    margin-top: 5px;
+    font-size: 16px;
+    margin-bottom: 30px;
+  }
+
+
+  .btn-section {
+    padding: 20px;
+    text-align: center;
+  }
+
+
+  .btn-section .edit-btn {
+    border: 2px solid #196890;
+    color: #196890;
+    font-weight: 600;
+    margin-right: 10px;
+  }
+
+
+  .btn-section a, .btn-section input {
+    padding: 10px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+
+
+  .btn-section .back-btn {
+    border: 2px solid rgba(0,0,0,0.5);
+    color: rgba(0,0,0,0.5);
+    font-weight: 600;
+  }
+
+
+</style>
+
+
 <div>
   <h1>Summary report of the presentation</h1>
 
@@ -6,18 +134,18 @@
       <h3 class="grade-header">Comment Report Details</h3>
 
       <div class="grade-content">
-          <div class="group-info clearfix" style="border-bottom: 0;">
+          <div class="group-info cf" style="border-bottom: 0;">
             <p class="pull-left" style="font-size: 18px;"><strong>Group #:</strong> <%= comment.group %></p>
             <p class="pull-right" style="font-size: 18px;"><strong>Project Name:</strong> <%= comment.project %></p>
           </div>
 
-          <div class="group-info group-info-comment clearfix">
+          <div class="group-info group-info-comment cf">
             <p class="pull-left" style="font-size: 18px;"><strong>Course:</strong> <%= comment.course.course_name %></p> 
           </div>
 
-          <div class="question clearfix">
+          <div class="question cf">
               <div class="col-md-12 question-section adv-comment"><%= comment.course.cq1 %></div>
-              <div class="col-md-12 comment-content clearfix">
+              <div class="col-md-12 comment-content cf">
                  <span class="fa fa-comment adv-comment-color"> Comment:</span>
                  <div class="content">
                     <%= comment.strength %>
@@ -25,9 +153,9 @@
               </div>
           </div>
 
-          <div class="question clearfix">
+          <div class="question cf">
               <div class="col-md-12 question-section adv-comment"><%= comment.course.cq2 %></div>
-              <div class="col-md-12 comment-content clearfix">
+              <div class="col-md-12 comment-content cf">
                  <span class="fa fa-comment adv-comment-color"> Comment:</span>
                  <div class="content">
                     <%= comment.weakness %>
@@ -35,9 +163,9 @@
               </div>
           </div>
 
-          <div class="question clearfix">
+          <div class="question cf">
               <div class="col-md-12 question-section adv-comment"><%= comment.course.cq3 %></div>
-              <div class="col-md-12 comment-content clearfix">
+              <div class="col-md-12 comment-content cf">
                  <span class="fa fa-comment adv-comment-color"> Comment:</span>
                  <div class="content">
                     <%= comment.improvement %>
@@ -45,9 +173,9 @@
               </div>
           </div>
 
-          <div class="question clearfix">
+          <div class="question cf">
               <div class="col-md-12 question-section adv-comment"><%= comment.course.cq4 %></div>
-              <div class="col-md-12 comment-content clearfix">
+              <div class="col-md-12 comment-content cf">
                  <span class="fa fa-comment adv-comment-color"> Comment:</span>
                  <div class="content">
                     <%= comment.fund %>
@@ -66,11 +194,11 @@
         <h1 class="grade-header">Grading Details</h1>
 
         <div class="grade-content">
-            <div class="group-info clearfix" style="border-bottom: 0;">
+            <div class="group-info cf" style="border-bottom: 0;">
               <p class="pull-left"><strong>Group #:</strong> <%= grade.group %></p>
               <p class="pull-right"><strong>Project Name:</strong> <%= grade.project %></p>
             </div>
-            <div class="group-info clearfix">
+            <div class="group-info cf">
                 <p class="pull-left"><strong>Course:</strong> <%= grade.course.course_name %></p>
                <p class="pull-right">
                   <strong><span class="fa fa-calculator"></span> Final Grade:</strong>
@@ -82,7 +210,7 @@
             <div class="question">
                 <div class="col-md-6 question-section"><%= grade.course.gq1 %></div>
                 <h4 style="color: #b83936; padding-left: 10px;">Grade: <%= grade.opport %></h4>
-                <div class="col-md-12 comment-content clearfix">
+                <div class="col-md-12 comment-content cf">
                    <span class="fa fa-comment"> Instructor Comment:</span>
                    <div class="content">
                       <%= grade.opport_c %>
@@ -90,7 +218,7 @@
                 </div>
             </div>
 
-            <div class="question clearfix">
+            <div class="question cf">
                 <div class="col-md-6 question-section"><%= grade.course.gq2 %></div>
                 <h4 style="color: #b83936; padding-left: 10px;">Grade: <%= grade.cost %></h4>
                 <div class="col-md-12 comment-content">
@@ -101,10 +229,10 @@
                 </div>
             </div>
 
-            <div class="question clearfix">
+            <div class="question cf">
                 <div class="col-md-6 question-section"><%= grade.course.gq3 %></div>
                 <h4 style="color: #b83936; padding-left: 10px;">Grade: <%= grade.timeline %></h4>
-                <div class="col-md-12 comment-content clearfix">
+                <div class="col-md-12 comment-content cf">
                    <span class="fa fa-comment"> Instructor Comment:</span>
                    <div class="content">
                      <%= grade.timeline_c %>
@@ -112,10 +240,10 @@
                 </div>
             </div>
 
-            <div class="question clearfix">
+            <div class="question cf">
                 <div class="col-md-6 question-section"><%= grade.course.gq4 %></div>
                 <h4 style="color: #b83936; padding-left: 10px;">Grade: <%= grade.obstacle %></h4>
-                <div class="col-md-12 comment-content clearfix">
+                <div class="col-md-12 comment-content cf">
                    <span class="fa fa-comment"> Instructor Comment:</span>
                    <div class="content">
                      <%= grade.obstacle %>
@@ -123,10 +251,10 @@
                 </div>
             </div>
 
-            <div class="question clearfix">
+            <div class="question cf">
                 <div class="col-md-6 question-section"><%= grade.course.gq5 %></div>
                 <h4 style="color: #b83936; padding-left: 10px;">Grade: <%= grade.risk %></h4>
-                <div class="col-md-12 comment-content clearfix">
+                <div class="col-md-12 comment-content cf">
                    <span class="fa fa-comment"> Instructor Comment:</span>
                    <div class="content">
                      <%= grade.risk_c %>
@@ -134,10 +262,10 @@
                 </div>
             </div>
 
-            <div class="question clearfix">
+            <div class="question cf">
                 <div class="col-md-6 question-section"><%= grade.course.gq6 %></div>
                 <h4 style="color: #b83936; padding-left: 10px;">Grade: <%= grade.point %></h4>
-                <div class="col-md-12 comment-content clearfix">
+                <div class="col-md-12 comment-content cf">
                    <span class="fa fa-comment"> Instructor Comment: </span>
                    <div class="content">
                       <%= grade.point_c %>
@@ -145,10 +273,10 @@
                 </div>
             </div>
 
-            <div class="question clearfix">
+            <div class="question cf">
                 <div class="col-md-6 question-section"><%= grade.course.gq7 %></div>
                 <h4 style="color: #b83936; padding-left: 10px;">Grade: <%= grade.fund %></h4>
-                <div class="col-md-12 comment-content clearfix">
+                <div class="col-md-12 comment-content cf">
                    <span class="fa fa-comment"> Instructor Comment:</span>
                    <div class="content">
                       <%= grade.fund_c %>
