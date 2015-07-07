@@ -25,7 +25,7 @@ $(document).ready(function(){
 		e.preventDefault();
 		var sum = 0;
 
-		sum = (parseInt($('input:radio[name="grade[opport]"]:checked').val()) + parseInt($('input:radio[name="grade[cost]"]:checked').val()) + parseInt($('input:radio[name="grade[timeline]"]:checked').val()) + parseInt($('input:radio[name="grade[obstacle]"]:checked').val()) + parseInt($('input:radio[name="grade[risk]"]:checked').val())) * 0.4 + parseInt($('input:radio[name="grade[point]"]:checked').val()) * 0.2 + parseInt($('input:radio[name="grade[fund]"]:checked').val()) * 0.4;
+		sum = ((parseInt($('input:radio[name="grade[opport]"]:checked').val()) + parseInt($('input:radio[name="grade[cost]"]:checked').val()) + parseInt($('input:radio[name="grade[timeline]"]:checked').val()) + parseInt($('input:radio[name="grade[obstacle]"]:checked').val()) + parseInt($('input:radio[name="grade[risk]"]:checked').val())) / 25 ) * 5 * 0.4 + parseInt($('input:radio[name="grade[point]"]:checked').val()) * 0.2 + parseInt($('input:radio[name="grade[fund]"]:checked').val()) * 0.4;
 		//console.log(parseInt($('input:radio[name=opport]:checked').val()));
 		var new_sum = sum.toFixed(1).toString();
 		console.log(typeof(new_sum));
