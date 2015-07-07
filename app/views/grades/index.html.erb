@@ -17,10 +17,10 @@
 </div>
 
 
-<div class="wrapper_wide" style="padding-bottom: 5em;">
+<div class="wrapper_wide clearfix" style="padding-bottom: 5em;">
     
   <% if current_user.role.name == 'Instructor' %>
-    <div class="pull-right" style="margin-bottom: 20px; margin-top: 40px;">
+    <div style="margin-bottom: 20px; margin-top: 40px; float: right;">
          <%= link_to 'Evaluate Presenation', new_grade_path, class: 'btn btn-primary' %>
     </div>
   <% end %>
