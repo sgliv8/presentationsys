@@ -8,11 +8,17 @@
 #banner {
 	background: url(image_path("intro-bg.jpg")) no-repeat center center;
 	background-size: cover;
+	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
 	width: 100%;
-	display: table;
 	min-height: 600px;
 	.banner_content {
 		display: table-cell;
+		margin: 0 auto;
+		width: 50%;
+		padding-top: 15em;
+		padding-left: 20px;
 		vertical-align: middle;
 		text-align: center;
 		h1 {
