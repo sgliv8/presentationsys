@@ -14,7 +14,7 @@
       	{{#each comments}}
       	<tr>
       		<td>{{group}}</td>
-      		<td><a class="tag">{{project}}</a></td>
+      		<td><a class="tag" href="/comments/{{id}}">{{project}}</a></td>
           <td>{{first_name}} {{last_name}}</td>
           <td>Advisory Board</td>
       		<td>Comment</td>
@@ -24,7 +24,7 @@
       	{{#each grades}}
       	<tr>
       		<td>{{group}}</td>
-      		<td><a class="tag">{{project}}</a></td>
+      		<td><a class="tag" href="/grades/{{id}}">{{project}}</a></td>
           <td>{{first_name}} {{last_name}}</td>
           <td>Instructor</td>
       		<td>Grade</td>

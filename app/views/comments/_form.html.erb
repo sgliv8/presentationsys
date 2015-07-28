@@ -6,12 +6,40 @@
   </div>
 <% end %>
 
+<% if @inquestions1.present?
+      @id = @inquestions1.id
+      @cq1 = @inquestions1.cq1 
+      @cq2 = @inquestions1.cq2
+      @cq3 = @inquestions1.cq3
+      @cq4 = @inquestions1.cq4
+      @cq5 = @inquestions1.cq5
+      @cq6 = @inquestions1.cq6
+      @cq7 = @inquestions1.cq7
+      @cq8 = @inquestions1.cq8
+      @cq9 = @inquestions1.cq9
+      @cq10 = @inquestions1.cq10
+    else
+      @id = @comment.course.id
+      @cq1 = @comment.course.cq1
+      @cq2 = @comment.course.cq2
+      @cq3 = @comment.course.cq3
+      @cq4 = @comment.course.cq4
+      @cq5 = @comment.course.cq5
+      @cq6 = @comment.course.cq6
+      @cq7 = @comment.course.cq7
+      @cq8 = @comment.course.cq8
+      @cq9 = @comment.course.cq9
+      @cq10 = @comment.course.cq10
+    end
+%>
+
+
 
 <div class="grade-content">
   
   <%= form_for(@comment, html: {role: 'form' }) do |f| %>
   
-    <%= f.hidden_field :course_id, class: "input-control", :value => Course.first.id %>
+    <%= f.hidden_field :course_id, class: "input-control", :value => @id %>
     
 
     <div class="group-info group-info-edit clearfix">
@@ -24,68 +52,134 @@
           <%= f.text_field :project, class: "input-control project-name-input" %>
         </div>
     </div>
+    
+    <% unless @cq1.blank? %>
+      <div class="question question-edit clearfix">
+          <div class="col-md-12 question-section adv-comment" id="comment_q1">1. 
 
+            <%= @cq1 %>
+          </div>
+          <div class="col-md-12 comment-content comment-edit">
+             <span class="fa fa-comment adv-comment-color"> Comment:</span>  
+             <%= f.text_area :strength, class: 'input-control comment-textarea' %>
+          </div>
+      </div>
+    <% end %>
+  
+    <% unless @cq2.blank? %>
+      <div class="question question-edit clearfix">
+          <div class="col-md-12 question-section adv-comment" id="comment_q2">2. 
+            
+            <%= @cq2 %>
+          </div>
+          <div class="col-md-12 comment-content comment-edit">
+             <span class="fa fa-comment adv-comment-color"> Comment:</span>  
+             <%= f.text_area :weakness, class: 'input-control comment-textarea' %>
+          </div>
+      </div>
+    <% end %>
+    
+    <% unless @cq3.blank? %>
+      <div class="question question-edit clearfix">
+          <div class="col-md-12 question-section adv-comment" id="comment_q3">3. 
+            <%= @cq3 %>
+          </div>
+          <div class="col-md-12 comment-content comment-edit">
+             <span class="fa fa-comment adv-comment-color"> Comment:</span>  
+             <%= f.text_area :improvement, class: 'input-control comment-textarea' %>
+          </div>
+      </div>
+    <% end %>
+    
+    <% unless @cq4.blank? %>
+      <div class="question question-edit clearfix">
+          <div class="col-md-12 question-section adv-comment" id="comment_q4">4. 
+            <%= @cq4 %>
+          </div>
+          <div class="col-md-12 comment-content comment-edit">
+             <span class="fa fa-comment adv-comment-color"> Comment:</span>  
+             <%= f.text_area :fund, class: 'input-control comment-textarea' %>
+          </div>
+      </div>
+    <% end %>
+    
+    <% unless @cq5.blank? %>
+      <div class="question question-edit clearfix">
+          <div class="col-md-12 question-section adv-comment" id="comment_q1">5. 
+    
+            <%= @cq5 %>
+          </div>
+          <div class="col-md-12 comment-content comment-edit">
+             <span class="fa fa-comment adv-comment-color"> Comment:</span>  
+             <%= f.text_area :ca5, class: 'input-control comment-textarea' %>
+          </div>
+      </div>
+    <% end %>
+    
+    <% unless @cq6.blank? %>
+      <div class="question question-edit clearfix">
+          <div class="col-md-12 question-section adv-comment" id="comment_q1">6. 
+
+            <%= @cq6 %>
+          </div>
+          <div class="col-md-12 comment-content comment-edit">
+             <span class="fa fa-comment adv-comment-color"> Comment:</span>  
+             <%= f.text_area :ca6, class: 'input-control comment-textarea' %>
+          </div>
+      </div>
+    <% end %>
+
+    <% unless @cq7.blank? %>
+      <div class="question question-edit clearfix">
+          <div class="col-md-12 question-section adv-comment" id="comment_q1">7. 
+
+            <%= @cq7 %>
+          </div>
+          <div class="col-md-12 comment-content comment-edit">
+             <span class="fa fa-comment adv-comment-color"> Comment:</span>  
+             <%= f.text_area :ca7, class: 'input-control comment-textarea' %>
+          </div>
+      </div>
+    <% end %>
+    
+    <% unless @cq8.blank? %>
     <div class="question question-edit clearfix">
-        <div class="col-md-12 question-section adv-comment" id="comment_q1">1. 
+        <div class="col-md-12 question-section adv-comment" id="comment_q1">8. 
 
-          <%= if @inquestions1.present?
-                @inquestions1.cq1 
-              else
-                @comment.course.cq1
-              end
-          %>
+          <%= @cq8 %>
         </div>
         <div class="col-md-12 comment-content comment-edit">
            <span class="fa fa-comment adv-comment-color"> Comment:</span>  
-           <%= f.text_area :strength, class: 'input-control comment-textarea' %>
+           <%= f.text_area :ca8, class: 'input-control comment-textarea' %>
         </div>
     </div>
+    <% end %>
+    
+    <% unless @cq9.blank? %>
+      <div class="question question-edit clearfix">
+          <div class="col-md-12 question-section adv-comment" id="comment_q1">9. 
 
-    <div class="question question-edit clearfix">
-        <div class="col-md-12 question-section adv-comment" id="comment_q2">2. 
-          
-          <%= if @inquestions1.present?
-                @inquestions1.cq2 
-              else
-                @comment.course.cq2
-              end
-          %>
-        </div>
-        <div class="col-md-12 comment-content comment-edit">
-           <span class="fa fa-comment adv-comment-color"> Comment:</span>  
-           <%= f.text_area :weakness, class: 'input-control comment-textarea' %>
-        </div>
-    </div>
+           <%= @cq9 %>
+          </div>
+          <div class="col-md-12 comment-content comment-edit">
+             <span class="fa fa-comment adv-comment-color"> Comment:</span>  
+             <%= f.text_area :ca9, class: 'input-control comment-textarea' %>
+          </div>
+      </div>
+    <% end %>
+    
+    <% unless @cq10.blank? %>
+      <div class="question question-edit clearfix">
+          <div class="col-md-12 question-section adv-comment" id="comment_q1">10. 
 
-    <div class="question question-edit clearfix">
-        <div class="col-md-12 question-section adv-comment" id="comment_q3">3. 
-          <%= if @inquestions1.present?
-                @inquestions1.cq3 
-              else
-                @comment.course.cq3
-              end
-          %>
-        </div>
-        <div class="col-md-12 comment-content comment-edit">
-           <span class="fa fa-comment adv-comment-color"> Comment:</span>  
-           <%= f.text_area :improvement, class: 'input-control comment-textarea' %>
-        </div>
-    </div>
-
-    <div class="question question-edit clearfix">
-        <div class="col-md-12 question-section adv-comment" id="comment_q4">4. 
-          <%= if @inquestions1.present?
-                @inquestions1.cq4
-              else
-                @comment.course.cq4
-              end
-          %>
-        </div>
-        <div class="col-md-12 comment-content comment-edit">
-           <span class="fa fa-comment adv-comment-color"> Comment:</span>  
-           <%= f.text_area :fund, class: 'input-control comment-textarea' %>
-        </div>
-    </div>
+            <%= @cq10 %>
+          </div>
+          <div class="col-md-12 comment-content comment-edit">
+             <span class="fa fa-comment adv-comment-color"> Comment:</span>  
+             <%= f.text_area :ca10, class: 'input-control comment-textarea' %>
+          </div>
+      </div>
+    <% end %>
 
     <div class="btn-section" style="margin-top: 25px;">
       <%= f.submit 'Save', class: 'save-btn save-comment-btn' %>

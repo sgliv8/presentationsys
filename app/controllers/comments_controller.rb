@@ -22,7 +22,8 @@ class CommentsController < ApplicationController
   def new
     @comment = current_user.comments.build
 
-    @inquestions1 = Course.first
+    @course = params[:course]
+    @inquestions1 = Course.where(id: @course).first
 
   end
 
@@ -94,6 +95,6 @@ class CommentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def comment_params
-      params.require(:comment).permit(:group, :project, :strength, :weakness, :improvement, :fund, :user_id, :course_id)
+      params.require(:comment).permit(:group, :project, :strength, :weakness, :improvement, :fund, :user_id, :course_id, :ca5, :ca6, :ca7, :ca8, :ca9, :ca10)
     end
 end

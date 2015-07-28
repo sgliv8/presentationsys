@@ -25,12 +25,33 @@ $(document).ready(function(){
 		e.preventDefault();
 		var sum = 0;
 
-		sum = ((parseInt($('input:radio[name="grade[opport]"]:checked').val()) + parseInt($('input:radio[name="grade[cost]"]:checked').val()) + parseInt($('input:radio[name="grade[timeline]"]:checked').val()) + parseInt($('input:radio[name="grade[obstacle]"]:checked').val()) + parseInt($('input:radio[name="grade[risk]"]:checked').val())) / 25 ) * 5 * 0.4 + parseInt($('input:radio[name="grade[point]"]:checked').val()) * 0.2 + parseInt($('input:radio[name="grade[fund]"]:checked').val()) * 0.4;
-		//console.log(parseInt($('input:radio[name=opport]:checked').val()));
-		var new_sum = sum.toFixed(2).toString();
-		console.log(typeof(new_sum));
+		var weights = $('strong.grade_weight');
 
-		$('#grade_totalscore').val(new_sum);
+    weights.each(function(index){
+      var text = $(this).text();
+      if(text === ""){
+        var weight = 0;
+        console.log(weight);
+      }else {
+        var weight = parseFloat(text) / 100.0;
+        console.log(weight);
+
+        //console.log($(this));
+      }
+
+      var checked = parseInt($(this).parent().parent().parent().find('input[type=radio]:checked').val());
+      console.log(checked);
+
+      sum += checked * weight;
+      
+    });
+
+    //sum = ((parseInt($('input:radio[name="grade[opport]"]:checked').val()) + parseInt($('input:radio[name="grade[cost]"]:checked').val()) + parseInt($('input:radio[name="grade[timeline]"]:checked').val()) + parseInt($('input:radio[name="grade[obstacle]"]:checked').val()) + parseInt($('input:radio[name="grade[risk]"]:checked').val())) / 25 ) * 5 * 0.4 + parseInt($('input:radio[name="grade[point]"]:checked').val()) * 0.2 + parseInt($('input:radio[name="grade[fund]"]:checked').val()) * 0.4;
+    //console.log(parseInt($('input:radio[name=opport]:checked').val()));
+    var new_sum = sum.toFixed(2).toString();
+    //console.log(typeof(new_sum));
+
+    $('#grade_totalscore').val(new_sum);
 	});
 
 
@@ -74,6 +95,19 @@ $(document).ready(function(){
 	$('#comment-e').on('click', commentAccordion).parent().next().hide();
 	$('#comment-f').on('click', commentAccordion).parent().next().hide();
 	$('#comment-g').on('click', commentAccordion).parent().next().hide();
+  $('#comment-h').on('click', commentAccordion).parent().next().hide();
+  $('#comment-i').on('click', commentAccordion).parent().next().hide();
+  $('#comment-j').on('click', commentAccordion).parent().next().hide();
+  $('#comment-k').on('click', commentAccordion).parent().next().hide();
+  $('#comment-l').on('click', commentAccordion).parent().next().hide();
+  $('#comment-m').on('click', commentAccordion).parent().next().hide();
+  $('#comment-n').on('click', commentAccordion).parent().next().hide();
+  $('#comment-o').on('click', commentAccordion).parent().next().hide();
+  $('#comment-p').on('click', commentAccordion).parent().next().hide();
+  $('#comment-q').on('click', commentAccordion).parent().next().hide();
+  $('#comment-r').on('click', commentAccordion).parent().next().hide();
+  $('#comment-s').on('click', commentAccordion).parent().next().hide();
+  $('#comment-t').on('click', commentAccordion).parent().next().hide();
 
 	// callback function
     function commentAccordion() {

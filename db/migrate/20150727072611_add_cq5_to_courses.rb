@@ -1,0 +1,43 @@
+class AddCq5ToCourses < ActiveRecord::Migration
+  def change
+    add_column :courses, :cq5, :text
+    add_column :courses, :cq6, :text
+    add_column :courses, :cq7, :text
+    add_column :courses, :cq8, :text
+    add_column :courses, :cq9, :text
+    add_column :courses, :cq10, :text
+    add_column :courses, :gq8, :text
+    add_column :courses, :gq9, :text
+    add_column :courses, :gq10, :text
+    add_column :courses, :gq11, :text
+    add_column :courses, :gq12, :text
+    add_column :courses, :gq13, :text
+    add_column :courses, :gq14, :text
+    add_column :courses, :gq15, :text
+    add_column :courses, :gq16, :text
+    add_column :courses, :gq17, :text
+    add_column :courses, :gq18, :text
+    add_column :courses, :gq19, :text
+    add_column :courses, :gq20, :text
+    add_column :courses, :gw1, :string
+    add_column :courses, :gw2, :string
+    add_column :courses, :gw3, :string
+    add_column :courses, :gw4, :string
+    add_column :courses, :gw5, :string
+    add_column :courses, :gw6, :string
+    add_column :courses, :gw7, :string
+    add_column :courses, :gw8, :string
+    add_column :courses, :gw9, :string
+    add_column :courses, :gw10, :string
+    add_column :courses, :gw11, :string
+    add_column :courses, :gw12, :string
+    add_column :courses, :gw13, :string
+    add_column :courses, :gw14, :string
+    add_column :courses, :gw15, :string
+    add_column :courses, :gw16, :string
+    add_column :courses, :gw17, :string
+    add_column :courses, :gw18, :string
+    add_column :courses, :gw19, :string
+    add_column :courses, :gw20, :string
+  end
+end

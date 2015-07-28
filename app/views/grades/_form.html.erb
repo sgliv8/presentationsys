@@ -6,12 +6,102 @@
   </div>
 <% end %>
 
+<% if @inquestions1.present?
+      @id = @inquestions1.id
+      @gq1 = @inquestions1.gq1 
+      @gq2 = @inquestions1.gq2
+      @gq3 = @inquestions1.gq3
+      @gq4 = @inquestions1.gq4
+      @gq5 = @inquestions1.gq5
+      @gq6 = @inquestions1.gq6
+      @gq7 = @inquestions1.gq7
+      @gq8 = @inquestions1.gq8
+      @gq9 = @inquestions1.gq9
+      @gq10 = @inquestions1.gq10
+      @gq11 = @inquestions1.gq11 
+      @gq12 = @inquestions1.gq12
+      @gq13 = @inquestions1.gq13
+      @gq14 = @inquestions1.gq14
+      @gq15 = @inquestions1.gq15
+      @gq16 = @inquestions1.gq16
+      @gq17 = @inquestions1.gq17
+      @gq18 = @inquestions1.gq18
+      @gq19 = @inquestions1.gq19
+      @gq20 = @inquestions1.gq20
+
+      @gw1 = @inquestions1.gw1 
+      @gw2 = @inquestions1.gw2
+      @gw3 = @inquestions1.gw3
+      @gw4 = @inquestions1.gw4
+      @gw5 = @inquestions1.gw5
+      @gw6 = @inquestions1.gw6
+      @gw7 = @inquestions1.gw7
+      @gw8 = @inquestions1.gw8
+      @gw9 = @inquestions1.gw9
+      @gw10 = @inquestions1.gw10
+      @gw11 = @inquestions1.gw11 
+      @gw12 = @inquestions1.gw12
+      @gw13 = @inquestions1.gw13
+      @gw14 = @inquestions1.gw14
+      @gw15 = @inquestions1.gw15
+      @gw16 = @inquestions1.gw16
+      @gw17 = @inquestions1.gw17
+      @gw18 = @inquestions1.gw18
+      @gw19 = @inquestions1.gw19
+      @gw20 = @inquestions1.gw20
+    else
+      @id = @grade.course.id
+      @gq1 = @grade.course.gq1
+      @gq2 = @grade.course.gq2
+      @gq3 = @grade.course.gq3
+      @gq4 = @grade.course.gq4
+      @gq5 = @grade.course.gq5
+      @gq6 = @grade.course.gq6
+      @gq7 = @grade.course.gq7
+      @gq8 = @grade.course.gq8
+      @gq9 = @grade.course.gq9
+      @gq10 = @grade.course.gq10
+      @gq11 = @grade.course.gq11
+      @gq12 = @grade.course.gq12
+      @gq13 = @grade.course.gq13
+      @gq14 = @grade.course.gq14
+      @gq15 = @grade.course.gq15
+      @gq16 = @grade.course.gq16
+      @gq17 = @grade.course.gq17
+      @gq18 = @grade.course.gq18
+      @gq19 = @grade.course.gq19
+      @gq20 = @grade.course.gq20
+
+
+      @gw1 = @grade.course.gw1
+      @gw2 = @grade.course.gw2
+      @gw3 = @grade.course.gw3
+      @gw4 = @grade.course.gw4
+      @gw5 = @grade.course.gw5
+      @gw6 = @grade.course.gw6
+      @gw7 = @grade.course.gw7
+      @gw8 = @grade.course.gw8
+      @gw9 = @grade.course.gw9
+      @gw10 = @grade.course.gw10
+      @gw11 = @grade.course.gw11
+      @gw12 = @grade.course.gw12
+      @gw13 = @grade.course.gw13
+      @gw14 = @grade.course.gw14
+      @gw15 = @grade.course.gw15
+      @gw16 = @grade.course.gw16
+      @gw17 = @grade.course.gw17
+      @gw18 = @grade.course.gw18
+      @gw19 = @grade.course.gw19
+      @gw20 = @grade.course.gw20
+    end
+%>
+
 
 <div class="grade-content">
 
   <%= form_for(@grade) do |f| %>
 
-    <%= f.hidden_field :course_id, class: "input-control", :value => Course.first.id %>
+    <%= f.hidden_field :course_id, class: "input-control", :value => @id %>
 
 
     <div class="group-info group-info-edit clearfix">
@@ -24,155 +114,389 @@
           <%= f.text_field :project, class: "input-control project-name-input" %>
         </div>
     </div>
-
-    <div class="question question-edit clearfix">
-          <div class="col-md-6 question-section" id="grade_q1"><strong>a.</strong> 
-            <%= if @inquestions1.present?
-                @inquestions1.gq1 
-              else
-                @grade.course.gq1
-              end
-          %>
-          </div>
-          <div class="col-md-6 grade-section">
-            <% [ '1', '2', '3', '4', '5' ].each do |opport| %>
-              <p style="display:inline-block;" class="grade-checkbox"><%= radio_button_tag 'grade[opport]', opport, @grade.opport == opport %>
-              <%= label_tag "opport_#{opport}", opport.humanize %></p>
-            <% end %>
-          </div>
-          <div class="col-md-12 comment-content comment-edit">
-             <span class="fa fa-comment"></span> Comment: 
-             <%= f.text_area :opport_c, class: 'input-control comment-textarea' %>
-          </div>
-    </div>
-
-     <div class="question question-edit clearfix">
-          <div class="col-md-6 question-section" id="grade_q2"><strong>b.</strong> 
-            
-            <%= if @inquestions1.present?
-                @inquestions1.gq2 
-              else
-                @grade.course.gq2
-              end
-            %>
-
-          </div>
-          <div class="col-md-6 grade-section">
-            <% [ '1', '2', '3', '4', '5' ].each do |cost| %>
-              <p style="display:inline-block;" class="grade-checkbox"><%= radio_button_tag 'grade[cost]', cost, @grade.cost == cost %>
-              <%= label_tag "cost_#{cost}", cost.humanize %></p>
-            <% end %>
-          </div>
-          <div class="col-md-12 comment-content comment-edit">
-             <span class="fa fa-comment"></span> Comment: 
-             <%= f.text_area :cost_c, class: 'input-control comment-textarea' %>
-          </div>
-    </div>
-
-    <div class="question question-edit clearfix">
-          <div class="col-md-6 question-section" id="comment_q3"><strong>c.</strong> 
-            <%= if @inquestions1.present?
-                @inquestions1.gq3 
-              else
-                @grade.course.gq3
-              end
-            %>
-          </div>
-          <div class="col-md-6 grade-section">
-            <% [ '1', '2', '3', '4', '5' ].each do |timeline| %>
-              <p style="display:inline-block;" class="grade-checkbox"><%= radio_button_tag 'grade[timeline]', timeline, @grade.timeline == timeline %>
-              <%= label_tag "timeline_#{timeline}", timeline.humanize %></p>
-            <% end %>
-          </div>
-          <div class="col-md-12 comment-content comment-edit">
-             <span class="fa fa-comment"></span> Comment: 
-             <%= f.text_area :timeline_c, class: 'input-control comment-textarea' %>
-          </div>
-    </div>    
     
-    <div class="question question-edit clearfix">
-          <div class="col-md-6 question-section" id="comment_q4"><strong>d.</strong> 
-            <%= if @inquestions1.present?
-                @inquestions1.gq4 
-              else
-                @grade.course.gq4
-              end
-            %>
-          </div>
-          <div class="col-md-6 grade-section">
-            <% [ '1', '2', '3', '4', '5' ].each do |obstacle| %>
-              <p style="display:inline-block;" class="grade-checkbox"><%= radio_button_tag 'grade[obstacle]', obstacle, @grade.obstacle == obstacle %>
-              <%= label_tag "obstacle_#{obstacle}", obstacle.humanize %></p>
-            <% end %>
-          </div>
-          <div class="col-md-12 comment-content comment-edit">
-             <span class="fa fa-comment"></span> Comment: 
-             <%= f.text_area :obstacle_c, class: 'input-control comment-textarea' %>
-          </div>
-    </div>   
+    <% unless @gq1.blank? %>
+      <div class="question question-edit clearfix">
+        <div class="col-md-6 question-section" id="grade_q1"><strong>a.</strong> 
+          <%= @gq1 %>
+        <p class="adv-comment-color">(<strong class="grade_weight"><%= @gw1 %>%</strong>)</p>
+        </div>
+        <div class="col-md-6 grade-section">
+          <% [ '1', '2', '3', '4', '5' ].each do |opport| %>
+            <p style="display:inline-block;" class="grade-checkbox"><%= radio_button_tag 'grade[opport]', opport, @grade.opport == opport %>
+            <%= label_tag "opport_#{opport}", opport.humanize %></p>
+          <% end %>
+        </div>
+        <div class="col-md-12 comment-content comment-edit">
+           <span class="fa fa-comment"></span> Comment: 
+           <%= f.text_area :opport_c, class: 'input-control comment-textarea' %>
+        </div>
+      </div>
+    <% end %>
     
-    <div class="question question-edit clearfix">
-          <div class="col-md-6 question-section" id="comment_q5"><strong>e.</strong> 
-            <%= if @inquestions1.present?
-                @inquestions1.gq5 
-              else
-                @grade.course.gq5
-              end
-            %>
-          </div>
-          <div class="col-md-6 grade-section">
-            <% [ '1', '2', '3', '4', '5' ].each do |risk| %>
-              <p style="display:inline-block;" class="grade-checkbox"><%= radio_button_tag 'grade[risk]', risk, @grade.risk == risk %>
-              <%= label_tag "risk_#{risk}", risk.humanize %></p>
-            <% end %>
-          </div>
-          <div class="col-md-12 comment-content comment-edit">
-             <span class="fa fa-comment"></span> Comment: 
-             <%= f.text_area :risk_c, class: 'input-control comment-textarea' %>
-          </div>
-    </div>
+    <% unless @gq2.blank? %>
+      <div class="question question-edit clearfix">
+        <div class="col-md-6 question-section" id="grade_q2"><strong>b.</strong> 
+          
+          <%= @gq2 %>
+          <p class="adv-comment-color">(<strong class="grade_weight"><%= @gw2 %>%</strong>)</p>
+        </div>
+        <div class="col-md-6 grade-section">
+          <% [ '1', '2', '3', '4', '5' ].each do |cost| %>
+            <p style="display:inline-block;" class="grade-checkbox"><%= radio_button_tag 'grade[cost]', cost, @grade.cost == cost %>
+            <%= label_tag "cost_#{cost}", cost.humanize %></p>
+          <% end %>
+        </div>
+        <div class="col-md-12 comment-content comment-edit">
+           <span class="fa fa-comment"></span> Comment: 
+           <%= f.text_area :cost_c, class: 'input-control comment-textarea' %>
+        </div>
+      </div>
+    <% end %>
+    
+    <% unless @gq3.blank? %>
+      <div class="question question-edit clearfix">
+        <div class="col-md-6 question-section" id="comment_q3"><strong>c.</strong> 
+          <%= @gq3 %>
+          <p class="adv-comment-color">(<strong class="grade_weight"><%= @gw3 %>%</strong>)</p>
+        </div>
+        <div class="col-md-6 grade-section">
+          <% [ '1', '2', '3', '4', '5' ].each do |timeline| %>
+            <p style="display:inline-block;" class="grade-checkbox"><%= radio_button_tag 'grade[timeline]', timeline, @grade.timeline == timeline %>
+            <%= label_tag "timeline_#{timeline}", timeline.humanize %></p>
+          <% end %>
+        </div>
+        <div class="col-md-12 comment-content comment-edit">
+           <span class="fa fa-comment"></span> Comment: 
+           <%= f.text_area :timeline_c, class: 'input-control comment-textarea' %>
+        </div>
+      </div>
+    <% end %>  
 
-    <div class="question question-edit clearfix">
-          <div class="col-md-6 question-section" id="comment_q6"><strong>f.</strong> 
-            <%= if @inquestions1.present?
-                @inquestions1.gq6 
-              else
-                @grade.course.gq6
-              end
-            %>
-          </div>
-          <div class="col-md-6 grade-section">
-            <% [ '1', '2', '3', '4', '5' ].each do |point| %>
-              <p style="display:inline-block;" class="grade-checkbox"><%= radio_button_tag 'grade[point]', point, @grade.point == point %>
-              <%= label_tag "point_#{point}", point.humanize %></p>
-            <% end %>
-          </div>
-          <div class="col-md-12 comment-content comment-edit">
-             <span class="fa fa-comment"></span> Comment: 
-             <%= f.text_area :point_c, class: 'input-control comment-textarea' %>
-          </div>
-    </div>
 
-    <div class="question question-edit clearfix">
-          <div class="col-md-6 question-section" id="comment_q7"><strong>g.</strong> 
-            <%= if @inquestions1.present?
-                @inquestions1.gq7 
-              else
-                @grade.course.gq7
-              end
-            %>
-          </div>
-          <div class="col-md-6 grade-section">
-            <% [ '1', '2', '3', '4', '5' ].each do |fund| %>
-              <p style="display:inline-block;" class="grade-checkbox"><%= radio_button_tag 'grade[fund]', fund, @grade.fund == fund %>
-              <%= label_tag "fund_#{fund}", fund.humanize %></p>
-            <% end %>
-          </div>
-          <div class="col-md-12 comment-content comment-edit">
-             <span class="fa fa-comment"></span> Comment: 
-             <%= f.text_area :fund_c, class: 'input-control comment-textarea' %>
-          </div>
-    </div>        
+    <% unless @gq4.blank? %>
+      <div class="question question-edit clearfix">
+        <div class="col-md-6 question-section" id="comment_q4"><strong>d.</strong> 
+          <%= @gq4 %>
+          <p class="adv-comment-color">(<strong class="grade_weight"><%= @gw4 %>%</strong>)</p>
+        </div>
+        <div class="col-md-6 grade-section">
+          <% [ '1', '2', '3', '4', '5' ].each do |obstacle| %>
+            <p style="display:inline-block;" class="grade-checkbox"><%= radio_button_tag 'grade[obstacle]', obstacle, @grade.obstacle == obstacle %>
+            <%= label_tag "obstacle_#{obstacle}", obstacle.humanize %></p>
+          <% end %>
+        </div>
+        <div class="col-md-12 comment-content comment-edit">
+           <span class="fa fa-comment"></span> Comment: 
+           <%= f.text_area :obstacle_c, class: 'input-control comment-textarea' %>
+        </div>
+      </div> 
+    <% end %>
+    
+    <% unless @gq5.blank? %>
+      <div class="question question-edit clearfix">
+        <div class="col-md-6 question-section" id="comment_q5"><strong>e.</strong> 
+          <%= @gq5 %>
+          <p class="adv-comment-color">(<strong class="grade_weight"><%= @gw5 %>%</strong>)</p>
+        </div>
+        <div class="col-md-6 grade-section">
+          <% [ '1', '2', '3', '4', '5' ].each do |risk| %>
+            <p style="display:inline-block;" class="grade-checkbox"><%= radio_button_tag 'grade[risk]', risk, @grade.risk == risk %>
+            <%= label_tag "risk_#{risk}", risk.humanize %></p>
+          <% end %>
+        </div>
+        <div class="col-md-12 comment-content comment-edit">
+           <span class="fa fa-comment"></span> Comment: 
+           <%= f.text_area :risk_c, class: 'input-control comment-textarea' %>
+        </div>
+      </div>
+    <% end %>
+    
+    <% unless @gq6.blank? %>
+      <div class="question question-edit clearfix">
+        <div class="col-md-6 question-section" id="comment_q6"><strong>f.</strong> 
+          <%= @gq6 %>
+          <p class="adv-comment-color">(<strong class="grade_weight"><%= @gw6 %>%</strong>)</p>
+        </div>
+        <div class="col-md-6 grade-section">
+          <% [ '1', '2', '3', '4', '5' ].each do |point| %>
+            <p style="display:inline-block;" class="grade-checkbox"><%= radio_button_tag 'grade[point]', point, @grade.point == point %>
+            <%= label_tag "point_#{point}", point.humanize %></p>
+          <% end %>
+        </div>
+        <div class="col-md-12 comment-content comment-edit">
+           <span class="fa fa-comment"></span> Comment: 
+           <%= f.text_area :point_c, class: 'input-control comment-textarea' %>
+        </div>
+      </div>
+    <% end %>
+    
+    <% unless @gq7.blank? %>
+      <div class="question question-edit clearfix">
+        <div class="col-md-6 question-section" id="comment_q7"><strong>g.</strong> 
+          <%= @gq7 %>
+          <p class="adv-comment-color">(<strong class="grade_weight"><%= @gw7 %>%</strong>)</p>
+        </div>
+        <div class="col-md-6 grade-section">
+          <% [ '1', '2', '3', '4', '5' ].each do |fund| %>
+            <p style="display:inline-block;" class="grade-checkbox"><%= radio_button_tag 'grade[fund]', fund, @grade.fund == fund %>
+            <%= label_tag "fund_#{fund}", fund.humanize %></p>
+          <% end %>
+        </div>
+        <div class="col-md-12 comment-content comment-edit">
+           <span class="fa fa-comment"></span> Comment: 
+           <%= f.text_area :fund_c, class: 'input-control comment-textarea' %>
+        </div>
+      </div>
+    <% end %>
+
+
+    <% unless @gq8.blank? %>
+      <div class="question question-edit clearfix">
+        <div class="col-md-6 question-section" id="grade_q8"><strong>h.</strong> 
+          <%= @gq8 %>
+          <p class="adv-comment-color">(<strong class="grade_weight"><%= @gw8 %>%</strong>)</p>
+        </div>
+        <div class="col-md-6 grade-section">
+          <% [ '1', '2', '3', '4', '5' ].each do |g8| %>
+            <p style="display:inline-block;" class="grade-checkbox"><%= radio_button_tag 'grade[g8]', g8, @grade.g8 == g8 %>
+            <%= label_tag "g8_#{g8}", g8.humanize %></p>
+          <% end %>
+        </div>
+        <div class="col-md-12 comment-content comment-edit">
+           <span class="fa fa-comment"></span> Comment: 
+           <%= f.text_area :g8_c, class: 'input-control comment-textarea' %>
+        </div>
+      </div>
+    <% end %>
+
+    <% unless @gq9.blank? %>
+      <div class="question question-edit clearfix">
+        <div class="col-md-6 question-section" id="grade_q9"><strong>i.</strong> 
+          <%= @gq9 %>
+          <p class="adv-comment-color">(<strong class="grade_weight"><%= @gw9 %>%</strong>)</p>
+        </div>
+        <div class="col-md-6 grade-section">
+          <% [ '1', '2', '3', '4', '5' ].each do |g9| %>
+            <p style="display:inline-block;" class="grade-checkbox"><%= radio_button_tag 'grade[g9]', g9, @grade.g9 == g9 %>
+            <%= label_tag "g9_#{g9}", g9.humanize %></p>
+          <% end %>
+        </div>
+        <div class="col-md-12 comment-content comment-edit">
+           <span class="fa fa-comment"></span> Comment: 
+           <%= f.text_area :g9_c, class: 'input-control comment-textarea' %>
+        </div>
+      </div>
+    <% end %>
+  
+    <% unless @gq10.blank? %>
+      <div class="question question-edit clearfix">
+        <div class="col-md-6 question-section" id="grade_q10"><strong>j.</strong> 
+          <%= @gq10 %>
+          <p class="adv-comment-color">(<strong class="grade_weight"><%= @gw10 %>%</strong>)</p>
+        </div>
+        <div class="col-md-6 grade-section">
+          <% [ '1', '2', '3', '4', '5' ].each do |g10| %>
+            <p style="display:inline-block;" class="grade-checkbox"><%= radio_button_tag 'grade[g10]', g10, @grade.g10 == g10 %>
+            <%= label_tag "g8_#{g10}", g10.humanize %></p>
+          <% end %>
+        </div>
+        <div class="col-md-12 comment-content comment-edit">
+           <span class="fa fa-comment"></span> Comment: 
+           <%= f.text_area :g10_c, class: 'input-control comment-textarea' %>
+        </div>
+      </div>
+    <% end %>
+
+    <% unless @gq11.blank? %>
+      <div class="question question-edit clearfix">
+        <div class="col-md-6 question-section" id="grade_q11"><strong>k.</strong> 
+          <%= @gq11 %>
+          <p class="adv-comment-color">(<strong class="grade_weight"><%= @gw11 %>%</strong>)</p>
+        </div>
+        <div class="col-md-6 grade-section">
+          <% [ '1', '2', '3', '4', '5' ].each do |g11| %>
+            <p style="display:inline-block;" class="grade-checkbox"><%= radio_button_tag 'grade[g11]', g11, @grade.g11 == g11 %>
+            <%= label_tag "g11_#{g11}", g11.humanize %></p>
+          <% end %>
+        </div>
+        <div class="col-md-12 comment-content comment-edit">
+           <span class="fa fa-comment"></span> Comment: 
+           <%= f.text_area :g11_c, class: 'input-control comment-textarea' %>
+        </div>
+      </div>
+    <% end %>
+
+    <% unless @gq12.blank? %>
+      <div class="question question-edit clearfix">
+        <div class="col-md-6 question-section" id="grade_q12"><strong>l.</strong> 
+          <%= @gq12 %>
+          <p class="adv-comment-color">(<strong class="grade_weight"><%= @gw12 %>%</strong>)</p>
+        </div>
+        <div class="col-md-6 grade-section">
+          <% [ '1', '2', '3', '4', '5' ].each do |g12| %>
+            <p style="display:inline-block;" class="grade-checkbox"><%= radio_button_tag 'grade[g12]', g12, @grade.g12 == g12 %>
+            <%= label_tag "g12_#{g12}", g12.humanize %></p>
+          <% end %>
+        </div>
+        <div class="col-md-12 comment-content comment-edit">
+           <span class="fa fa-comment"></span> Comment: 
+           <%= f.text_area :g12_c, class: 'input-control comment-textarea' %>
+        </div>
+      </div> 
+    <% end %>
+
+    <% unless @gq13.blank? %>
+      <div class="question question-edit clearfix">
+        <div class="col-md-6 question-section" id="grade_q13"><strong>m.</strong> 
+          <%= @gq13 %>
+          <p class="adv-comment-color">(<strong class="grade_weight"><%= @gw13 %>%</strong>)</p>
+        </div>
+        <div class="col-md-6 grade-section">
+          <% [ '1', '2', '3', '4', '5' ].each do |g13| %>
+            <p style="display:inline-block;" class="grade-checkbox"><%= radio_button_tag 'grade[g13]', g13, @grade.g13 == g13 %>
+            <%= label_tag "g13_#{g13}", g13.humanize %></p>
+          <% end %>
+        </div>
+        <div class="col-md-12 comment-content comment-edit">
+           <span class="fa fa-comment"></span> Comment: 
+           <%= f.text_area :g13_c, class: 'input-control comment-textarea' %>
+        </div>
+      </div> 
+    <% end %>
+
+    <% unless @gq14.blank? %>
+      <div class="question question-edit clearfix">
+        <div class="col-md-6 question-section" id="grade_q14"><strong>n.</strong> 
+          <%= @gq14 %>
+          <p class="adv-comment-color">(<strong class="grade_weight"><%= @gw14 %>%</strong>)</p>
+        </div>
+        <div class="col-md-6 grade-section">
+          <% [ '1', '2', '3', '4', '5' ].each do |g14| %>
+            <p style="display:inline-block;" class="grade-checkbox"><%= radio_button_tag 'grade[g14]', g14, @grade.g14 == g14 %>
+            <%= label_tag "g14_#{g14}", g14.humanize %></p>
+          <% end %>
+        </div>
+        <div class="col-md-12 comment-content comment-edit">
+           <span class="fa fa-comment"></span> Comment: 
+           <%= f.text_area :g14_c, class: 'input-control comment-textarea' %>
+        </div>
+      </div>
+    <% end %> 
+
+    <% unless @gq15.blank? %>
+      <div class="question question-edit clearfix">
+        <div class="col-md-6 question-section" id="grade_q15"><strong>o.</strong> 
+          <%= @gq15 %>
+          <p class="adv-comment-color">(<strong class="grade_weight"><%= @gw15 %>%</strong>)</p>
+        </div>
+        <div class="col-md-6 grade-section">
+          <% [ '1', '2', '3', '4', '5' ].each do |g15| %>
+            <p style="display:inline-block;" class="grade-checkbox"><%= radio_button_tag 'grade[g15]', g15, @grade.g15 == g15 %>
+            <%= label_tag "g15_#{g15}", g15.humanize %></p>
+          <% end %>
+        </div>
+        <div class="col-md-12 comment-content comment-edit">
+           <span class="fa fa-comment"></span> Comment: 
+           <%= f.text_area :g15_c, class: 'input-control comment-textarea' %>
+        </div>
+      </div>
+    <% end %>
+
+    <% unless @gq16.blank? %>
+      <div class="question question-edit clearfix">
+        <div class="col-md-6 question-section" id="grade_q16"><strong>p.</strong> 
+          <%= @gq16 %>
+          <p class="adv-comment-color">(<strong class="grade_weight"><%= @gw16 %>%</strong>)</p>
+        </div>
+        <div class="col-md-6 grade-section">
+          <% [ '1', '2', '3', '4', '5' ].each do |g16| %>
+            <p style="display:inline-block;" class="grade-checkbox"><%= radio_button_tag 'grade[g16]', g16, @grade.g16 == g16 %>
+            <%= label_tag "g16_#{g16}", g16.humanize %></p>
+          <% end %>
+        </div>
+        <div class="col-md-12 comment-content comment-edit">
+           <span class="fa fa-comment"></span> Comment: 
+           <%= f.text_area :g16_c, class: 'input-control comment-textarea' %>
+        </div>
+      </div>
+    <% end %> 
+
+    <% unless @gq17.blank? %>
+      <div class="question question-edit clearfix">
+        <div class="col-md-6 question-section" id="grade_q17"><strong>q.</strong> 
+          <%= @gq17 %>
+          <p class="adv-comment-color">(<strong class="grade_weight"><%= @gw17 %>%</strong>)</p>
+        </div>
+        <div class="col-md-6 grade-section">
+          <% [ '1', '2', '3', '4', '5' ].each do |g17| %>
+            <p style="display:inline-block;" class="grade-checkbox"><%= radio_button_tag 'grade[g17]', g17, @grade.g17 == g17 %>
+            <%= label_tag "g17_#{g17}", g17.humanize %></p>
+          <% end %>
+        </div>
+        <div class="col-md-12 comment-content comment-edit">
+           <span class="fa fa-comment"></span> Comment: 
+           <%= f.text_area :g17_c, class: 'input-control comment-textarea' %>
+        </div>
+      </div>
+    <% end %>
+
+    <% unless @gq18.blank? %>
+      <div class="question question-edit clearfix">
+        <div class="col-md-6 question-section" id="grade_q18"><strong>r.</strong> 
+          <%= @gq18 %>
+          <p class="adv-comment-color">(<strong class="grade_weight"><%= @gw18 %>%</strong>)</p>
+        </div>
+        <div class="col-md-6 grade-section">
+          <% [ '1', '2', '3', '4', '5' ].each do |g18| %>
+            <p style="display:inline-block;" class="grade-checkbox"><%= radio_button_tag 'grade[g18]', g18, @grade.g18 == g18 %>
+            <%= label_tag "g18_#{g18}", g18.humanize %></p>
+          <% end %>
+        </div>
+        <div class="col-md-12 comment-content comment-edit">
+           <span class="fa fa-comment"></span> Comment: 
+           <%= f.text_area :g18_c, class: 'input-control comment-textarea' %>
+        </div>
+      </div>
+    <% end %>
+  
+    <% unless @gq19.blank? %>
+      <div class="question question-edit clearfix">
+        <div class="col-md-6 question-section" id="grade_q19"><strong>s.</strong> 
+          <%= @gq19 %>
+          <p class="adv-comment-color">(<strong class="grade_weight"><%= @gw19 %>%</strong>)</p>
+        </div>
+        <div class="col-md-6 grade-section">
+          <% [ '1', '2', '3', '4', '5' ].each do |g19| %>
+            <p style="display:inline-block;" class="grade-checkbox"><%= radio_button_tag 'grade[g19]', g19, @grade.g19 == g19 %>
+            <%= label_tag "g19_#{g19}", g19.humanize %></p>
+          <% end %>
+        </div>
+        <div class="col-md-12 comment-content comment-edit">
+           <span class="fa fa-comment"></span> Comment: 
+           <%= f.text_area :g19_c, class: 'input-control comment-textarea' %>
+        </div>
+      </div> 
+    <% end %>
+
+    <% unless @gq20.blank? %>
+      <div class="question question-edit clearfix">
+        <div class="col-md-6 question-section" id="grade_q20"><strong>t.</strong> 
+          <%= @gq20 %>
+          <p class="adv-comment-color">(<strong class="grade_weight"><%= @gw20 %>%</strong>)</p>
+        </div>
+        <div class="col-md-6 grade-section">
+          <% [ '1', '2', '3', '4', '5' ].each do |g20| %>
+            <p style="display:inline-block;" class="grade-checkbox"><%= radio_button_tag 'grade[g20]', g20, @grade.g20 == g20 %>
+            <%= label_tag "g20_#{g20}", g20.humanize %></p>
+          <% end %>
+        </div>
+        <div class="col-md-12 comment-content comment-edit">
+           <span class="fa fa-comment"></span> Comment: 
+           <%= f.text_area :g20_c, class: 'input-control comment-textarea' %>
+        </div>
+      </div>
+    <% end %>             
 
     <div class="calculate-score clearfix">
       <div class="pull-right col-md-4">

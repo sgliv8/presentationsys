@@ -1,5 +1,5 @@
 <div class="grade-container">
-    <h2 class="grade-header">Comment Report Details</h2>
+    <h2 class="grade-header">Evaluation Details</h2>
 
     <div class="grade-content">
         <div class="group-info clearfix" style="border-bottom: 0;">
@@ -15,46 +15,127 @@
           </p>
 
         </div>
+        
+        <% unless @comment.course.cq1.blank? %>
+          <div class="question clearfix">
+              <div class="col-md-12 question-section adv-comment">1. <%= @comment.course.cq1 %></div>
+              <div class="col-md-12 comment-content clearfix">
+                 <span class="fa fa-comment adv-comment-color"> Comment:</span>
+                 <div class="content">
+                    <%= @comment.strength %>
+                 </div>
+              </div>
+          </div>
+        <% end %>
+        
+        <% unless @comment.course.cq2.blank? %>
+          <div class="question clearfix">
+              <div class="col-md-12 question-section adv-comment">2. <%= @comment.course.cq2 %></div>
+              <div class="col-md-12 comment-content clearfix">
+                 <span class="fa fa-comment adv-comment-color"> Comment:</span>
+                 <div class="content">
+                    <%= @comment.weakness %>
+                 </div>
+              </div>
+          </div>
+        <% end %>
 
-        <div class="question clearfix">
-            <div class="col-md-12 question-section adv-comment">1. <%= @comment.course.cq1 %></div>
-            <div class="col-md-12 comment-content clearfix">
-               <span class="fa fa-comment adv-comment-color"> Comment:</span>
-               <div class="content">
-                  <%= @comment.strength %>
-               </div>
-            </div>
-        </div>
+        <% unless @comment.course.cq3.blank? %>
+          <div class="question clearfix">
+              <div class="col-md-12 question-section adv-comment">3. <%= @comment.course.cq3 %></div>
+              <div class="col-md-12 comment-content clearfix">
+                 <span class="fa fa-comment adv-comment-color"> Comment:</span>
+                 <div class="content">
+                    <%= @comment.improvement %>
+                 </div>
+              </div>
+          </div>
+        <% end %>
+        
+        <% unless @comment.course.cq4.blank? %>
+          <div class="question clearfix">
+              <div class="col-md-12 question-section adv-comment">4. <%= @comment.course.cq4 %></div>
+              <div class="col-md-12 comment-content clearfix">
+                 <span class="fa fa-comment adv-comment-color"> Comment:</span>
+                 <div class="content">
+                    <%= @comment.fund %>
+                 </div>
+              </div>
+          </div>
+        <% end %>
 
-        <div class="question clearfix">
-            <div class="col-md-12 question-section adv-comment">2. <%= @comment.course.cq2 %></div>
-            <div class="col-md-12 comment-content clearfix">
-               <span class="fa fa-comment adv-comment-color"> Comment:</span>
-               <div class="content">
-                  <%= @comment.weakness %>
-               </div>
-            </div>
-        </div>
+        <% unless @comment.course.cq5.blank? %>
+          <div class="question clearfix">
+              <div class="col-md-12 question-section adv-comment">5. <%= @comment.course.cq5 %></div>
+              <div class="col-md-12 comment-content clearfix">
+                 <span class="fa fa-comment adv-comment-color"> Comment:</span>
+                 <div class="content">
+                    <%= @comment.ca5 %>
+                 </div>
+              </div>
+          </div>
+        <% end %>
 
-        <div class="question clearfix">
-            <div class="col-md-12 question-section adv-comment">3. <%= @comment.course.cq3 %></div>
-            <div class="col-md-12 comment-content clearfix">
-               <span class="fa fa-comment adv-comment-color"> Comment:</span>
-               <div class="content">
-                  <%= @comment.improvement %>
-               </div>
-            </div>
-        </div>
+        
+        <% unless @comment.course.cq6.blank? %>
+          <div class="question clearfix">
+              <div class="col-md-12 question-section adv-comment">6. <%= @comment.course.cq6 %></div>
+              <div class="col-md-12 comment-content clearfix">
+                 <span class="fa fa-comment adv-comment-color"> Comment:</span>
+                 <div class="content">
+                    <%= @comment.ca6 %>
+                 </div>
+              </div>
+          </div>
+        <% end %>
+        
+        <% unless @comment.course.cq7.blank? %>
+          <div class="question clearfix">
+              <div class="col-md-12 question-section adv-comment">7. <%= @comment.course.cq7 %></div>
+              <div class="col-md-12 comment-content clearfix">
+                 <span class="fa fa-comment adv-comment-color"> Comment:</span>
+                 <div class="content">
+                    <%= @comment.ca7 %>
+                 </div>
+              </div>
+          </div>
+        <% end %>
 
-        <div class="question clearfix">
-            <div class="col-md-12 question-section adv-comment">4. <%= @comment.course.cq4 %></div>
-            <div class="col-md-12 comment-content clearfix">
-               <span class="fa fa-comment adv-comment-color"> Comment:</span>
-               <div class="content">
-                  <%= @comment.fund %>
-               </div>
-            </div>
-        </div>
+        <% unless @comment.course.cq8.blank? %>
+          <div class="question clearfix">
+              <div class="col-md-12 question-section adv-comment">8. <%= @comment.course.cq8 %></div>
+              <div class="col-md-12 comment-content clearfix">
+                 <span class="fa fa-comment adv-comment-color"> Comment:</span>
+                 <div class="content">
+                    <%= @comment.ca8 %>
+                 </div>
+              </div>
+          </div>
+        <% end %>
+        
+        <% unless @comment.course.cq9.blank? %>
+          <div class="question clearfix">
+              <div class="col-md-12 question-section adv-comment">9. <%= @comment.course.cq9 %></div>
+              <div class="col-md-12 comment-content clearfix">
+                 <span class="fa fa-comment adv-comment-color"> Comment:</span>
+                 <div class="content">
+                    <%= @comment.ca9 %>
+                 </div>
+              </div>
+          </div>
+        <% end %>
+        
+        <% unless @comment.course.cq10.blank? %>
+          <div class="question clearfix">
+              <div class="col-md-12 question-section adv-comment">10. <%= @comment.course.cq10 %></div>
+              <div class="col-md-12 comment-content clearfix">
+                 <span class="fa fa-comment adv-comment-color"> Comment:</span>
+                 <div class="content">
+                    <%= @comment.ca10 %>
+                 </div>
+              </div>
+          </div>
+        <% end %>
 
         <div class="col-md-12 adv-board clearfix">
           

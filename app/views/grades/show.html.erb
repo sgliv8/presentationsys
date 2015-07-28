@@ -1,5 +1,5 @@
 <div class="grade-container">
-    <h1 class="grade-header">Grading Details</h1>
+    <h1 class="grade-header">Evaluation Details</h1>
 
     <div class="grade-content">
       <div class="group-info clearfix" style="border-bottom: 0;">
@@ -24,92 +24,349 @@
       </div>
 
       <div class="criteria">Does the presentation provide a complete and compelling explanation of: </div>
-
-      <div class="question clearfix">
-          <div class="col-md-6 question-section"><strong>a.</strong> <%= @grade.course.gq1 %></div>
-          <div class="col-md-3 grade-section"><%= @grade.opport %></div>
-          <div class="col-md-3 comment-section">
-            <span id="comment-a">comment</span>
-          </div>
-          <div class="col-md-12 comment-content clearfix">
-             <span class="fa fa-comment"> Instructor Comment:</span>
-             <div class="content">
-                <%= @grade.opport_c %>
-             </div>
-          </div>
-      </div>
-
-      <div class="question clearfix">
-          <div class="col-md-6 question-section"><strong>b.</strong> <%= @grade.course.gq2 %></div>
-          <div class="col-md-3 grade-section"><%= @grade.cost %></div>
-          <div class="col-md-3 comment-section"><span id="comment-b">comment</span></div>
-          <div class="col-md-12 comment-content">
-             <span class="fa fa-comment"> Instructor Comment:</span>
-             <div class="content">
-                <%= @grade.cost_c %>
+      
+      <% unless @grade.course.gq1.blank? %>
+        <div class="question clearfix">
+            <div class="col-md-6 question-section">
+              <strong>a.</strong> <%= @grade.course.gq1 %>
+              <p class="adv-comment-color"><strong class="grade_weight"> (<%= @grade.course.gw1 %>%)</strong></p>
             </div>
-          </div>
-      </div>
+            <div class="col-md-3 grade-section"><%= @grade.opport %></div>
+            <div class="col-md-3 comment-section">
+              <span id="comment-a" data-toggle="tooltip" data-placement="top" title="Expand to see the comment">comment</span>
+            </div>
+            <div class="col-md-12 comment-content clearfix">
+               <span class="fa fa-comment"> Instructor Comment:</span>
+               <div class="content">
+                  <%= @grade.opport_c %>
+               </div>
+            </div>
+        </div>
+      <% end %>
+      
+      <% unless @grade.course.gq2.blank? %>
+        <div class="question clearfix">
+            <div class="col-md-6 question-section">
+              <strong>b.</strong> <%= @grade.course.gq2 %>
+              <p class="adv-comment-color"><strong class="grade_weight"> (<%= @grade.course.gw2 %>%)</strong></p>
+            </div>
+            <div class="col-md-3 grade-section"><%= @grade.cost %></div>
+            <div class="col-md-3 comment-section"><span id="comment-b" data-toggle="tooltip" data-placement="top" title="Expand to see the comment">comment</span></div>
+            <div class="col-md-12 comment-content">
+               <span class="fa fa-comment"> Instructor Comment:</span>
+               <div class="content">
+                  <%= @grade.cost_c %>
+              </div>
+            </div>
+        </div>
+      <% end %>
+      
+      <% unless @grade.course.gq3.blank? %>
+        <div class="question clearfix">
+            <div class="col-md-6 question-section">
+              <strong>c.</strong> <%= @grade.course.gq3 %>
+              <p class="adv-comment-color"><strong class="grade_weight"> (<%= @grade.course.gw3 %>%)</strong></p>
+            </div>
+            <div class="col-md-3 grade-section"><%= @grade.timeline %></div>
+            <div class="col-md-3 comment-section"><span id="comment-c" data-toggle="tooltip" data-placement="top" title="Expand to see the comment">comment</span></div>
+            <div class="col-md-12 comment-content clearfix">
+               <span class="fa fa-comment"> Instructor Comment:</span>
+               <div class="content">
+                 <%= @grade.timeline_c %>
+               </div> 
+            </div>
+        </div>
+      <% end %>
+      
+      <% unless @grade.course.gq4.blank? %>
+        <div class="question clearfix">
+            <div class="col-md-6 question-section">
+              <strong>d.</strong> <%= @grade.course.gq4 %>
+              <p class="adv-comment-color"><strong class="grade_weight"> (<%= @grade.course.gw4 %>%)</strong></p>
+            </div>
+            <div class="col-md-3 grade-section"><%= @grade.obstacle %></div>
+            <div class="col-md-3 comment-section"><span id="comment-d" data-toggle="tooltip" data-placement="top" title="Expand to see the comment">comment</span></div>
+            <div class="col-md-12 comment-content clearfix">
+               <span class="fa fa-comment"> Instructor Comment:</span>
+               <div class="content">
+                 <%= @grade.obstacle %>
+               </div>   
+            </div>
+        </div>
+      <% end %>
+      
+      <% unless @grade.course.gq5.blank? %>
+        <div class="question clearfix">
+            <div class="col-md-6 question-section">
+              <strong>e.</strong> <%= @grade.course.gq5 %>
+              <p class="adv-comment-color"><strong class="grade_weight"> (<%= @grade.course.gw5 %>%)</strong></p>
+            </div>
+            <div class="col-md-3 grade-section"><%= @grade.risk %></div>
+            <div class="col-md-3 comment-section"><span id="comment-e" data-toggle="tooltip" data-placement="top" title="Expand to see the comment">comment</span></div>
+            <div class="col-md-12 comment-content clearfix">
+               <span class="fa fa-comment"> Instructor Comment:</span>
+               <div class="content">
+                 <%= @grade.risk_c %>
+               </div>
+            </div>
+        </div>
+      <% end %>
+      
+      <% unless @grade.course.gq6.blank? %>
+        <div class="question clearfix">
+            <div class="col-md-6 question-section">
+              <strong>f.</strong> <%= @grade.course.gq6 %>
+              <p class="adv-comment-color"><strong class="grade_weight"> (<%= @grade.course.gw6 %>%)</strong></p>
+            </div>
+            <div class="col-md-3 grade-section"><%= @grade.point %></div>
+            <div class="col-md-3 comment-section"><span id="comment-f" data-toggle="tooltip" data-placement="top" title="Expand to see the comment">comment</span></div>
+            <div class="col-md-12 comment-content clearfix">
+               <span class="fa fa-comment"> Instructor Comment: </span>
+               <div class="content">
+                  <%= @grade.point_c %>
+               </div>
+            </div>
+        </div>
+      <% end %>
+    
+      <% unless @grade.course.gq7.blank? %>
+        <div class="question clearfix">
+            <div class="col-md-6 question-section">
+              <strong>g.</strong> <%= @grade.course.gq7 %>
+              <p class="adv-comment-color"><strong class="grade_weight"> (<%= @grade.course.gw7 %>%)</strong></p>
+            </div>
+            <div class="col-md-3 grade-section"><%= @grade.fund %></div>
+            <div class="col-md-3 comment-section"><span id="comment-g" data-toggle="tooltip" data-placement="top" title="Expand to see the comment">comment</span></div>
+            <div class="col-md-12 comment-content clearfix">
+               <span class="fa fa-comment"> Instructor Comment:</span>
+               <div class="content">
+                  <%= @grade.fund_c %>
+               </div>
+            </div>
+        </div>
+      <% end %>
+      
+      <% unless @grade.course.gq8.blank? %>
+        <div class="question clearfix">
+            <div class="col-md-6 question-section">
+              <strong>h.</strong> <%= @grade.course.gq8 %>
+              <p class="adv-comment-color"><strong class="grade_weight"> (<%= @grade.course.gw8 %>%)</strong></p>
+            </div>
+            <div class="col-md-3 grade-section"><%= @grade.g8 %></div>
+            <div class="col-md-3 comment-section"><span id="comment-h" data-toggle="tooltip" data-placement="top" title="Expand to see the comment">comment</span></div>
+            <div class="col-md-12 comment-content clearfix">
+               <span class="fa fa-comment"> Instructor Comment:</span>
+               <div class="content">
+                  <%= @grade.g8_c %>
+               </div>
+            </div>
+        </div>
+      <% end %>
 
-      <div class="question clearfix">
-          <div class="col-md-6 question-section"><strong>c.</strong> <%= @grade.course.gq3 %></div>
-          <div class="col-md-3 grade-section"><%= @grade.timeline %></div>
-          <div class="col-md-3 comment-section"><span id="comment-c">comment</span></div>
-          <div class="col-md-12 comment-content clearfix">
-             <span class="fa fa-comment"> Instructor Comment:</span>
-             <div class="content">
-               <%= @grade.timeline_c %>
-             </div> 
-          </div>
-      </div>
+      <% unless @grade.course.gq9.blank? %>
+        <div class="question clearfix">
+            <div class="col-md-6 question-section">
+              <strong>i.</strong> <%= @grade.course.gq9 %>
+              <p class="adv-comment-color"><strong class="grade_weight"> (<%= @grade.course.gw9 %>%)</strong></p>
+            </div>
+            <div class="col-md-3 grade-section"><%= @grade.g9 %></div>
+            <div class="col-md-3 comment-section"><span id="comment-i" data-toggle="tooltip" data-placement="top" title="Expand to see the comment">comment</span></div>
+            <div class="col-md-12 comment-content clearfix">
+               <span class="fa fa-comment"> Instructor Comment:</span>
+               <div class="content">
+                  <%= @grade.g9_c %>
+               </div>
+            </div>
+        </div>
+      <% end %>
 
-      <div class="question clearfix">
-          <div class="col-md-6 question-section"><strong>d.</strong> <%= @grade.course.gq4 %></div>
-          <div class="col-md-3 grade-section"><%= @grade.obstacle %></div>
-          <div class="col-md-3 comment-section"><span id="comment-d">comment</span></div>
-          <div class="col-md-12 comment-content clearfix">
-             <span class="fa fa-comment"> Instructor Comment:</span>
-             <div class="content">
-               <%= @grade.obstacle %>
-             </div>   
-          </div>
-      </div>
+      <% unless @grade.course.gq10.blank? %>
+        <div class="question clearfix">
+            <div class="col-md-6 question-section">
+              <strong>j.</strong> <%= @grade.course.gq10 %>
+              <p class="adv-comment-color"><strong class="grade_weight"> (<%= @grade.course.gw10 %>%)</strong></p>
+            </div>
+            <div class="col-md-3 grade-section"><%= @grade.g10 %></div>
+            <div class="col-md-3 comment-section"><span id="comment-j" data-toggle="tooltip" data-placement="top" title="Expand to see the comment">comment</span></div>
+            <div class="col-md-12 comment-content clearfix">
+               <span class="fa fa-comment"> Instructor Comment:</span>
+               <div class="content">
+                  <%= @grade.g10_c %>
+               </div>
+            </div>
+        </div>
+      <% end %>
 
-      <div class="question clearfix">
-          <div class="col-md-6 question-section"><strong>e.</strong> <%= @grade.course.gq5 %></div>
-          <div class="col-md-3 grade-section"><%= @grade.risk %></div>
-          <div class="col-md-3 comment-section"><span id="comment-e">comment</span></div>
-          <div class="col-md-12 comment-content clearfix">
-             <span class="fa fa-comment"> Instructor Comment:</span>
-             <div class="content">
-               <%= @grade.risk_c %>
-             </div>
-          </div>
-      </div>
+      <% unless @grade.course.gq11.blank? %>
+        <div class="question clearfix">
+            <div class="col-md-6 question-section">
+              <strong>k.</strong> <%= @grade.course.gq11 %>
+              <p class="adv-comment-color"><strong class="grade_weight"> (<%= @grade.course.gw11 %>%)</strong></p>
+            </div>
+            <div class="col-md-3 grade-section"><%= @grade.g11 %></div>
+            <div class="col-md-3 comment-section"><span id="comment-k" data-toggle="tooltip" data-placement="top" title="Expand to see the comment">comment</span></div>
+            <div class="col-md-12 comment-content clearfix">
+               <span class="fa fa-comment"> Instructor Comment:</span>
+               <div class="content">
+                  <%= @grade.g11_c %>
+               </div>
+            </div>
+        </div>
+      <% end %>
+      
+      <% unless @grade.course.gq12.blank? %>
+        <div class="question clearfix">
+            <div class="col-md-6 question-section">
+              <strong>l.</strong> <%= @grade.course.gq12 %>
+              <p class="adv-comment-color"><strong class="grade_weight"> (<%= @grade.course.gw12 %>%)</strong></p>
+            </div>
+            <div class="col-md-3 grade-section"><%= @grade.g12 %></div>
+            <div class="col-md-3 comment-section"><span id="comment-l" data-toggle="tooltip" data-placement="top" title="Expand to see the comment">comment</span></div>
+            <div class="col-md-12 comment-content clearfix">
+               <span class="fa fa-comment"> Instructor Comment:</span>
+               <div class="content">
+                  <%= @grade.g12_c %>
+               </div>
+            </div>
+        </div>
+      <% end %>
+      
+      <% unless @grade.course.gq13.blank? %>
+        <div class="question clearfix">
+            <div class="col-md-6 question-section">
+              <strong>m.</strong> <%= @grade.course.gq13 %>
+              <p class="adv-comment-color"><strong class="grade_weight"> (<%= @grade.course.gw13 %>%)</strong></p>
+            </div>
+            <div class="col-md-3 grade-section"><%= @grade.g13 %></div>
+            <div class="col-md-3 comment-section"><span id="comment-m" data-toggle="tooltip" data-placement="top" title="Expand to see the comment">comment</span></div>
+            <div class="col-md-12 comment-content clearfix">
+               <span class="fa fa-comment"> Instructor Comment:</span>
+               <div class="content">
+                  <%= @grade.g13_c %>
+               </div>
+            </div>
+        </div>
+      <% end %>
 
-      <div class="question clearfix">
-          <div class="col-md-6 question-section"><strong>f.</strong> <%= @grade.course.gq6 %></div>
-          <div class="col-md-3 grade-section"><%= @grade.point %></div>
-          <div class="col-md-3 comment-section"><span id="comment-f">comment</span></div>
-          <div class="col-md-12 comment-content clearfix">
-             <span class="fa fa-comment"> Instructor Comment: </span>
-             <div class="content">
-                <%= @grade.point_c %>
-             </div>
-          </div>
-      </div>
+      <% unless @grade.course.gq14.blank? %>
+        <div class="question clearfix">
+            <div class="col-md-6 question-section">
+              <strong>n.</strong> <%= @grade.course.gq14 %>
+              <p class="adv-comment-color"><strong class="grade_weight"> (<%= @grade.course.gw14 %>%)</strong></p>
+            </div>
+            <div class="col-md-3 grade-section"><%= @grade.g14 %></div>
+            <div class="col-md-3 comment-section"><span id="comment-n" data-toggle="tooltip" data-placement="top" title="Expand to see the comment">comment</span></div>
+            <div class="col-md-12 comment-content clearfix">
+               <span class="fa fa-comment"> Instructor Comment:</span>
+               <div class="content">
+                  <%= @grade.g14_c %>
+               </div>
+            </div>
+        </div>
+      <% end %>
+      
+      <% unless @grade.course.gq15.blank? %>
+        <div class="question clearfix">
+            <div class="col-md-6 question-section">
+              <strong>o.</strong> <%= @grade.course.gq15 %>
+              <p class="adv-comment-color"><strong class="grade_weight"> (<%= @grade.course.gw15 %>%)</strong></p>
+            </div>
+            <div class="col-md-3 grade-section"><%= @grade.g15 %></div>
+            <div class="col-md-3 comment-section"><span id="comment-o" data-toggle="tooltip" data-placement="top" title="Expand to see the comment">comment</span></div>
+            <div class="col-md-12 comment-content clearfix">
+               <span class="fa fa-comment"> Instructor Comment:</span>
+               <div class="content">
+                  <%= @grade.g15_c %>
+               </div>
+            </div>
+        </div>
+      <% end %>
+      
+      <% unless @grade.course.gq16.blank? %>
+        <div class="question clearfix">
+            <div class="col-md-6 question-section">
+              <strong>p.</strong> <%= @grade.course.gq16 %>
+              <p class="adv-comment-color"><strong class="grade_weight"> (<%= @grade.course.gw16 %>%)</strong></p>
+            </div>
+            <div class="col-md-3 grade-section"><%= @grade.g16 %></div>
+            <div class="col-md-3 comment-section"><span id="comment-p" data-toggle="tooltip" data-placement="top" title="Expand to see the comment">comment</span></div>
+            <div class="col-md-12 comment-content clearfix">
+               <span class="fa fa-comment"> Instructor Comment:</span>
+               <div class="content">
+                  <%= @grade.g16_c %>
+               </div>
+            </div>
+        </div>
+      <% end %>
+      
+      <% unless @grade.course.gq17.blank? %>
+        <div class="question clearfix">
+            <div class="col-md-6 question-section">
+              <strong>q.</strong> <%= @grade.course.gq17 %>
+              <p class="adv-comment-color"><strong class="grade_weight"> (<%= @grade.course.gw17 %>%)</strong></p>
+            </div>
+            <div class="col-md-3 grade-section"><%= @grade.g17 %></div>
+            <div class="col-md-3 comment-section"><span id="comment-q" data-toggle="tooltip" data-placement="top" title="Expand to see the comment">comment</span></div>
+            <div class="col-md-12 comment-content clearfix">
+               <span class="fa fa-comment"> Instructor Comment:</span>
+               <div class="content">
+                  <%= @grade.g17_c %>
+               </div>
+            </div>
+        </div>
+      <% end %>
+      
+      <% unless @grade.course.gq18.blank? %>
+        <div class="question clearfix">
+            <div class="col-md-6 question-section">
+              <strong>r.</strong> <%= @grade.course.gq18 %>
+              <p class="adv-comment-color"><strong class="grade_weight"> (<%= @grade.course.gw18 %>%)</strong></p>
+            </div>
+            <div class="col-md-3 grade-section"><%= @grade.g18 %></div>
+            <div class="col-md-3 comment-section"><span id="comment-r" data-toggle="tooltip" data-placement="top" title="Expand to see the comment">comment</span></div>
+            <div class="col-md-12 comment-content clearfix">
+               <span class="fa fa-comment"> Instructor Comment:</span>
+               <div class="content">
+                  <%= @grade.g18_c %>
+               </div>
+            </div>
+        </div>
+      <% end %>
+      
+      <% unless @grade.course.gq19.blank? %>
+        <div class="question clearfix">
+            <div class="col-md-6 question-section">
+              <strong>s.</strong> <%= @grade.course.gq19 %>
+              <p class="adv-comment-color"><strong class="grade_weight"> (<%= @grade.course.gw19 %>%)</strong></p>
+            </div>
+            <div class="col-md-3 grade-section"><%= @grade.g19 %></div>
+            <div class="col-md-3 comment-section"><span id="comment-s" data-toggle="tooltip" data-placement="top" title="Expand to see the comment">comment</span></div>
+            <div class="col-md-12 comment-content clearfix">
+               <span class="fa fa-comment"> Instructor Comment:</span>
+               <div class="content">
+                  <%= @grade.g19_c %>
+               </div>
+            </div>
+        </div>
+      <% end %>
+      
+      <% unless @grade.course.gq20.blank? %>
+        <div class="question clearfix">
+            <div class="col-md-6 question-section">
+              <strong>t.</strong> <%= @grade.course.gq20 %>
+              <p class="adv-comment-color"><strong class="grade_weight"> (<%= @grade.course.gw20 %>%)</strong></p>
+            </div>
+            <div class="col-md-3 grade-section"><%= @grade.g20 %></div>
+            <div class="col-md-3 comment-section"><span id="comment-t" data-toggle="tooltip" data-placement="top" title="Expand to see the comment">comment</span></div>
+            <div class="col-md-12 comment-content clearfix">
+               <span class="fa fa-comment"> Instructor Comment:</span>
+               <div class="content">
+                  <%= @grade.g20_c %>
+               </div>
+            </div>
+        </div>
+      <% end %>
 
-      <div class="question clearfix">
-          <div class="col-md-6 question-section"><strong>g.</strong> <%= @grade.course.gq7 %></div>
-          <div class="col-md-3 grade-section"><%= @grade.fund %></div>
-          <div class="col-md-3 comment-section"><span id="comment-g">comment</span></div>
-          <div class="col-md-12 comment-content clearfix">
-             <span class="fa fa-comment"> Instructor Comment:</span>
-             <div class="content">
-                <%= @grade.fund_c %>
-             </div>
-          </div>
-      </div>
 
       <div class="col-md-12 adv-board clearfix">
           

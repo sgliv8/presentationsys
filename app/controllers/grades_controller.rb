@@ -21,7 +21,8 @@ class GradesController < ApplicationController
   def new
     @grade = current_user.grades.build
 
-    @inquestions1 = Course.first
+    @course = params[:course]
+    @inquestions1 = Course.where(id: @course).first
   end
 
   # GET /grades/1/edit
@@ -33,7 +34,7 @@ class GradesController < ApplicationController
   def create
     @grade = current_user.grades.build(grade_params)
 
-    @inquestions1 = Course.first
+    #@inquestions1 = Course.first
 
     respond_to do |format|
       if @grade.save
@@ -90,6 +91,6 @@ class GradesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def grade_params
-      params.require(:grade).permit(:group, :project, :opport, :opport_c, :cost, :cost_c, :timeline, :timeline_c, :obstacle, :obstacle_c, :risk, :risk_c, :point, :point_c, :fund, :fund_c, :totalscore, :user_id, :course_id)
+      params.require(:grade).permit(:group, :project, :opport, :opport_c, :cost, :cost_c, :timeline, :timeline_c, :obstacle, :obstacle_c, :risk, :risk_c, :point, :point_c, :fund, :fund_c, :totalscore, :user_id, :course_id, :g8, :g8_c, :g9, :g9_c, :g10, :g10_c, :g11, :g11_c, :g12, :g12_c, :g13, :g13_c, :g14, :g14_c, :g15, :g15_c, :g16, :g16_c, :g17, :g17_c, :g18, :g18_c, :g19, :g19_c, :g20, :g20_c)
     end
 end

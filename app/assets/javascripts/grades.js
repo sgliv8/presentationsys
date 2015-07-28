@@ -97,13 +97,13 @@ $(document).ready(function(){
 			//console.log(data.questions[0].id);
 			
 
-			$('input[name="comment[course_id]"]').val(data.questions[0].id );
+			//$('input[name="comment[course_id]"]').val(data.questions[0].id );
 
-
-			$('#comment_q1').html(data.questions[0].cq1);
-			$('#comment_q2').html(data.questions[0].cq2);
-			$('#comment_q3').html(data.questions[0].cq3);
-			$('#comment_q4').html(data.questions[0].cq4);
+			$('#create_comment').attr('href', "/comments/new?course=" + data.questions[0].id);
+			// $('#comment_q1').html(data.questions[0].cq1);
+			// $('#comment_q2').html(data.questions[0].cq2);
+			// $('#comment_q3').html(data.questions[0].cq3);
+			// $('#comment_q4').html(data.questions[0].cq4);
 
 			
 		
@@ -149,16 +149,16 @@ $(document).ready(function(){
 			//console.log(data.questions[0].id);
 			
 
-			$('input[name="grade[course_id]"]').val(data.questions[0].id );
+			//$('input[name="grade[course_id]"]').val(data.questions[0].id );
+			$('#create_grade').attr('href', "/grades/new?course=" + data.questions[0].id);
 
-
-			$('#grade_q1').html(data.questions[0].gq1);
-			$('#grade_q2').html(data.questions[0].gq2);
-			$('#grade_q3').html(data.questions[0].gq3);
-			$('#grade_q4').html(data.questions[0].gq4);
-			$('#grade_q5').html(data.questions[0].gq5);
-			$('#grade_q6').html(data.questions[0].gq6);
-			$('#grade_q7').html(data.questions[0].gq7);
+			// $('#grade_q1').html(data.questions[0].gq1);
+			// $('#grade_q2').html(data.questions[0].gq2);
+			// $('#grade_q3').html(data.questions[0].gq3);
+			// $('#grade_q4').html(data.questions[0].gq4);
+			// $('#grade_q5').html(data.questions[0].gq5);
+			// $('#grade_q6').html(data.questions[0].gq6);
+			// $('#grade_q7').html(data.questions[0].gq7);
 
 			
 		

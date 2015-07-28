@@ -26,47 +26,126 @@
           <div style="padding: 0 5px; border-bottom: 2px solid #196890;" class="cf">
             <p style="font-size: 18px; margin-bottom: 5px; color: #196890; float:left;"><strong>Course:</strong> <%= comment.course.course_name %></p> 
           </div>
+          
+          <% unless comment.course.cq1.blank? %>
+            <div style="padding: 10px 5px 25px; font-size: 15px; border-bottom: 1px solid rgba(34,41,46,0.4);">
+                <div style="width: 100%; padding: 13px 0; font-size: 20px; font-weight: 600px;">1. <%= comment.course.cq1 %></div>
+                <div class="cf" style="width: 100%; padding: 10px 0; background: #E9E9E9; border-radius: 5px;">
+                   <span style="color: #196890;"> Comment:</span>
+                   <div style="padding: 5px; word-wrap: break-word;">
+                      <%= comment.strength %>
+                   </div>
+                </div>
+            </div>
+          <% end %>
+          
+          <% unless comment.course.cq2.blank? %>
+            <div style="padding: 10px 5px 25px; font-size: 15px; border-bottom: 1px solid rgba(34,41,46,0.4);">
+                <div style="width: 100%; padding: 13px 0; font-size: 20px; font-weight: 600px;">2. <%= comment.course.cq2 %></div>
+                <div style=" width: 100%; padding: 10px 0; background: #E9E9E9; border-radius: 5px;">
+                   <span style="color: #196890;"> Comment:</span>
+                   <div style="padding: 5px; word-wrap: break-word;">
+                      <%= comment.weakness %>
+                   </div>
+                </div>
+            </div>
+          <% end %>
+          
+          <% unless comment.course.cq3.blank? %>
+            <div style="padding: 10px 5px 25px; font-size: 15px; border-bottom: 1px solid rgba(34,41,46,0.4);">
+                <div style="width: 100%; padding: 13px 0; font-size: 20px; font-weight: 600px;">3. <%= comment.course.cq3 %></div>
+                <div style=" width: 100%; padding: 10px 0; background: #E9E9E9; border-radius: 5px;">
+                   <span style="color: #196890;"> Comment:</span>
+                   <div style="padding: 5px; word-wrap: break-word;">
+                      <%= comment.improvement %>
+                   </div>
+                </div>
+            </div>
+          <% end %>
 
-          <div style="padding: 10px 5px 25px; font-size: 15px; border-bottom: 1px solid rgba(34,41,46,0.4);">
-              <div style="width: 100%; padding: 13px 0; font-size: 20px; font-weight: 600px;">1. <%= comment.course.cq1 %></div>
-              <div class="cf" style="width: 100%; padding: 10px 0; background: #E9E9E9; border-radius: 5px;">
-                 <span style="color: #196890;"> Comment:</span>
-                 <div style="padding: 5px; word-wrap: break-word;">
-                    <%= comment.strength %>
-                 </div>
-              </div>
-          </div>
+          <% unless comment.course.cq4.blank? %>
+            <div style="padding: 10px 5px 25px; font-size: 15px; border-bottom: 1px solid rgba(34,41,46,0.4);">
+                <div style="width: 100%; padding: 13px 0; font-size: 20px; font-weight: 600px;">4. <%= comment.course.cq4 %></div>
+                <div style="width: 100%; padding: 10px 0; background: #E9E9E9; border-radius: 5px;">
+                   <span style="color: #196890;"> Comment:</span>
+                   <div style="padding: 5px; word-wrap: break-word;">
+                      <%= comment.fund %>
+                   </div>
+                </div>
+            </div>
+          <% end %>
 
-          <div style="padding: 10px 5px 25px; font-size: 15px; border-bottom: 1px solid rgba(34,41,46,0.4);">
-              <div style="width: 100%; padding: 13px 0; font-size: 20px; font-weight: 600px;">2. <%= comment.course.cq2 %></div>
-              <div style=" width: 100%; padding: 10px 0; background: #E9E9E9; border-radius: 5px;">
-                 <span style="color: #196890;"> Comment:</span>
-                 <div style="padding: 5px; word-wrap: break-word;">
-                    <%= comment.weakness %>
-                 </div>
-              </div>
-          </div>
+          <% unless comment.course.cq5.blank? %>
+            <div style="padding: 10px 5px 25px; font-size: 15px; border-bottom: 1px solid rgba(34,41,46,0.4);">
+                <div style="width: 100%; padding: 13px 0; font-size: 20px; font-weight: 600px;">5. <%= comment.course.cq5 %></div>
+                <div style="width: 100%; padding: 10px 0; background: #E9E9E9; border-radius: 5px;">
+                   <span style="color: #196890;"> Comment:</span>
+                   <div style="padding: 5px; word-wrap: break-word;">
+                      <%= comment.ca5 %>
+                   </div>
+                </div>
+            </div>
+          <% end %>
 
-          <div style="padding: 10px 5px 25px; font-size: 15px; border-bottom: 1px solid rgba(34,41,46,0.4);">
-              <div style="width: 100%; padding: 13px 0; font-size: 20px; font-weight: 600px;">3. <%= comment.course.cq3 %></div>
-              <div style=" width: 100%; padding: 10px 0; background: #E9E9E9; border-radius: 5px;">
-                 <span style="color: #196890;"> Comment:</span>
-                 <div style="padding: 5px; word-wrap: break-word;">
-                    <%= comment.improvement %>
-                 </div>
-              </div>
-          </div>
+          <% unless comment.course.cq6.blank? %>
+            <div style="padding: 10px 5px 25px; font-size: 15px; border-bottom: 1px solid rgba(34,41,46,0.4);">
+                <div style="width: 100%; padding: 13px 0; font-size: 20px; font-weight: 600px;">6. <%= comment.course.cq6 %></div>
+                <div style="width: 100%; padding: 10px 0; background: #E9E9E9; border-radius: 5px;">
+                   <span style="color: #196890;"> Comment:</span>
+                   <div style="padding: 5px; word-wrap: break-word;">
+                      <%= comment.ca6 %>
+                   </div>
+                </div>
+            </div>
+          <% end %>
 
+          <% unless comment.course.cq7.blank? %>
+            <div style="padding: 10px 5px 25px; font-size: 15px; border-bottom: 1px solid rgba(34,41,46,0.4);">
+                <div style="width: 100%; padding: 13px 0; font-size: 20px; font-weight: 600px;">7. <%= comment.course.cq7 %></div>
+                <div style="width: 100%; padding: 10px 0; background: #E9E9E9; border-radius: 5px;">
+                   <span style="color: #196890;"> Comment:</span>
+                   <div style="padding: 5px; word-wrap: break-word;">
+                      <%= comment.ca7 %>
+                   </div>
+                </div>
+            </div>
+          <% end %>
 
-          <div style="padding: 10px 5px 25px; font-size: 15px; border-bottom: 1px solid rgba(34,41,46,0.4);">
-              <div style="width: 100%; padding: 13px 0; font-size: 20px; font-weight: 600px;">4. <%= comment.course.cq4 %></div>
-              <div style="width: 100%; padding: 10px 0; background: #E9E9E9; border-radius: 5px;">
-                 <span style="color: #196890;"> Comment:</span>
-                 <div style="padding: 5px; word-wrap: break-word;">
-                    <%= comment.fund %>
-                 </div>
-              </div>
-          </div>
+          <% unless comment.course.cq8.blank? %>
+            <div style="padding: 10px 5px 25px; font-size: 15px; border-bottom: 1px solid rgba(34,41,46,0.4);">
+                <div style="width: 100%; padding: 13px 0; font-size: 20px; font-weight: 600px;">8. <%= comment.course.cq8 %></div>
+                <div style="width: 100%; padding: 10px 0; background: #E9E9E9; border-radius: 5px;">
+                   <span style="color: #196890;"> Comment:</span>
+                   <div style="padding: 5px; word-wrap: break-word;">
+                      <%= comment.ca8 %>
+                   </div>
+                </div>
+            </div>
+          <% end %>
+
+          <% unless comment.course.cq9.blank? %>
+            <div style="padding: 10px 5px 25px; font-size: 15px; border-bottom: 1px solid rgba(34,41,46,0.4);">
+                <div style="width: 100%; padding: 13px 0; font-size: 20px; font-weight: 600px;">9. <%= comment.course.cq9 %></div>
+                <div style="width: 100%; padding: 10px 0; background: #E9E9E9; border-radius: 5px;">
+                   <span style="color: #196890;"> Comment:</span>
+                   <div style="padding: 5px; word-wrap: break-word;">
+                      <%= comment.ca9 %>
+                   </div>
+                </div>
+            </div>
+          <% end %>
+
+          <% unless comment.course.cq10.blank? %>
+            <div style="padding: 10px 5px 25px; font-size: 15px; border-bottom: 1px solid rgba(34,41,46,0.4);">
+                <div style="width: 100%; padding: 13px 0; font-size: 20px; font-weight: 600px;">10. <%= comment.course.cq10 %></div>
+                <div style="width: 100%; padding: 10px 0; background: #E9E9E9; border-radius: 5px;">
+                   <span style="color: #196890;"> Comment:</span>
+                   <div style="padding: 5px; word-wrap: break-word;">
+                      <%= comment.ca10 %>
+                   </div>
+                </div>
+            </div>
+          <% end %>
 
       </div>
     </div>
@@ -92,85 +171,310 @@
             </div>
             <div style="padding: 15px 5px;font-size: 18px; background: #33a3dc; color: #FFFFFF;">Does the presentation provide a complete and compelling explanation of: </div>
 
-            <div style="padding: 10px 5px 25px; font-size: 15px; border-bottom: 1px solid rgba(34,41,46,0.4);">
-                <div style="width: 100%; padding: 13px 0;"><strong>a. </strong><%= grade.course.gq1 %></div>
-                <h4 style="color: #b83936; padding-left: 10px;">Grade: <%= grade.opport %></h4>
-                <div class="cf" style="width: 100%; padding: 10px 0; background: #E9E9E9; border-radius: 5px;">
-                   <span> Instructor Comment:</span>
-                   <div style="padding: 5px; word-wrap: break-word;">
-                      <%= grade.opport_c %>
-                   </div>
-                </div>
-            </div>
+            <% unless grade.course.gq1.blank? %>
+              <div style="padding: 10px 5px 25px; font-size: 15px; border-bottom: 1px solid rgba(34,41,46,0.4);">
+                  <div style="width: 100%; padding: 13px 0;"><strong>a. </strong><%= grade.course.gq1 %>
+                    <p style="color: #196890;"><strong class="grade_weight"> (<%= grade.course.gw1 %>%)</strong></p>
+                  </div>
+                  <h4 style="color: #b83936; padding-left: 10px;">Grade: <%= grade.opport %></h4>
+                  <div class="cf" style="width: 100%; padding: 10px 0; background: #E9E9E9; border-radius: 5px;">
+                     <span> Instructor Comment:</span>
+                     <div style="padding: 5px; word-wrap: break-word;">
+                        <%= grade.opport_c %>
+                     </div>
+                  </div>
+              </div>
+            <% end %>
 
-
-            <div style="padding: 10px 5px 25px; font-size: 15px; border-bottom: 1px solid rgba(34,41,46,0.4);">
-                <div style="width: 100%; padding: 13px 0;"><strong>b. </strong><%= grade.course.gq2 %></div>
-                <h4 style="color: #b83936; padding-left: 10px;">Grade: <%= grade.cost %></h4>
-                <div class="cf" style="width: 100%; padding: 10px 0; background: #E9E9E9; border-radius: 5px;">
-                   <span> Instructor Comment:</span>
-                   <div style="padding: 5px; word-wrap: break-word;">
-                      <%= grade.cost_c %>
-                   </div>
-                </div>
-            </div>
+            <% unless grade.course.gq2.blank? %>
+              <div style="padding: 10px 5px 25px; font-size: 15px; border-bottom: 1px solid rgba(34,41,46,0.4);">
+                  <div style="width: 100%; padding: 13px 0;"><strong>b. </strong><%= grade.course.gq2 %>
+                    <p style="color: #196890;"><strong class="grade_weight"> (<%= grade.course.gw2 %>%)</strong></p>
+                  </div>
+                  <h4 style="color: #b83936; padding-left: 10px;">Grade: <%= grade.cost %></h4>
+                  <div class="cf" style="width: 100%; padding: 10px 0; background: #E9E9E9; border-radius: 5px;">
+                     <span> Instructor Comment:</span>
+                     <div style="padding: 5px; word-wrap: break-word;">
+                        <%= grade.cost_c %>
+                     </div>
+                  </div>
+              </div>
+            <% end %>
             
-
-            <div style="padding: 10px 5px 25px; font-size: 15px; border-bottom: 1px solid rgba(34,41,46,0.4);">
-                <div style="width: 100%; padding: 13px 0;"><strong>c. </strong><%= grade.course.gq3 %></div>
-                <h4 style="color: #b83936; padding-left: 10px;">Grade: <%= grade.timeline %></h4>
-                <div class="cf" style="width: 100%; padding: 10px 0; background: #E9E9E9; border-radius: 5px;">
-                   <span> Instructor Comment:</span>
-                   <div style="padding: 5px; word-wrap: break-word;">
-                      <%= grade.timeline_c %>
-                   </div>
-                </div>
-            </div>
+            <% unless grade.course.gq3.blank? %>
+              <div style="padding: 10px 5px 25px; font-size: 15px; border-bottom: 1px solid rgba(34,41,46,0.4);">
+                  <div style="width: 100%; padding: 13px 0;"><strong>c. </strong><%= grade.course.gq3 %>
+                    <p style="color: #196890;"><strong class="grade_weight"> (<%= grade.course.gw3 %>%)</strong></p>
+                  </div>
+                  <h4 style="color: #b83936; padding-left: 10px;">Grade: <%= grade.timeline %></h4>
+                  <div class="cf" style="width: 100%; padding: 10px 0; background: #E9E9E9; border-radius: 5px;">
+                     <span> Instructor Comment:</span>
+                     <div style="padding: 5px; word-wrap: break-word;">
+                        <%= grade.timeline_c %>
+                     </div>
+                  </div>
+              </div>
+            <% end %>
             
-            <div style="padding: 10px 5px 25px; font-size: 15px; border-bottom: 1px solid rgba(34,41,46,0.4);">
-                <div style="width: 100%; padding: 13px 0;"><strong>d. </strong><%= grade.course.gq4 %></div>
-                <h4 style="color: #b83936; padding-left: 10px;">Grade: <%= grade.obstacle %></h4>
-                <div class="cf" style="width: 100%; padding: 10px 0; background: #E9E9E9; border-radius: 5px;">
-                   <span> Instructor Comment:</span>
-                   <div style="padding: 5px; word-wrap: break-word;">
-                      <%= grade.obstacle_c %>
-                   </div>
-                </div>
-            </div>
+            <% unless grade.course.gq4.blank? %>
+              <div style="padding: 10px 5px 25px; font-size: 15px; border-bottom: 1px solid rgba(34,41,46,0.4);">
+                  <div style="width: 100%; padding: 13px 0;"><strong>d. </strong><%= grade.course.gq4 %>
+                    <p style="color: #196890;"><strong class="grade_weight"> (<%= grade.course.gw4 %>%)</strong></p>
+                  </div>
+                  <h4 style="color: #b83936; padding-left: 10px;">Grade: <%= grade.obstacle %></h4>
+                  <div class="cf" style="width: 100%; padding: 10px 0; background: #E9E9E9; border-radius: 5px;">
+                     <span> Instructor Comment:</span>
+                     <div style="padding: 5px; word-wrap: break-word;">
+                        <%= grade.obstacle_c %>
+                     </div>
+                  </div>
+              </div>
+            <% end %>
+
+            <% unless grade.course.gq5.blank? %>
+              <div style="padding: 10px 5px 25px; font-size: 15px; border-bottom: 1px solid rgba(34,41,46,0.4);">
+                  <div style="width: 100%; padding: 13px 0;"><strong>e. </strong><%= grade.course.gq5 %>
+                    <p style="color: #196890;"><strong class="grade_weight"> (<%= grade.course.gw5 %>%)</strong></p>
+                  </div>
+                  <h4 style="color: #b83936; padding-left: 10px;">Grade: <%= grade.risk %></h4>
+                  <div class="cf" style="width: 100%; padding: 10px 0; background: #E9E9E9; border-radius: 5px;">
+                     <span> Instructor Comment:</span>
+                     <div style="padding: 5px; word-wrap: break-word;">
+                        <%= grade.risk_c %>
+                     </div>
+                  </div>
+              </div>
+            <% end %>
+            
+            <% unless grade.course.gq6.blank? %>
+              <div style="padding: 10px 5px 25px; font-size: 15px; border-bottom: 1px solid rgba(34,41,46,0.4);">
+                  <div style="width: 100%; padding: 13px 0;"><strong>f. </strong><%= grade.course.gq6 %>
+                    <p style="color: #196890;"><strong class="grade_weight"> (<%= grade.course.gw6 %>%)</strong></p>
+                  </div>
+                  <h4 style="color: #b83936; padding-left: 10px;">Grade: <%= grade.point %></h4>
+                  <div class="cf" style="width: 100%; padding: 10px 0; background: #E9E9E9; border-radius: 5px;">
+                     <span> Instructor Comment:</span>
+                     <div style="padding: 5px; word-wrap: break-word;">
+                        <%= grade.point_c %>
+                     </div>
+                  </div>
+              </div>
+            <% end %>
+            
+            <% unless grade.course.gq7.blank? %>
+              <div style="padding: 10px 5px 25px; font-size: 15px; border-bottom: 1px solid rgba(34,41,46,0.4);">
+                  <div style="width: 100%; padding: 13px 0;"><strong>g. </strong><%= grade.course.gq7 %>
+                    <p style="color: #196890;"><strong class="grade_weight"> (<%= grade.course.gw7 %>%)</strong></p>
+                  </div>
+                  <h4 style="color: #b83936; padding-left: 10px;">Grade: <%= grade.fund %></h4>
+                  <div class="cf" style="width: 100%; padding: 10px 0; background: #E9E9E9; border-radius: 5px;">
+                     <span> Instructor Comment:</span>
+                     <div style="padding: 5px; word-wrap: break-word;">
+                        <%= grade.fund_c %>
+                     </div>
+                  </div>
+              </div>
+            <% end %>
+
+            <% unless grade.course.gq8.blank? %>
+              <div style="padding: 10px 5px 25px; font-size: 15px; border-bottom: 1px solid rgba(34,41,46,0.4);">
+                  <div style="width: 100%; padding: 13px 0;"><strong>h. </strong><%= grade.course.gq8 %>
+                    <p style="color: #196890;"><strong class="grade_weight"> (<%= grade.course.gw8 %>%)</strong></p>
+                  </div>
+                  <h4 style="color: #b83936; padding-left: 10px;">Grade: <%= grade.g8 %></h4>
+                  <div class="cf" style="width: 100%; padding: 10px 0; background: #E9E9E9; border-radius: 5px;">
+                     <span> Instructor Comment:</span>
+                     <div style="padding: 5px; word-wrap: break-word;">
+                        <%= grade.g8_c %>
+                     </div>
+                  </div>
+              </div>
+            <% end %>
+
+            <% unless grade.course.gq9.blank? %>
+              <div style="padding: 10px 5px 25px; font-size: 15px; border-bottom: 1px solid rgba(34,41,46,0.4);">
+                  <div style="width: 100%; padding: 13px 0;"><strong>i. </strong><%= grade.course.gq9 %>
+                    <p style="color: #196890;"><strong class="grade_weight"> (<%= grade.course.gw9 %>%)</strong></p>
+                  </div>
+                  <h4 style="color: #b83936; padding-left: 10px;">Grade: <%= grade.g9 %></h4>
+                  <div class="cf" style="width: 100%; padding: 10px 0; background: #E9E9E9; border-radius: 5px;">
+                     <span> Instructor Comment:</span>
+                     <div style="padding: 5px; word-wrap: break-word;">
+                        <%= grade.g9_c %>
+                     </div>
+                  </div>
+              </div>
+            <% end %>
+
+            <% unless grade.course.gq10.blank? %>
+              <div style="padding: 10px 5px 25px; font-size: 15px; border-bottom: 1px solid rgba(34,41,46,0.4);">
+                  <div style="width: 100%; padding: 13px 0;"><strong>j. </strong><%= grade.course.gq10 %>
+                    <p style="color: #196890;"><strong class="grade_weight"> (<%= grade.course.gw10 %>%)</strong></p>
+                  </div>
+                  <h4 style="color: #b83936; padding-left: 10px;">Grade: <%= grade.g10 %></h4>
+                  <div class="cf" style="width: 100%; padding: 10px 0; background: #E9E9E9; border-radius: 5px;">
+                     <span> Instructor Comment:</span>
+                     <div style="padding: 5px; word-wrap: break-word;">
+                        <%= grade.g10_c %>
+                     </div>
+                  </div>
+              </div>
+            <% end %>
+
+            <% unless grade.course.gq11.blank? %>
+              <div style="padding: 10px 5px 25px; font-size: 15px; border-bottom: 1px solid rgba(34,41,46,0.4);">
+                  <div style="width: 100%; padding: 13px 0;"><strong>k. </strong><%= grade.course.gq11 %>
+                    <p style="color: #196890;"><strong class="grade_weight"> (<%= grade.course.gw11 %>%)</strong></p>
+                  </div>
+                  <h4 style="color: #b83936; padding-left: 10px;">Grade: <%= grade.g11 %></h4>
+                  <div class="cf" style="width: 100%; padding: 10px 0; background: #E9E9E9; border-radius: 5px;">
+                     <span> Instructor Comment:</span>
+                     <div style="padding: 5px; word-wrap: break-word;">
+                        <%= grade.g11_c %>
+                     </div>
+                  </div>
+              </div>
+            <% end %>
+
+            <% unless grade.course.gq12.blank? %>
+              <div style="padding: 10px 5px 25px; font-size: 15px; border-bottom: 1px solid rgba(34,41,46,0.4);">
+                  <div style="width: 100%; padding: 13px 0;"><strong>l. </strong><%= grade.course.gq12 %>
+                    <p style="color: #196890;"><strong class="grade_weight"> (<%= grade.course.gw12 %>%)</strong></p>
+                  </div>
+                  <h4 style="color: #b83936; padding-left: 10px;">Grade: <%= grade.g12 %></h4>
+                  <div class="cf" style="width: 100%; padding: 10px 0; background: #E9E9E9; border-radius: 5px;">
+                     <span> Instructor Comment:</span>
+                     <div style="padding: 5px; word-wrap: break-word;">
+                        <%= grade.g12_c %>
+                     </div>
+                  </div>
+              </div>
+            <% end %>
 
 
-            <div style="padding: 10px 5px 25px; font-size: 15px; border-bottom: 1px solid rgba(34,41,46,0.4);">
-                <div style="width: 100%; padding: 13px 0;"><strong>e. </strong><%= grade.course.gq5 %></div>
-                <h4 style="color: #b83936; padding-left: 10px;">Grade: <%= grade.risk %></h4>
-                <div class="cf" style="width: 100%; padding: 10px 0; background: #E9E9E9; border-radius: 5px;">
-                   <span> Instructor Comment:</span>
-                   <div style="padding: 5px; word-wrap: break-word;">
-                      <%= grade.risk_c %>
-                   </div>
-                </div>
-            </div>
+            <% unless grade.course.gq13.blank? %>
+              <div style="padding: 10px 5px 25px; font-size: 15px; border-bottom: 1px solid rgba(34,41,46,0.4);">
+                  <div style="width: 100%; padding: 13px 0;"><strong>m. </strong><%= grade.course.gq13 %>
+                    <p style="color: #196890;"><strong class="grade_weight"> (<%= grade.course.gw13 %>%)</strong></p>
+                  </div>
+                  <h4 style="color: #b83936; padding-left: 10px;">Grade: <%= grade.g13 %></h4>
+                  <div class="cf" style="width: 100%; padding: 10px 0; background: #E9E9E9; border-radius: 5px;">
+                     <span> Instructor Comment:</span>
+                     <div style="padding: 5px; word-wrap: break-word;">
+                        <%= grade.g13_c %>
+                     </div>
+                  </div>
+              </div>
+            <% end %>
 
-            <div style="padding: 10px 5px 25px; font-size: 15px; border-bottom: 1px solid rgba(34,41,46,0.4);">
-                <div style="width: 100%; padding: 13px 0;"><strong>f. </strong><%= grade.course.gq6 %></div>
-                <h4 style="color: #b83936; padding-left: 10px;">Grade: <%= grade.point %></h4>
-                <div class="cf" style="width: 100%; padding: 10px 0; background: #E9E9E9; border-radius: 5px;">
-                   <span> Instructor Comment:</span>
-                   <div style="padding: 5px; word-wrap: break-word;">
-                      <%= grade.point_c %>
-                   </div>
-                </div>
-            </div>
+            <% unless grade.course.gq14.blank? %>
+              <div style="padding: 10px 5px 25px; font-size: 15px; border-bottom: 1px solid rgba(34,41,46,0.4);">
+                  <div style="width: 100%; padding: 13px 0;"><strong>n. </strong><%= grade.course.gq14 %>
+                    <p style="color: #196890;"><strong class="grade_weight"> (<%= grade.course.gw14 %>%)</strong></p>
+                  </div>
+                  <h4 style="color: #b83936; padding-left: 10px;">Grade: <%= grade.g14 %></h4>
+                  <div class="cf" style="width: 100%; padding: 10px 0; background: #E9E9E9; border-radius: 5px;">
+                     <span> Instructor Comment:</span>
+                     <div style="padding: 5px; word-wrap: break-word;">
+                        <%= grade.g14_c %>
+                     </div>
+                  </div>
+              </div>
+            <% end %>
 
-            <div style="padding: 10px 5px 25px; font-size: 15px; border-bottom: 1px solid rgba(34,41,46,0.4);">
-                <div style="width: 100%; padding: 13px 0;"><strong>g. </strong><%= grade.course.gq7 %></div>
-                <h4 style="color: #b83936; padding-left: 10px;">Grade: <%= grade.fund %></h4>
-                <div class="cf" style="width: 100%; padding: 10px 0; background: #E9E9E9; border-radius: 5px;">
-                   <span> Instructor Comment:</span>
-                   <div style="padding: 5px; word-wrap: break-word;">
-                      <%= grade.fund_c %>
-                   </div>
-                </div>
-            </div>
+
+            <% unless grade.course.gq15.blank? %>
+              <div style="padding: 10px 5px 25px; font-size: 15px; border-bottom: 1px solid rgba(34,41,46,0.4);">
+                  <div style="width: 100%; padding: 13px 0;"><strong>o. </strong><%= grade.course.gq15 %>
+                    <p style="color: #196890;"><strong class="grade_weight"> (<%= grade.course.gw15 %>%)</strong></p>
+                  </div>
+                  <h4 style="color: #b83936; padding-left: 10px;">Grade: <%= grade.g15 %></h4>
+                  <div class="cf" style="width: 100%; padding: 10px 0; background: #E9E9E9; border-radius: 5px;">
+                     <span> Instructor Comment:</span>
+                     <div style="padding: 5px; word-wrap: break-word;">
+                        <%= grade.g15_c %>
+                     </div>
+                  </div>
+              </div>
+            <% end %>
+
+
+            <% unless grade.course.gq16.blank? %>
+              <div style="padding: 10px 5px 25px; font-size: 15px; border-bottom: 1px solid rgba(34,41,46,0.4);">
+                  <div style="width: 100%; padding: 13px 0;"><strong>p. </strong><%= grade.course.gq16 %>
+                    <p style="color: #196890;"><strong class="grade_weight"> (<%= grade.course.gw16 %>%)</strong></p>
+                  </div>
+                  <h4 style="color: #b83936; padding-left: 10px;">Grade: <%= grade.g16 %></h4>
+                  <div class="cf" style="width: 100%; padding: 10px 0; background: #E9E9E9; border-radius: 5px;">
+                     <span> Instructor Comment:</span>
+                     <div style="padding: 5px; word-wrap: break-word;">
+                        <%= grade.g16_c %>
+                     </div>
+                  </div>
+              </div>
+            <% end %>
+
+            <% unless grade.course.gq17.blank? %>
+              <div style="padding: 10px 5px 25px; font-size: 15px; border-bottom: 1px solid rgba(34,41,46,0.4);">
+                  <div style="width: 100%; padding: 13px 0;"><strong>q. </strong><%= grade.course.gq17 %>
+                    <p style="color: #196890;"><strong class="grade_weight"> (<%= grade.course.gw17 %>%)</strong></p>
+                  </div>
+                  <h4 style="color: #b83936; padding-left: 10px;">Grade: <%= grade.g17 %></h4>
+                  <div class="cf" style="width: 100%; padding: 10px 0; background: #E9E9E9; border-radius: 5px;">
+                     <span> Instructor Comment:</span>
+                     <div style="padding: 5px; word-wrap: break-word;">
+                        <%= grade.g17_c %>
+                     </div>
+                  </div>
+              </div>
+            <% end %>
+
+            <% unless grade.course.gq18.blank? %>
+              <div style="padding: 10px 5px 25px; font-size: 15px; border-bottom: 1px solid rgba(34,41,46,0.4);">
+                  <div style="width: 100%; padding: 13px 0;"><strong>r. </strong><%= grade.course.gq18 %>
+                    <p style="color: #196890;"><strong class="grade_weight"> (<%= grade.course.gw18 %>%)</strong></p>
+                  </div>
+                  <h4 style="color: #b83936; padding-left: 10px;">Grade: <%= grade.g18 %></h4>
+                  <div class="cf" style="width: 100%; padding: 10px 0; background: #E9E9E9; border-radius: 5px;">
+                     <span> Instructor Comment:</span>
+                     <div style="padding: 5px; word-wrap: break-word;">
+                        <%= grade.g18_c %>
+                     </div>
+                  </div>
+              </div>
+            <% end %>
+
+
+            <% unless grade.course.gq19.blank? %>
+              <div style="padding: 10px 5px 25px; font-size: 15px; border-bottom: 1px solid rgba(34,41,46,0.4);">
+                  <div style="width: 100%; padding: 13px 0;"><strong>s. </strong><%= grade.course.gq19 %>
+                    <p style="color: #196890;"><strong class="grade_weight"> (<%= grade.course.gw19 %>%)</strong></p>
+                  </div>
+                  <h4 style="color: #b83936; padding-left: 10px;">Grade: <%= grade.g19 %></h4>
+                  <div class="cf" style="width: 100%; padding: 10px 0; background: #E9E9E9; border-radius: 5px;">
+                     <span> Instructor Comment:</span>
+                     <div style="padding: 5px; word-wrap: break-word;">
+                        <%= grade.g19_c %>
+                     </div>
+                  </div>
+              </div>
+            <% end %>
+
+
+            <% unless grade.course.gq20.blank? %>
+              <div style="padding: 10px 5px 25px; font-size: 15px; border-bottom: 1px solid rgba(34,41,46,0.4);">
+                  <div style="width: 100%; padding: 13px 0;"><strong>t. </strong><%= grade.course.gq20 %>
+                    <p style="color: #196890;"><strong class="grade_weight"> (<%= grade.course.gw20 %>%)</strong></p>
+                  </div>
+                  <h4 style="color: #b83936; padding-left: 10px;">Grade: <%= grade.g20 %></h4>
+                  <div class="cf" style="width: 100%; padding: 10px 0; background: #E9E9E9; border-radius: 5px;">
+                     <span> Instructor Comment:</span>
+                     <div style="padding: 5px; word-wrap: break-word;">
+                        <%= grade.g20_c %>
+                     </div>
+                  </div>
+              </div>
+            <% end %>
 
           </div>
 

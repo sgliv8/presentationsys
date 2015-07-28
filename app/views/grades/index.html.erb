@@ -20,15 +20,23 @@
 <div class="wrapper_wide clearfix" style="padding-bottom: 5em;">
     
   <% if current_user.role.name == 'Instructor' %>
-    <div style="margin-bottom: 20px; margin-top: 40px; float: right;">
-         <%= link_to 'Evaluate Presenation', new_grade_path, class: 'btn btn-primary' %>
+    <div style="margin-bottom: 20px; margin-top: 40px; float:right;">
+         <%= link_to 'Evaluate Presenation', new_grade_path(:course => 1), class: 'btn btn-primary', id: 'create_grade' %>
     </div>
+
+    <div class="form-inline" style="margin-top: 40px; margin-bottom: 20px; float: left;">
+        <img src="<%= asset_path( 'ajax-loader.gif' ) %>" alt="ajax-loader" id="loading" style="margin-left: 10px; display:none;">
+        <label style="margin-right: 5px;">Course</label>
+      
+        <%= collection_select :grade, :course_id, Course.all, :id, :course_name, {prompt: 'Please select a course'}, {class: 'form-control', 'data-remote' => true, 'data-url' => '/grades/questiondisplay', "data-type"=> 'json'} %>
+
+      </div>
   <% end %>
 
   <table class="table table-hover">
     <thead>
       <tr>
-        <th>Group Name</th>
+        <th>Group Number</th>
         <th>Project Name</th>
         <th>Evaluator</th>
         <th>Role</th>

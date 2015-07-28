@@ -22,7 +22,7 @@
 
   <div class="question question-edit clearfix">
     <div class="col-md-12 comment-content comment-edit">
-       <span class="fa fa-question-circle adv-comment-color"> Question 1:</span>  
+       <span class="fa fa-question-circle adv-comment-color"> Question 1:</span>
        <%= f.text_area :cq1, class: 'input-control comment-textarea' %>
     </div>
   </div>
@@ -49,27 +49,81 @@
     </div>
   </div>
 
+  <div class="question question-edit clearfix" style="border-bottom: 0;">
+    <div class="col-md-12 comment-content comment-edit">
+       <span class="fa fa-question-circle adv-comment-color"> Question 5:</span>  
+       <%= f.text_area :cq5, class: 'input-control comment-textarea' %>
+    </div>
+  </div>
+
+  <div class="question question-edit clearfix" style="border-bottom: 0;">
+    <div class="col-md-12 comment-content comment-edit">
+       <span class="fa fa-question-circle adv-comment-color"> Question 6:</span>  
+       <%= f.text_area :cq6, class: 'input-control comment-textarea' %>
+    </div>
+  </div>
+
+  <div class="question question-edit clearfix" style="border-bottom: 0;">
+    <div class="col-md-12 comment-content comment-edit">
+       <span class="fa fa-question-circle adv-comment-color"> Question 7:</span>  
+       <%= f.text_area :cq7, class: 'input-control comment-textarea' %>
+    </div>
+  </div>
+
+  <div class="question question-edit clearfix" style="border-bottom: 0;">
+    <div class="col-md-12 comment-content comment-edit">
+       <span class="fa fa-question-circle adv-comment-color"> Question 8:</span>  
+       <%= f.text_area :cq8, class: 'input-control comment-textarea' %>
+    </div>
+  </div>
+
+  <div class="question question-edit clearfix" style="border-bottom: 0;">
+    <div class="col-md-12 comment-content comment-edit">
+       <span class="fa fa-question-circle adv-comment-color"> Question 9:</span>  
+       <%= f.text_area :cq9, class: 'input-control comment-textarea' %>
+    </div>
+  </div>
+
+  <div class="question question-edit clearfix" style="border-bottom: 0;">
+    <div class="col-md-12 comment-content comment-edit">
+       <span class="fa fa-question-circle adv-comment-color"> Question 10:</span>  
+       <%= f.text_area :cq10, class: 'input-control comment-textarea' %>
+    </div>
+  </div>
+
   <div class="group-info group-info-comment clearfix" style="padding: 10px;">
     <p class="pull-left"><strong>Grade Questions Section:</strong></p>
   </div>
 
   <div class="question question-edit clearfix">
     <div class="col-md-12 comment-content comment-edit">
-       <span class="fa fa-question-circle adv-comment-color"> Question 1:</span>  
+       <span class="fa fa-question-circle adv-comment-color col-md-8" style="margin-top: 10px;"> Question 1:</span> 
+       <span class="col-md-4">
+        <div class="group-num adv-comment-color" style="float: left; width: 50%; margin-top: 10px;">Weight (%):</div> 
+        <%= f.text_field :gw1, class: "input-control group-num-input", style: "width: 50%; float:left;"%>
+      </span> 
        <%= f.text_area :gq1, class: 'input-control comment-textarea' %>
     </div>
   </div>
 
   <div class="question question-edit clearfix">
     <div class="col-md-12 comment-content comment-edit">
-       <span class="fa fa-question-circle adv-comment-color"> Question 2:</span>  
+       <span class="fa fa-question-circle adv-comment-color col-md-8" style="margin-top: 10px;"> Question 2:</span> 
+       <span class="col-md-4">
+        <div class="group-num adv-comment-color" style="float: left; width: 50%; margin-top: 10px;">Weight (%):</div> 
+        <%= f.text_field :gw2, class: "input-control group-num-input", style: "width: 50%; float:left;"%>
+      </span>   
        <%= f.text_area :gq2, class: 'input-control comment-textarea' %>
     </div>
   </div>
 
   <div class="question question-edit clearfix">
     <div class="col-md-12 comment-content comment-edit">
-       <span class="fa fa-question-circle adv-comment-color"> Question 3:</span>  
+       <span class="fa fa-question-circle adv-comment-color col-md-8" style="margin-top: 10px;"> Question 3:</span> 
+       <span class="col-md-4">
+        <div class="group-num adv-comment-color" style="float: left; width: 50%; margin-top: 10px;">Weight (%):</div> 
+        <%= f.text_field :gw3, class: "input-control group-num-input", style: "width: 50%; float:left;"%>
+      </span>  
        <%= f.text_area :gq3, class: 'input-control comment-textarea' %>
     </div>
   </div>
@@ -77,7 +131,11 @@
   
   <div class="question question-edit clearfix">
     <div class="col-md-12 comment-content comment-edit">
-       <span class="fa fa-question-circle adv-comment-color"> Question 4:</span>  
+       <span class="fa fa-question-circle adv-comment-color col-md-8" style="margin-top: 10px;"> Question 4:</span> 
+       <span class="col-md-4">
+        <div class="group-num adv-comment-color" style="float: left; width: 50%; margin-top: 10px;">Weight (%):</div> 
+        <%= f.text_field :gw4, class: "input-control group-num-input", style: "width: 50%; float:left;"%>
+      </span>   
        <%= f.text_area :gq4, class: 'input-control comment-textarea' %>
     </div>
   </div>
@@ -85,14 +143,22 @@
 
   <div class="question question-edit clearfix">
     <div class="col-md-12 comment-content comment-edit">
-       <span class="fa fa-question-circle adv-comment-color"> Question 5:</span>  
+       <span class="fa fa-question-circle adv-comment-color col-md-8" style="margin-top: 10px;"> Question 5:</span> 
+       <span class="col-md-4">
+        <div class="group-num adv-comment-color" style="float: left; width: 50%; margin-top: 10px;">Weight (%):</div> 
+        <%= f.text_field :gw5, class: "input-control group-num-input", style: "width: 50%; float:left;"%>
+      </span>   
        <%= f.text_area :gq5, class: 'input-control comment-textarea' %>
     </div>
   </div>
 
   <div class="question question-edit clearfix">
     <div class="col-md-12 comment-content comment-edit">
-       <span class="fa fa-question-circle adv-comment-color"> Question 6:</span>  
+       <span class="fa fa-question-circle adv-comment-color col-md-8" style="margin-top: 10px;"> Question 6:</span> 
+       <span class="col-md-4">
+        <div class="group-num adv-comment-color" style="float: left; width: 50%; margin-top: 10px;">Weight (%):</div> 
+        <%= f.text_field :gw6, class: "input-control group-num-input", style: "width: 50%; float:left;"%>
+      </span>   
        <%= f.text_area :gq6, class: 'input-control comment-textarea' %>
     </div>
   </div>
@@ -100,11 +166,160 @@
   
   <div class="question question-edit clearfix">
     <div class="col-md-12 comment-content comment-edit">
-       <span class="fa fa-question-circle adv-comment-color"> Question 7:</span>  
+       <span class="fa fa-question-circle adv-comment-color col-md-8" style="margin-top: 10px;"> Question 7:</span> 
+       <span class="col-md-4">
+        <div class="group-num adv-comment-color" style="float: left; width: 50%; margin-top: 10px;">Weight (%):</div> 
+        <%= f.text_field :gw7, class: "input-control group-num-input", style: "width: 50%; float:left;"%>
+      </span>   
        <%= f.text_area :gq7, class: 'input-control comment-textarea' %>
     </div>
   </div>
+
+
+  <div class="question question-edit clearfix">
+    <div class="col-md-12 comment-content comment-edit">
+       <span class="fa fa-question-circle adv-comment-color col-md-8" style="margin-top: 10px;"> Question 8:</span> 
+       <span class="col-md-4">
+        <div class="group-num adv-comment-color" style="float: left; width: 50%; margin-top: 10px;">Weight (%):</div> 
+        <%= f.text_field :gw8, class: "input-control group-num-input", style: "width: 50%; float:left;"%>
+      </span>   
+       <%= f.text_area :gq8, class: 'input-control comment-textarea' %>
+    </div>
+  </div>
+
+  <div class="question question-edit clearfix">
+    <div class="col-md-12 comment-content comment-edit">
+       <span class="fa fa-question-circle adv-comment-color col-md-8" style="margin-top: 10px;"> Question 9:</span> 
+       <span class="col-md-4">
+        <div class="group-num adv-comment-color" style="float: left; width: 50%; margin-top: 10px;">Weight (%):</div> 
+        <%= f.text_field :gw9, class: "input-control group-num-input", style: "width: 50%; float:left;"%>
+      </span>   
+       <%= f.text_area :gq9, class: 'input-control comment-textarea' %>
+    </div>
+  </div>
+
+  <div class="question question-edit clearfix">
+    <div class="col-md-12 comment-content comment-edit">
+       <span class="fa fa-question-circle adv-comment-color col-md-8" style="margin-top: 10px;"> Question 10:</span> 
+       <span class="col-md-4">
+        <div class="group-num adv-comment-color" style="float: left; width: 50%; margin-top: 10px;">Weight (%):</div> 
+        <%= f.text_field :gw10, class: "input-control group-num-input", style: "width: 50%; float:left;"%>
+      </span>   
+       <%= f.text_area :gq10, class: 'input-control comment-textarea' %>
+    </div>
+  </div>
+
+  <div class="question question-edit clearfix">
+    <div class="col-md-12 comment-content comment-edit">
+       <span class="fa fa-question-circle adv-comment-color col-md-8" style="margin-top: 10px;"> Question 11:</span> 
+       <span class="col-md-4">
+        <div class="group-num adv-comment-color" style="float: left; width: 50%; margin-top: 10px;">Weight (%):</div> 
+        <%= f.text_field :gw11, class: "input-control group-num-input", style: "width: 50%; float:left;"%>
+      </span>   
+       <%= f.text_area :gq11, class: 'input-control comment-textarea' %>
+    </div>
+  </div>
+
+
+  <div class="question question-edit clearfix">
+    <div class="col-md-12 comment-content comment-edit">
+       <span class="fa fa-question-circle adv-comment-color col-md-8" style="margin-top: 10px;"> Question 12:</span> 
+       <span class="col-md-4">
+        <div class="group-num adv-comment-color" style="float: left; width: 50%; margin-top: 10px;">Weight (%):</div> 
+        <%= f.text_field :gw12, class: "input-control group-num-input", style: "width: 50%; float:left;"%>
+      </span>   
+       <%= f.text_area :gq12, class: 'input-control comment-textarea' %>
+    </div>
+  </div>
+
+  <div class="question question-edit clearfix">
+    <div class="col-md-12 comment-content comment-edit">
+       <span class="fa fa-question-circle adv-comment-color col-md-8" style="margin-top: 10px;"> Question 13:</span> 
+       <span class="col-md-4">
+        <div class="group-num adv-comment-color" style="float: left; width: 50%; margin-top: 10px;">Weight (%):</div> 
+        <%= f.text_field :gw13, class: "input-control group-num-input", style: "width: 50%; float:left;"%>
+      </span>   
+       <%= f.text_area :gq13, class: 'input-control comment-textarea' %>
+    </div>
+  </div>
+
+
+  <div class="question question-edit clearfix">
+    <div class="col-md-12 comment-content comment-edit">
+       <span class="fa fa-question-circle adv-comment-color col-md-8" style="margin-top: 10px;"> Question 14:</span> 
+       <span class="col-md-4">
+        <div class="group-num adv-comment-color" style="float: left; width: 50%; margin-top: 10px;">Weight (%):</div> 
+        <%= f.text_field :gw14, class: "input-control group-num-input", style: "width: 50%; float:left;"%>
+      </span>   
+       <%= f.text_area :gq14, class: 'input-control comment-textarea' %>
+    </div>
+  </div>
+
+  <div class="question question-edit clearfix">
+    <div class="col-md-12 comment-content comment-edit">
+       <span class="fa fa-question-circle adv-comment-color col-md-8" style="margin-top: 10px;"> Question 15:</span> 
+       <span class="col-md-4">
+        <div class="group-num adv-comment-color" style="float: left; width: 50%; margin-top: 10px;">Weight (%):</div> 
+        <%= f.text_field :gw15, class: "input-control group-num-input", style: "width: 50%; float:left;"%>
+      </span>   
+       <%= f.text_area :gq15, class: 'input-control comment-textarea' %>
+    </div>
+  </div>
+
+  <div class="question question-edit clearfix">
+    <div class="col-md-12 comment-content comment-edit">
+       <span class="fa fa-question-circle adv-comment-color col-md-8" style="margin-top: 10px;"> Question 16:</span> 
+       <span class="col-md-4">
+        <div class="group-num adv-comment-color" style="float: left; width: 50%; margin-top: 10px;">Weight (%):</div> 
+        <%= f.text_field :gw16, class: "input-control group-num-input", style: "width: 50%; float:left;"%>
+      </span>   
+       <%= f.text_area :gq16, class: 'input-control comment-textarea' %>
+    </div>
+  </div>
   
+  <div class="question question-edit clearfix">
+    <div class="col-md-12 comment-content comment-edit">
+       <span class="fa fa-question-circle adv-comment-color col-md-8" style="margin-top: 10px;"> Question 17:</span> 
+       <span class="col-md-4">
+        <div class="group-num adv-comment-color" style="float: left; width: 50%; margin-top: 10px;">Weight (%):</div> 
+        <%= f.text_field :gw17, class: "input-control group-num-input", style: "width: 50%; float:left;"%>
+      </span>   
+       <%= f.text_area :gq17, class: 'input-control comment-textarea' %>
+    </div>
+  </div>
+
+  <div class="question question-edit clearfix">
+    <div class="col-md-12 comment-content comment-edit">
+       <span class="fa fa-question-circle adv-comment-color col-md-8" style="margin-top: 10px;"> Question 18:</span> 
+       <span class="col-md-4">
+        <div class="group-num adv-comment-color" style="float: left; width: 50%; margin-top: 10px;">Weight (%):</div> 
+        <%= f.text_field :gw18, class: "input-control group-num-input", style: "width: 50%; float:left;"%>
+      </span>   
+       <%= f.text_area :gq18, class: 'input-control comment-textarea' %>
+    </div>
+  </div>
+
+  <div class="question question-edit clearfix">
+    <div class="col-md-12 comment-content comment-edit">
+       <span class="fa fa-question-circle adv-comment-color col-md-8" style="margin-top: 10px;"> Question 19:</span> 
+       <span class="col-md-4">
+        <div class="group-num adv-comment-color" style="float: left; width: 50%; margin-top: 10px;">Weight (%):</div> 
+        <%= f.text_field :gw19, class: "input-control group-num-input", style: "width: 50%; float:left;"%>
+      </span>   
+       <%= f.text_area :gq19, class: 'input-control comment-textarea' %>
+    </div>
+  </div>
+
+  <div class="question question-edit clearfix">
+    <div class="col-md-12 comment-content comment-edit">
+       <span class="fa fa-question-circle adv-comment-color col-md-8" style="margin-top: 10px;"> Question 20:</span> 
+       <span class="col-md-4">
+        <div class="group-num adv-comment-color" style="float: left; width: 50%; margin-top: 10px;">Weight (%):</div> 
+        <%= f.text_field :gw20, class: "input-control group-num-input", style: "width: 50%; float:left;"%>
+      </span>   
+       <%= f.text_area :gq20, class: 'input-control comment-textarea' %>
+    </div>
+  </div>
 
   <div class="btn-section" style="margin-top: 25px;">
       <%= f.submit 'Save', class: 'save-btn save-comment-btn' %>
