@@ -25,11 +25,18 @@ $(document).ready(function(){
 		e.preventDefault();
 		var sum = 0;
 
+    var errorsDisplay = $('.error');
+    $('.cal_err').remove();
+
+    errorsDisplay.each(function(index){
+      $(this).remove();
+    });
+
 		var weights = $('strong.grade_weight');
 
     weights.each(function(index){
       var text = $(this).text();
-      if(text === ""){
+      if(text === "%"){
         var weight = 0;
         console.log(weight);
       }else {
@@ -42,14 +49,23 @@ $(document).ready(function(){
       var checked = parseInt($(this).parent().parent().parent().find('input[type=radio]:checked').val());
       console.log(checked);
 
-      sum += checked * weight;
+      if(isNaN(checked)){
+        $(this).parent().parent().parent().find('.grade-section').append('<div class="error" style="color: red; text-align: left;">Please select a score.</div>');
+      } else {
+        sum += checked * weight;
+      }
       
     });
 
-    //sum = ((parseInt($('input:radio[name="grade[opport]"]:checked').val()) + parseInt($('input:radio[name="grade[cost]"]:checked').val()) + parseInt($('input:radio[name="grade[timeline]"]:checked').val()) + parseInt($('input:radio[name="grade[obstacle]"]:checked').val()) + parseInt($('input:radio[name="grade[risk]"]:checked').val())) / 25 ) * 5 * 0.4 + parseInt($('input:radio[name="grade[point]"]:checked').val()) * 0.2 + parseInt($('input:radio[name="grade[fund]"]:checked').val()) * 0.4;
-    //console.log(parseInt($('input:radio[name=opport]:checked').val()));
-    var new_sum = sum.toFixed(2).toString();
-    //console.log(typeof(new_sum));
+    var errorsLen = $('.error').length;
+    console.log(errorsLen);
+    if(errorsLen === 0){
+      var new_sum = sum.toFixed(2).toString();
+    } else {
+      var new_sum = '';
+      $('#cal_error_container').append('<div class="cal_err" style="color: red; text-align: left; margin-top: 20px;">Please fill in all the scores before calculating grade.</div>')
+    }
+
 
     $('#grade_totalscore').val(new_sum);
 	});

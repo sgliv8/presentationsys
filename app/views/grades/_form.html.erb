@@ -499,8 +499,8 @@
     <% end %>             
 
     <div class="calculate-score clearfix">
-      <div class="pull-right col-md-4">
-        <div class="total-grade">Total Grade:</div> 
+      <div class="pull-right col-md-4" id="cal_error_container">
+        <div class="total-grade" style="padding-top: 0;">Total Grade:</div> 
         <%= f.text_field :totalscore, class: 'input-control grade-input' %>
         <span id="calculate" class="fa fa-calculator" data-toggle="tooltip" data-placement="top" title="Calculate Grade"></span>
       </div>
