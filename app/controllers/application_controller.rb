@@ -11,6 +11,12 @@ class ApplicationController < ActionController::Base
     redirect_to root_url
   end
 
+  #rescue form for flash error message and redirection for the ActiveRecord Foreign Key Error
+  rescue_from 'ActiveRecord::InvalidForeignKey' do
+    flash[:alert] = "You must deletes the relative form before deleting the course"
+    redirect_to root_url
+  end
+
   protected
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:first_name, :last_name, :email, :password, :password_confirmation, :role_id) }
