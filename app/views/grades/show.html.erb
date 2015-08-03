@@ -11,7 +11,7 @@
         <p class="pull-left"><strong>Course:</strong> <%= @grade.course.course_name %></p> 
         <p class="pull-right">
             <span class="fa fa-pencil"></span>
-            <strong>Advisory Board:</strong> <%= @grade.user.full_name %>
+            <strong><%= current_user.role.name %>:</strong> <%= @grade.user.full_name %>
         </p>
 
       </div>
